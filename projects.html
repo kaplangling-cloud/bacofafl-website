@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Les projets de BACOFAFL — conservation forestière, agroforesterie, pépinières, gestion de l'eau et biodiversité au Cameroun.">
+  <title>Nos Projets — BACOFAFL</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <style>
+    .project-full { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 5rem; }
+    .project-full:nth-child(even) .pf-img { order: 2; }
+    .project-full:nth-child(even) .pf-text { order: 1; }
+    .pf-img img { border-radius: var(--r-lg); width: 100%; height: 380px; object-fit: cover; box-shadow: var(--shadow-lg); }
+    .pf-text .section-label { display: inline-block; }
+    .pf-text h2 { margin: .75rem 0 1rem; font-size: clamp(1.4rem,2.5vw,2rem); }
+    .pf-text p  { color: var(--gray-500); margin-bottom: 1rem; }
+    .pf-list { margin: 1rem 0 1.5rem; display: flex; flex-direction: column; gap: .55rem; }
+    .pf-list li { display: flex; gap: .65rem; align-items: flex-start; font-size: .9rem; color: var(--gray-800); }
+    .pf-list li::before { content: '✓'; color: var(--g700); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+    .process-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; position: relative; }
+    .process-steps::before {
+      content: ''; position: absolute; top: 38px; left: 12.5%; right: 12.5%; height: 2px;
+      background: linear-gradient(to right, var(--g300), var(--g700)); z-index: 0;
+    }
+    .step { text-align: center; position: relative; z-index: 1; }
+    .step-num {
+      width: 76px; height: 76px; border-radius: 50%; background: var(--g800); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; margin: 0 auto 1.2rem; box-shadow: var(--shadow-md);
+      border: 4px solid white;
+    }
+    .step h4 { font-size: .98rem; margin-bottom: .4rem; color: var(--g900); }
+    .step p  { font-size: .82rem; color: var(--gray-500); }
+    @media (max-width: 900px) {
+      .project-full { grid-template-columns: 1fr; gap: 2rem; }
+      .project-full:nth-child(even) .pf-img { order: 0; }
+      .project-full:nth-child(even) .pf-text { order: 0; }
+      .process-steps { grid-template-columns: repeat(2,1fr); }
+      .process-steps::before { display: none; }
+    }
+    @media (max-width: 600px) {
+      .process-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-top-bar">
+    <div class="container">
+      <div class="top-items">
+        <span>📍 Yaoundé, Cameroun — Bassin du Congo</span>
+        <a href="mailto:bacofafl@gmail.com">✉ bacofafl@gmail.com</a>
+        <a href="tel:+237600000000">📞 +237 6XX XXX XXX</a>
+      </div>
+      <div class="top-social">
+        <a href="#" title="Facebook">🇫</a>
+        <a href="#" title="Instagram">📷</a>
+        <a href="https://wa.me/237600000000" target="_blank" title="WhatsApp">💬</a>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🌿</div>
+        <div>
+          <span class="logo-name">BACOFAFL</span>
+          <span class="logo-tagline">Conservation · Cameroun</span>
+        </div>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html"    class="nav-link">Accueil</a></li>
+        <li><a href="about.html"    class="nav-link">À Propos</a></li>
+        <li><a href="projects.html" class="nav-link">Nos Projets</a></li>
+        <li><a href="gallery.html"  class="nav-link">Galerie</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
+        <li><a href="contact.html"  class="nav-link nav-cta">Nous Soutenir</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div class="page-content">
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <img src="images/03.jpg" alt="Cacao agroforestier au Cameroun">
+  <div class="ph-overlay"></div>
+  <div class="container ph-content">
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a> <span>›</span> <span>Nos Projets</span>
+    </div>
+    <h1>Nos Projets sur le Terrain</h1>
+  </div>
+</section>
+
+<!-- ===== INTRO ===== -->
+<section class="section section-alt" style="padding:50px 0;">
+  <div class="container" style="text-align:center;max-width:750px;">
+    <span class="section-label">6 Programmes Actifs</span>
+    <h2 style="margin-bottom:1rem;">Des Actions Concrètes pour la Forêt et les Hommes</h2>
+    <p>Chacun de nos projets répond à un besoin précis identifié avec les communautés locales. Ensemble, ils forment un écosystème d'interventions complémentaires qui transforment durablement les rapports entre les hommes et la nature au Cameroun.</p>
+  </div>
+</section>
+
+<!-- ===== PROJECTS DETAILED ===== -->
+<section class="section">
+  <div class="container">
+
+    <!-- Project 1 — Cacao Agroforestier -->
+    <div class="project-full">
+      <div class="pf-img reveal-l">
+        <img src="images/03.jpg" alt="Cabosses de cacao sur l'arbre">
+      </div>
+      <div class="pf-text reveal-r">
+        <span class="section-label">🍫 Agroforesterie</span>
+        <h2>Cacao Agroforestier sous Couvert Forestier</h2>
+        <p>Le cacao est cultivé depuis des siècles sous l'ombrage des grandes forêts du Cameroun. Notre programme restaure cette pratique traditionnelle en l'associant aux connaissances modernes de l'agroforesterie pour créer des systèmes productifs qui préservent la biodiversité.</p>
+        <ul class="pf-list">
+          <li>Formation de 150 producteurs aux techniques du cacao sous ombrage</li>
+          <li>Distribution de plants de cacao certifiés et d'arbres forestiers associés</li>
+          <li>Amélioration de la qualité du cacao et des revenus des producteurs (+40%)</li>
+          <li>Séquestration du carbone et maintien des corridors biologiques</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">En savoir plus →</a>
+      </div>
+    </div>
+
+    <!-- Project 2 — Pépinières -->
+    <div class="project-full">
+      <div class="pf-img reveal-r">
+        <img src="images/04.jpg" alt="Jeunes plants en pépinière">
+      </div>
+      <div class="pf-text reveal-l">
+        <span class="section-label">🌱 Reboisement</span>
+        <h2>Pépinières Forestières Communautaires</h2>
+        <p>Au cœur de toutes nos activités se trouvent nos pépinières communautaires — des espaces de vie où naissent chaque année des dizaines de milliers de plants destinés à reverdir les collines et enrichir les exploitations agricoles du Cameroun.</p>
+        <ul class="pf-list">
+          <li>Production de 75 000 plants par an (espèces fruitières et forestières)</li>
+          <li>3 pépinières communautaires opérationnelles autour de Yaoundé</li>
+          <li>Espèces produites : cacaoyer, manguier, papayer, goyavier, corossolier, palmier</li>
+          <li>Formation des jeunes à la production de plants en sachet</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">En savoir plus →</a>
+      </div>
+    </div>
+
+    <!-- Project 3 — Eau -->
+    <div class="project-full">
+      <div class="pf-img reveal-l">
+        <img src="images/21.jpg" alt="Canal d'irrigation avec taros">
+      </div>
+      <div class="pf-text reveal-r">
+        <span class="section-label">💧 Gestion de l'Eau</span>
+        <h2>Gestion Durable des Bassins Versants</h2>
+        <p>L'eau est la vie. Nos projets de gestion des bassins versants protègent les sources, aménagent des canaux d'irrigation et restaurent les zones humides pour assurer une alimentation en eau fiable aux communautés agricoles tout au long de l'année.</p>
+        <ul class="pf-list">
+          <li>Aménagement de 12 km de canaux d'irrigation gravitaire</li>
+          <li>Protection et reboisement des zones de captage</li>
+          <li>Introduction de cultures adaptées aux zones humides (taro, macabo)</li>
+          <li>Suivi de la qualité de l'eau dans les cours d'eau protégés</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">En savoir plus →</a>
+      </div>
+    </div>
+
+    <!-- Project 4 — Biodiversité -->
+    <div class="project-full">
+      <div class="pf-img reveal-r">
+        <img src="images/20.jpg" alt="Nids de tisserins — indicateurs de biodiversité">
+      </div>
+      <div class="pf-text reveal-l">
+        <span class="section-label">🦜 Biodiversité</span>
+        <h2>Documentation et Protection de la Biodiversité</h2>
+        <p>Le Cameroun est l'un des pays les plus riches en biodiversité d'Afrique. BACOFAFL contribue à son inventaire et à sa protection par des suivis scientifiques réguliers qui permettent de mesurer l'impact de nos actions et d'alerter sur les espèces menacées.</p>
+        <ul class="pf-list">
+          <li>Plus de 180 espèces d'oiseaux, insectes et plantes documentées</li>
+          <li>Suivi des nids d'oiseaux tisserins, indicateurs de la santé des écosystèmes</li>
+          <li>Cartographie des habitats naturels dans les zones d'intervention</li>
+          <li>Sensibilisation des communautés au rôle des espèces pollinisatrices</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">En savoir plus →</a>
+      </div>
+    </div>
+
+    <!-- Project 5 — Sécurité Alimentaire -->
+    <div class="project-full">
+      <div class="pf-img reveal-l">
+        <img src="images/15.jpg" alt="Racines de manioc fraîchement récoltées">
+      </div>
+      <div class="pf-text reveal-r">
+        <span class="section-label">🌾 Sécurité Alimentaire</span>
+        <h2>Sécurité Alimentaire et Cultures Vivrières</h2>
+        <p>Manioc, maïs, banane plantain, igname — les cultures vivrières traditionnelles forment le socle alimentaire des familles camerounaises. Nos programmes renforcent leur production tout en améliorant les pratiques pour préserver la fertilité des sols.</p>
+        <ul class="pf-list">
+          <li>Accompagnement de 320 familles dans la gestion de leurs exploitations</li>
+          <li>Techniques de conservation des semences et de gestion de la fertilité</li>
+          <li>Association culturale intelligente : manioc + légumineuses + arbres fruitiers</li>
+          <li>Transformation et conservation des récoltes pour réduire les pertes</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">En savoir plus →</a>
+      </div>
+    </div>
+
+    <!-- Project 6 — Conservation Forestière -->
+    <div class="project-full">
+      <div class="pf-img reveal-r">
+        <img src="images/17.jpg" alt="Tronc d'arbre abritant la biodiversité">
+      </div>
+      <div class="pf-text reveal-l">
+        <span class="section-label">🌲 Conservation</span>
+        <h2>Protection des Forêts Primaires et Secondaires</h2>
+        <p>Les forêts primaires du Bassin du Congo sont irremplaçables. Notre programme de conservation travaille avec les villages riverains pour délimiter et protéger des zones forestières communautaires, créant ainsi des réserves de biodiversité gérées par les populations locales.</p>
+        <ul class="pf-list">
+          <li>Délimitation et protection de 1 200 hectares de forêts communautaires</li>
+          <li>Lutte contre le braconnage et l'exploitation illégale du bois</li>
+          <li>Restauration des forêts dégradées par des plantations d'espèces locales</li>
+          <li>Mise en place de comités villageois de surveillance forestière</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">En savoir plus →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== COMMENT ON TRAVAILLE ===== -->
+<section class="section section-alt">
+  <div class="container">
+    <span class="section-label" style="display:block;text-align:center;">Notre Méthode</span>
+    <h2 class="section-title">Comment Nous Travaillons</h2>
+    <p class="section-sub">Une approche en quatre étapes qui garantit l'efficacité et la durabilité de chaque projet que nous engageons.</p>
+    <div class="process-steps" style="margin-top:3rem;">
+      <div class="step reveal">
+        <div class="step-num">🔍</div>
+        <h4>Diagnostic</h4>
+        <p>Évaluation participative des besoins avec les communautés et inventaire des ressources naturelles disponibles.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">📋</div>
+        <h4>Planification</h4>
+        <p>Co-conception du projet avec les bénéficiaires, définition des objectifs mesurables et des indicateurs de suivi.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">🌱</div>
+        <h4>Mise en Œuvre</h4>
+        <p>Déploiement sur le terrain avec formation, suivi régulier des équipes et ajustements en temps réel.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">📊</div>
+        <h4>Évaluation</h4>
+        <p>Mesure de l'impact environnemental et social, partage des résultats et capitalisation pour les projets futurs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="reveal">
+        <span class="stat-num" data-count="6">0</span>
+        <span class="stat-lbl">Programmes actifs</span>
+      </div>
+      <div class="reveal">
+        <span class="stat-num" data-count="1200">0</span><span class="stat-suf">ha</span>
+        <span class="stat-lbl">Forêts protégées</span>
+      </div>
+      <div class="reveal">
+        <span class="stat-num" data-count="75000">0</span><span class="stat-suf">+</span>
+        <span class="stat-lbl">Plants produits/an</span>
+      </div>
+      <div class="reveal">
+        <span class="stat-num" data-count="320">0</span><span class="stat-suf">+</span>
+        <span class="stat-lbl">Familles bénéficiaires</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="cta-bg">
+    <img src="images/22.jpg" alt="Ruisseau en forêt">
+    <div class="cta-overlay"></div>
+  </div>
+  <div class="container cta-content">
+    <h2>Soutenez un Projet</h2>
+    <p>Contactez-nous pour découvrir comment vous pouvez contribuer à l'un de nos programmes — don, bénévolat, partenariat ou expertise technique.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn btn-gold btn-lg">💛 Prendre contact</a>
+      <a href="gallery.html" class="btn btn-outline btn-lg">📷 Voir la galerie</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-about">
+        <a href="index.html" class="logo" style="margin-bottom:.75rem;">
+          <div class="logo-icon">🌿</div>
+          <div>
+            <span class="logo-name">BACOFAFL</span>
+            <span class="logo-tagline">Conservation · Cameroun</span>
+          </div>
+        </a>
+        <p>Bureau Africain de Conservation des Forêts, d'Agroforesterie et de la Faune &amp; Flore. Nous protégeons la biodiversité du Bassin du Congo.</p>
+        <div class="f-social">
+          <a href="#">f</a><a href="#">𝕏</a><a href="#">📷</a>
+          <a href="https://wa.me/237600000000" target="_blank">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <a href="about.html">À Propos</a>
+          <a href="projects.html">Nos Projets</a>
+          <a href="gallery.html">Galerie</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Nos Projets</h4>
+        <div class="footer-links">
+          <a href="projects.html">Conservation Forestière</a>
+          <a href="projects.html">Agroforesterie Cacao</a>
+          <a href="projects.html">Pépinières</a>
+          <a href="projects.html">Gestion de l'Eau</a>
+          <a href="projects.html">Biodiversité</a>
+          <a href="projects.html">Sécurité Alimentaire</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Nous Trouver</h4>
+        <div class="f-contact">
+          <div class="f-ci"><span class="ico">📍</span><span>Yaoundé, Cameroun</span></div>
+          <div class="f-ci"><span class="ico">✉</span><a href="mailto:bacofafl@gmail.com">bacofafl@gmail.com</a></div>
+          <div class="f-ci"><span class="ico">📞</span><a href="tel:+237600000000">+237 6XX XXX XXX</a></div>
+          <div class="f-ci"><span class="ico">💬</span><a href="https://wa.me/237600000000" target="_blank">WhatsApp</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
+      <span>© 2026 BACOFAFL. Tous droits réservés.</span>
+      <span>🌿 Protéger la forêt, nourrir les communautés</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<a href="https://wa.me/237600000000" class="wa-float" target="_blank" title="WhatsApp">💬</a>
+<button class="btt" aria-label="Retour en haut">↑</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
