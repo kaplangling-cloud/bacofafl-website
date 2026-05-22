@@ -392,38 +392,8 @@
     <span class="section-label" style="display:block;text-align:center;">Actualités</span>
     <h2 class="section-title">Dernières Nouvelles du Terrain</h2>
     <p class="section-sub">Suivez nos activités et les avancées de nos projets de conservation au Cameroun.</p>
-    <div class="g3">
-
-      <div class="news-card reveal">
-        <div class="nc-img"><img src="images/plants-sachets-pepiniere.jpg" alt="Distribution de plants en sachet"></div>
-        <div class="nc-body">
-          <span class="nc-tag">🌱 Reboisement</span>
-          <h3>Distribution de 5 000 Jeunes Plants aux Agriculteurs</h3>
-          <p>Notre pépinière a produit et distribué 5 000 plants d'espèces fruitières et forestières aux familles partenaires de la région de Yaoundé.</p>
-          <span class="nc-meta">🗓 Mai 2026</span>
-        </div>
-      </div>
-
-      <div class="news-card reveal">
-        <div class="nc-img"><img src="images/tubercules-manioc.jpg" alt="Récolte de manioc"></div>
-        <div class="nc-body">
-          <span class="nc-tag">🌾 Agriculture</span>
-          <h3>Récolte Record de Manioc pour les Familles Partenaires</h3>
-          <p>Grâce aux techniques agroforestières enseignées par IBCE-RC, les familles partenaires ont doublé leur production de manioc cette saison.</p>
-          <span class="nc-meta">🗓 Avril 2026</span>
-        </div>
-      </div>
-
-      <div class="news-card reveal">
-        <div class="nc-img"><img src="images/nids-oiseaux-roseaux.jpg" alt="Nids de tisserins"></div>
-        <div class="nc-body">
-          <span class="nc-tag">🦜 Biodiversité</span>
-          <h3>Découverte de Colonies de Tisserins dans nos Zones Protégées</h3>
-          <p>Les inventaires biologiques de mars 2026 ont révélé la présence de plusieurs colonies de tisserins, indicateurs d'un écosystème en bonne santé.</p>
-          <span class="nc-meta">🗓 Mars 2026</span>
-        </div>
-      </div>
-
+    <div class="g3" id="news-container">
+      <!-- Chargé dynamiquement depuis data/news.json -->
     </div>
   </div>
 </section>
@@ -526,5 +496,31 @@
 <button class="btt" aria-label="Retour en haut">↑</button>
 
 <script src="js/main.js"></script>
+<script>
+// Chargement dynamique des actualités depuis data/news.json
+fetch('data/news.json').then(r=>r.json()).then(news=>{
+  const c = document.getElementById('news-container');
+  if(!c || !news.length) return;
+  c.innerHTML = news.slice(0,3).map(n=>`
+    <div class="news-card reveal">
+      <div class="nc-img"><img src="${n.image}" alt="${n.title}"></div>
+      <div class="nc-body">
+        <span class="nc-tag">${n.emoji} ${n.category}</span>
+        <h3>${n.title}</h3>
+        <p>${n.content}</p>
+        <span class="nc-meta">🗓 ${n.date}</span>
+      </div>
+    </div>`).join('');
+}).catch(()=>{});
+
+// Chargement dynamique des statistiques depuis data/stats.json
+fetch('data/stats.json').then(r=>r.json()).then(s=>{
+  const map = {'hectares':1200,'arbres':75000,'especes':180,'familles':320};
+  document.querySelectorAll('[data-count]').forEach(el=>{
+    const key = Object.keys(map).find(k=>map[k]==+el.dataset.count);
+    if(key && s[key]) el.dataset.count = s[key];
+  });
+}).catch(()=>{});
+</script>
 </body>
 </html>

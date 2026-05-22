@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Distribution de 5 000 Jeunes Plants aux Agriculteurs",
+    "category": "Reboisement",
+    "emoji": "🌱",
+    "content": "Notre pépinière a produit et distribué 5 000 plants d'espèces fruitières et forestières aux familles partenaires de la région de Yaoundé.",
+    "date": "Mai 2026",
+    "image": "images/plants-sachets-pepiniere.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Récolte Record de Manioc pour les Familles Partenaires",
+    "category": "Agriculture",
+    "emoji": "🌾",
+    "content": "Grâce aux techniques agroforestières enseignées par IBCE-RC, les familles partenaires ont doublé leur production de manioc cette saison.",
+    "date": "Avril 2026",
+    "image": "images/tubercules-manioc.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Découverte de Colonies de Tisserins dans nos Zones Protégées",
+    "category": "Biodiversité",
+    "emoji": "🦜",
+    "content": "Les inventaires biologiques de mars 2026 ont révélé la présence de plusieurs colonies de tisserins, indicateurs d'un écosystème en bonne santé.",
+    "date": "Mars 2026",
+    "image": "images/nids-oiseaux-roseaux.jpg"
+  }
+]
