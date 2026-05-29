@@ -89,7 +89,7 @@ p  { color: var(--gray-800); }
 .header-top-bar a:hover { color: var(--g300); }
 .top-items { display: flex; gap: 1.5rem; align-items: center; }
 .top-items span, .top-items a { display: flex; align-items: center; gap: 5px; }
-.top-items img { width: 16px; height: 16px; object-fit: contain; flex-shrink: 0; }
+.top-items img { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
 .top-social { display: flex; gap: .75rem; align-items: center; }
 .top-social a { font-size: .9rem; display: flex; align-items: center; }
 .social-icon { width: 28px; height: 28px; object-fit: contain; border-radius: 50%; transition: transform .2s ease; }
