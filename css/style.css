@@ -478,14 +478,16 @@ p  { color: var(--gray-800); }
   .g3 { grid-template-columns: repeat(2,1fr); }
   .stats-grid { grid-template-columns: repeat(2,1fr); }
   .about-home { grid-template-columns: 1fr; }
-  .about-img-wrap img { height: 320px; }
+  .about-img-wrap img { height: 260px; }
   .img-badge { right: 1rem; bottom: -1rem; }
   .contact-grid { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: repeat(2,1fr); }
   .team-grid { grid-template-columns: repeat(2,1fr); }
-  .gallery-grid { grid-template-columns: repeat(3,1fr); }
-  .gallery-mosaic { grid-template-columns: repeat(3,1fr); grid-template-rows: 180px 180px; }
+  .gallery-grid { grid-template-columns: repeat(2,1fr); }
+  .gallery-mosaic { grid-template-columns: repeat(2,1fr); grid-template-rows: 180px 180px; }
   .gallery-mosaic .gal-item:first-child { grid-column: span 2; grid-row: span 1; }
+  .page-hero { height: 260px; }
+  .contact-form-card, .contact-card-info { padding: 1.75rem; }
 }
 @media (max-width: 768px) {
   .header-top-bar { display: none; }
@@ -498,27 +500,69 @@ p  { color: var(--gray-800); }
     transition: transform var(--ease); align-items: stretch; z-index: 999;
   }
   .nav-menu.open { transform: translateY(0); }
-  .nav-link { text-align: center; padding: .75rem; }
+  .nav-link { text-align: center; padding: .75rem; font-size: 1rem; }
   .nav-cta  { text-align: center; margin-left: 0; }
-  .hero { height: 72vh; }
-  .hero-text { padding: 1.5rem; max-width: 100%; }
+  .logo-img { width: 48px; height: 48px; }
+  .logo-name { font-size: 1.05rem; }
+  .logo-tagline { font-size: .58rem; }
+  .hero { height: 70vh; min-height: 380px; }
+  .hero-text { padding: 1.5rem 1.25rem; max-width: 100%; }
   .hero-arrow { display: none; }
-  .section { padding: 55px 0; }
+  .hero-desc { font-size: .95rem; }
+  .section { padding: 50px 0; }
   .g2,.g3,.g4 { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: 1fr; }
-  .team-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
-  .stats-grid { grid-template-columns: repeat(2,1fr); }
+  .team-grid { grid-template-columns: repeat(2,1fr); }
+  .stats-grid { grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
+  .stat-num { font-size: 2.4rem; }
   .mission-items { flex-direction: column; }
   .mission-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.12); padding: 1rem 1.5rem; }
   .mission-item:last-child { border-bottom: none; }
-  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .mission-item .ico img { width: 38px !important; height: 38px !important; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .form-row { grid-template-columns: 1fr; }
-  .gallery-grid { grid-template-columns: repeat(2,1fr); }
+  .gallery-grid { grid-template-columns: repeat(2,1fr); grid-auto-rows: 180px; }
+  .gi.wide { grid-column: span 2; }
+  .gi.tall { grid-row: span 1; }
   .gallery-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 160px 160px; }
-  .lb-prev { left: -1.5rem; } .lb-next { right: -1.5rem; }
+  .lb-prev { left: .5rem; } .lb-next { right: .5rem; }
+  .lb-inner { padding: 0 3.5rem; }
+  .cta-section { padding: 65px 0; }
+  .page-hero { height: 200px; }
+  .about-features { grid-template-columns: 1fr; }
+  .feat-ico img { width: 36px !important; height: 36px !important; }
+  .section-sub { font-size: .9rem; }
 }
 @media (max-width: 480px) {
-  .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 180px; }
+  .logo-img { width: 42px; height: 42px; }
+  .logo-name { font-size: .95rem; }
+  .logo-tagline { display: none; }
+  .navbar .container { height: 62px; }
+  .page-content { padding-top: 62px; }
+  .hero { height: 65vh; }
+  .hero-text { padding: 1.25rem 1rem; }
+  .hero-actions { flex-direction: column; gap: .75rem; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
+  .gi.wide { grid-column: span 2; }
+  .gi.tall { grid-row: span 1; }
   .about-features { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
+  .stats-grid { grid-template-columns: repeat(2,1fr); gap: 1rem; }
+  .stat-num { font-size: 2rem; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .mission-item { padding: .85rem 1.25rem; }
+  .mission-item .ico img { width: 34px !important; height: 34px !important; }
+  .cta-actions { flex-direction: column; align-items: center; }
+  .cta-actions .btn { width: 100%; max-width: 300px; justify-content: center; }
+  .btn-lg { padding: .85rem 1.5rem; font-size: .95rem; }
+  .contact-form-card, .contact-card-info { padding: 1.25rem; }
+  .section { padding: 40px 0; }
+  .page-hero { height: 170px; }
+  .breadcrumb { font-size: .78rem; }
+  .section-title { font-size: clamp(1.3rem,5vw,1.8rem); }
+  .lb-inner { padding: 0 2.5rem; }
+  .wa-float { width: 50px; height: 50px; font-size: 1.4rem; bottom: 1.25rem; right: 1.25rem; }
+  .btt { bottom: 4.5rem; right: 1.25rem; }
 }
