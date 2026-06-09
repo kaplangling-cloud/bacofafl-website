@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Programme Dépollution des Voies Fluviales & Surveillance de la Pollution — Affluents du Sud Cameroun 2025-2030. IBCE-RC.">
+  <title>Dépollution Fluviale Sud Cameroun — IBCE-RC</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/l.png" type="image/png">
+  <style>
+    .art-hero{position:relative;min-height:380px;display:flex;align-items:flex-end;background:linear-gradient(160deg,#0a2540 0%,#0d4d6e 60%,#072038 100%);overflow:hidden}
+    .art-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.2}
+    .art-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,25,45,.95) 0%,rgba(5,25,45,.35) 60%,transparent 100%)}
+    .art-hero-content{position:relative;z-index:2;padding:2.5rem 0 3rem;width:100%}
+    .art-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#93c5fd;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.28rem .85rem;border-radius:20px;margin-bottom:1.1rem}
+    .art-hero-content h1{font-family:var(--serif);color:white;font-size:clamp(1.7rem,3.5vw,2.8rem);line-height:1.15;margin-bottom:1.25rem;max-width:800px}
+    .art-meta-grid{display:flex;flex-wrap:wrap;gap:1.25rem;margin-bottom:1.5rem}
+    .art-meta-item{color:rgba(255,255,255,.78);font-size:.86rem}
+    .art-meta-item strong{color:#93c5fd;display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.15rem}
+    .kpi-band{background:#0d2540;padding:2rem 0}
+    .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border-radius:var(--r-lg);overflow:hidden}
+    .kpi-item{background:rgba(255,255,255,.03);text-align:center;padding:1.5rem .75rem}
+    .kpi-num{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:700;color:#93c5fd;display:block;line-height:1}
+    .kpi-unit{font-size:.74rem;color:#60a5fa;font-weight:600;display:block;margin-bottom:.25rem}
+    .kpi-lbl{font-size:.76rem;color:rgba(255,255,255,.6)}
+    .art-body{padding:3.5rem 0}
+    .art-layout{display:grid;grid-template-columns:1fr 260px;gap:2.5rem;align-items:start}
+    .art-toc{position:sticky;top:100px;background:var(--gray-100);border-radius:var(--r-lg);padding:1.25rem;font-size:.83rem}
+    .art-toc h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray-500);margin-bottom:.85rem}
+    .art-toc ol{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+    .art-toc ol li a{color:var(--g800);line-height:1.4;display:block;padding:.2rem 0 .2rem .5rem;border-left:2px solid transparent;transition:all .2s}
+    .art-toc ol li a:hover{color:var(--g700);border-left-color:var(--g700)}
+    .art-section{margin-bottom:3.5rem}
+    .art-section-title{font-family:var(--serif);font-size:clamp(1.2rem,2.2vw,1.65rem);color:var(--g900);margin-bottom:1.1rem;padding-bottom:.65rem;border-bottom:2px solid var(--g100)}
+    .art-section-sub{font-size:1rem;font-weight:600;color:var(--g800);margin:1.5rem 0 .65rem}
+    .art-text{color:var(--gray-800);line-height:1.75;margin-bottom:.9rem}
+    .art-bullet{margin:.55rem 0;display:flex;gap:.7rem;align-items:flex-start;font-size:.91rem;color:var(--gray-800)}
+    .art-bullet::before{content:'▸';color:#2563eb;font-weight:700;flex-shrink:0;margin-top:.06rem}
+    .art-bullets{margin:.6rem 0 1.1rem;display:flex;flex-direction:column;gap:.05rem}
+    .axe-block{margin-bottom:1.75rem;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--gray-200)}
+    .axe-header{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem;background:#0d2540;color:white}
+    .axe-num{width:48px;height:48px;border-radius:50%;background:#1d4ed8;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.15rem;font-weight:700;flex-shrink:0}
+    .axe-title{flex:1}
+    .axe-title h3{font-family:var(--serif);font-size:.98rem;color:#93c5fd;margin-bottom:.15rem}
+    .axe-title p{font-size:.78rem;color:rgba(255,255,255,.6)}
+    .axe-body{padding:1.35rem;background:white}
+    .axe-item{margin:.5rem 0;display:flex;gap:.6rem;font-size:.88rem;color:var(--gray-800);align-items:flex-start}
+    .axe-item::before{content:'●';color:#2563eb;font-size:.6rem;flex-shrink:0;margin-top:.3rem}
+    .art-table-wrap{overflow-x:auto;margin:1.25rem 0 1.75rem;border-radius:var(--r);box-shadow:var(--shadow-sm)}
+    table{width:100%;border-collapse:collapse;font-size:.83rem}
+    thead tr{background:#0d2540;color:white}
+    thead th{padding:.8rem .9rem;text-align:left;font-weight:600;font-size:.77rem;text-transform:uppercase;letter-spacing:.05em}
+    tbody tr{border-bottom:1px solid var(--gray-200)}
+    tbody tr:nth-child(even){background:var(--gray-100)}
+    tbody td{padding:.7rem .9rem;vertical-align:top;color:var(--gray-800)}
+    tbody td:first-child{font-weight:500;color:var(--g900)}
+    tfoot tr{background:#0d2540;color:white;font-weight:700}
+    tfoot td{padding:.8rem .9rem}
+    .td-badge{display:inline-block;padding:.18rem .55rem;border-radius:20px;font-size:.73rem;font-weight:700}
+    .td-ok{background:#dcfce7;color:#15803d}
+    .td-alert{background:#fee2e2;color:#b91c1c}
+    .td-warn{background:#fef9c3;color:#854d0e}
+    .td-blue{background:#dbeafe;color:#1d4ed8}
+    .alert-box{background:#7f1d1d;border-radius:var(--r-lg);padding:1.5rem 1.75rem;margin:1.5rem 0;color:white}
+    .alert-box h4{color:#fca5a5;font-family:var(--serif);margin-bottom:.6rem}
+    .alert-box p{color:rgba(255,255,255,.82);font-size:.9rem;line-height:1.65}
+    .inline-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin:1.5rem 0}
+    .istat{background:#eff6ff;border-radius:var(--r);padding:1.1rem;text-align:center}
+    .istat-num{font-family:var(--serif);font-size:1.55rem;color:#1d4ed8;font-weight:700;display:block}
+    .istat-lbl{font-size:.74rem;color:var(--gray-500);margin-top:.2rem}
+    .station-card{background:white;border:1px solid var(--gray-200);border-radius:var(--r);padding:1.1rem;border-left:4px solid #2563eb;margin-bottom:.85rem}
+    .station-card .s-badge{display:inline-block;background:#22c55e;color:white;font-size:.68rem;font-weight:700;padding:.15rem .5rem;border-radius:10px;margin-bottom:.5rem}
+    .station-card h4{font-size:.92rem;color:var(--g900);margin-bottom:.35rem}
+    .station-card p{font-size:.8rem;color:var(--gray-500);margin-bottom:.25rem}
+    .art-cta{background:linear-gradient(135deg,#0d2540 0%,#1e3a5f 100%);border-radius:var(--r-lg);padding:2.5rem;text-align:center;margin-top:2.5rem}
+    .art-cta h2{color:white;font-family:var(--serif);margin-bottom:.65rem;font-size:1.5rem}
+    .art-cta p{color:rgba(255,255,255,.72);margin-bottom:1.5rem;max-width:520px;margin-left:auto;margin-right:auto}
+    .art-cta .cta-person{color:#93c5fd;font-weight:600;margin-bottom:.2rem}
+    .art-cta .cta-role{font-size:.82rem;color:rgba(255,255,255,.58);margin-bottom:1.25rem}
+    .art-cta .cta-mail{color:#f0b429;font-weight:700;font-size:1rem}
+    @media(max-width:900px){.art-layout{grid-template-columns:1fr}.art-toc{display:none}.kpi-grid{grid-template-columns:repeat(2,1fr)}.inline-stats{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-top-bar">
+    <div class="container">
+      <div class="top-items">
+        <span><img src="images/gps.png" alt="" style="width:20px;height:20px;object-fit:contain;"> Yaoundé, Cameroun — Bassin du Congo</span>
+        <a href="mailto:info@ibce-rc.org"><img src="images/lettre.png" alt="" style="width:20px;height:20px;object-fit:contain;"> info@ibce-rc.org</a>
+        <a href="tel:+237697874374"><img src="images/phone.png" alt="" style="width:20px;height:20px;object-fit:contain;"> (+237) 697 874 374 / 678 202 974</a>
+      </div>
+      <div class="top-social">
+        <a href="#" title="Facebook"><img src="images/f.png" alt="Facebook" class="social-icon"></a>
+        <a href="#" title="Instagram"><img src="images/int.png" alt="Instagram" class="social-icon"></a>
+        <a href="https://wa.me/237697874374" target="_blank" title="WhatsApp"><img src="images/wha.png" alt="WhatsApp" class="social-icon"></a>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="images/l.png" alt="Logo IBCE-RC" class="logo-img"><div><span class="logo-name">IBCE-RC</span><span class="logo-tagline">Environnement · Résilience Climatique</span></div></a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="about.html" class="nav-link">À Propos</a></li>
+        <li><a href="projects.html" class="nav-link active">Nos Projets</a></li>
+        <li><a href="gallery.html" class="nav-link">Galerie</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Nous Soutenir</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<div class="page-content">
+
+<section class="art-hero">
+  <img src="images/canal-irrigation.jpg" alt="Fleuves et cours d'eau du Sud Cameroun" class="art-hero-img">
+  <div class="art-hero-overlay"></div>
+  <div class="container art-hero-content">
+    <div class="breadcrumb" style="margin-bottom:.9rem;">
+      <a href="index.html" style="color:rgba(255,255,255,.55);">Accueil</a>
+      <span style="color:rgba(255,255,255,.35);"> › </span>
+      <a href="projects.html" style="color:rgba(255,255,255,.55);">Nos Projets</a>
+      <span style="color:rgba(255,255,255,.35);"> › </span>
+      <span style="color:#93c5fd;">Dépollution Fluviale</span>
+    </div>
+    <div class="art-badge">Programme Intégré · 2025–2030 · Sud Cameroun</div>
+    <h1>Dépollution des Voies Fluviales &amp;<br><span style="color:#93c5fd;">Surveillance de la Pollution Industrielle &amp; Agricole</span></h1>
+    <div class="art-meta-grid">
+      <div class="art-meta-item"><strong>Référence</strong>IBCE-RC/PROG-DVF/2025-012</div>
+      <div class="art-meta-item"><strong>Fleuves</strong>Ntem, Nyong, Lobo, Lokoundjé, Mvila</div>
+      <div class="art-meta-item"><strong>Horizon</strong>2025 – 2030 (5 ans)</div>
+      <div class="art-meta-item"><strong>Budget</strong>24 M USD</div>
+    </div>
+  </div>
+</section>
+
+<div class="kpi-band">
+  <div class="container">
+    <div class="kpi-grid">
+      <div class="kpi-item"><span class="kpi-num">5</span><span class="kpi-unit">fleuves & affluents</span><span class="kpi-lbl">Cours d'eau sous surveillance</span></div>
+      <div class="kpi-item"><span class="kpi-num">48</span><span class="kpi-unit">stations</span><span class="kpi-lbl">Réseau monitoring temps réel</span></div>
+      <div class="kpi-item"><span class="kpi-num">2,8 M</span><span class="kpi-unit">personnes</span><span class="kpi-lbl">Riverains protégés</span></div>
+      <div class="kpi-item"><span class="kpi-num">−75 %</span><span class="kpi-unit">polluants</span><span class="kpi-lbl">Réduction projetée à 2030</span></div>
+      <div class="kpi-item"><span class="kpi-num">320 km</span><span class="kpi-unit">linéaire</span><span class="kpi-lbl">Linéaire fluvial à dépolluer</span></div>
+      <div class="kpi-item"><span class="kpi-num">62</span><span class="kpi-unit">sites</span><span class="kpi-lbl">Sources polluantes identifiées</span></div>
+      <div class="kpi-item"><span class="kpi-num">1 400</span><span class="kpi-unit">acteurs</span><span class="kpi-lbl">Sentinelles fluviales formées</span></div>
+      <div class="kpi-item"><span class="kpi-num">24 M</span><span class="kpi-unit">USD</span><span class="kpi-lbl">Budget total 2025–2030</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="art-body">
+  <div class="container">
+    <div class="art-layout">
+      <main>
+
+        <div class="art-section" id="resume">
+          <h2 class="art-section-title">Résumé Exécutif</h2>
+          <p class="art-text">Les affluents des grands fleuves du Sud Cameroun — <strong>Ntem, Nyong, Lobo, Lokoundjé et Mvila</strong> — subissent depuis plus d'une décennie une dégradation sans précédent de la qualité de leurs eaux. Les activités minières artisanales, les rejets non traités des agro-industries, l'usage intensif de pesticides agricoles et les effluents urbains non traités ont transformé plusieurs affluents jadis purs en vecteurs de contamination menaçant la santé de plus de <strong>2,8 millions de personnes</strong>.</p>
+          <p class="art-text">Le Programme combine un réseau de <strong>48 stations de surveillance en temps réel</strong>, des campagnes de dépollution active ciblant les 62 sources prioritaires, un dispositif réglementaire de contrôle des rejets, et une composante communautaire de <strong>1 400 Sentinelles Fluviales</strong>.</p>
+          <div style="background:#eff6ff;border-left:5px solid #2563eb;border-radius:0 var(--r) var(--r) 0;padding:1.1rem 1.4rem;margin:1.25rem 0;">
+            <p style="color:#1e3a5f;font-weight:600;font-size:.92rem;">Ambition centrale : Ramener la qualité des eaux des principaux affluents du Sud Cameroun au niveau « bon » selon les critères de la Directive-Cadre sur l'Eau (DCE) de l'UE et les normes OMS d'ici 2030.</p>
+          </div>
+        </div>
+
+        <div class="art-section" id="diagnostic">
+          <h2 class="art-section-title">1. Diagnostic de la Pollution Fluviale</h2>
+          <p class="art-text">Les analyses 2024 de l'IBCE-RC révèlent que <strong>68 % des stations de mesure</strong> présentent au moins un paramètre dépassant les seuils d'alerte.</p>
+
+          <div class="alert-box">
+            <h4>⚠ Alerte Sanitaire — Contamination au Mercure</h4>
+            <p>Les analyses toxicologiques menées sur 480 riverains des bassins miniers (2023–2024) révèlent que <strong>34 %</strong> présentent des taux sanguins de mercure supérieurs au seuil clinique OMS (20 µg/L), dont <strong>8 %</strong> au-delà du seuil d'atteinte neurologique grave. L'IBCE-RC classe cette situation en urgence sanitaire de niveau 2, nécessitant une intervention immédiate.</p>
+          </div>
+
+          <h3 class="art-section-sub">Pollution minière artisanale — Données 2024</h3>
+          <div class="art-bullets">
+            <div class="art-bullet"><strong>247 sites actifs d'orpaillage</strong> identifiés dans les bassins du Ntem, Nyong et Lobo, couvrant 3 400 ha perturbés</div>
+            <div class="art-bullet">Mercure dans les sédiments : <strong>0,8–12,4 mg Hg/kg</strong> (seuil SQG canadien : 0,174 mg/kg)</div>
+            <div class="art-bullet">Bioaccumulation dans les poissons : <strong>3,2–8,7 mg/kg</strong> (norme alimentaire OMS : 0,5 mg/kg)</div>
+            <div class="art-bullet">Cyanures résiduels (rivière Kom) : <strong>0,28 mg/L</strong> — 14× supérieur à la norme OMS pour l'eau potable</div>
+          </div>
+
+          <h3 class="art-section-sub">Pesticides agricoles détectés — Niveaux critiques</h3>
+          <div class="art-table-wrap">
+            <table>
+              <thead><tr><th>Molécule</th><th>Utilisation</th><th>Fréquence détection</th><th>Concentration max (µg/L)</th><th>Norme OMS (µg/L)</th><th>Risque</th></tr></thead>
+              <tbody>
+                <tr><td>Glyphosate</td><td>Herbicide cacao/palmier</td><td>82 %</td><td>48,6</td><td>0,1</td><td><span class="td-badge td-alert">CRITIQUE</span></td></tr>
+                <tr><td>Chlorpyrifos</td><td>Insecticide cultures</td><td>71 %</td><td>12,4</td><td>0,1</td><td><span class="td-badge td-alert">CRITIQUE</span></td></tr>
+                <tr><td>Imidaclopride</td><td>Traitement semences</td><td>64 %</td><td>8,8</td><td>0,2</td><td><span class="td-badge td-alert">TRÈS ÉLEVÉ</span></td></tr>
+                <tr><td>Atrazine</td><td>Herbicide maïs</td><td>58 %</td><td>6,4</td><td>0,1</td><td><span class="td-badge td-alert">TRÈS ÉLEVÉ</span></td></tr>
+                <tr><td>Nitrates (NO₃⁻)</td><td>Engrais azotés</td><td>88 %</td><td>84 mg/L</td><td>50 mg/L</td><td><span class="td-badge td-warn">ÉLEVÉ</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="inline-stats">
+            <div class="istat"><span class="istat-num">−58 %</span><span class="istat-lbl">Déclin captures piscicoles en 15 ans</span></div>
+            <div class="istat"><span class="istat-num">340 km</span><span class="istat-lbl">Cours d'eau en état dégradé</span></div>
+            <div class="istat"><span class="istat-num">12 400</span><span class="istat-lbl">Cas maladies liées à l'eau (2024)</span></div>
+            <div class="istat"><span class="istat-num">89</span><span class="istat-lbl">Espèces de poissons menacées</span></div>
+          </div>
+        </div>
+
+        <div class="art-section" id="surveillance">
+          <h2 class="art-section-title">2. Réseau de Surveillance — 48 Stations</h2>
+          <p class="art-text">Le réseau est conçu selon une architecture hiérarchique à trois niveaux, garantissant la couverture spatiale exhaustive et la détection des pics de pollution à haute résolution temporelle.</p>
+          <div class="art-table-wrap">
+            <table>
+              <thead><tr><th>Niveau</th><th>Type</th><th>Nb. stations</th><th>Paramètres mesurés</th><th>Transmission</th></tr></thead>
+              <tbody>
+                <tr><td>Niveau 1 — Référence</td><td>Station météo-hydro complète</td><td>8</td><td>40 paramètres + débit + météo</td><td>Temps réel 4G/satellite</td></tr>
+                <tr><td>Niveau 2 — Surveillance</td><td>Station multi-paramètre fixe</td><td>24</td><td>18 paramètres physicochimiques</td><td>Toutes les 15 min</td></tr>
+                <tr><td>Niveau 3 — Alerte</td><td>Micro-station flottante</td><td>16</td><td>6 paramètres d'alerte (O₂, pH, turbidité…)</td><td>Alerte temps réel</td></tr>
+              </tbody>
+              <tfoot><tr><td>TOTAL</td><td>—</td><td>48</td><td>—</td><td>5 bassins versants</td></tr></tfoot>
+            </table>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin:1.25rem 0;">
+            <div class="station-card"><span class="s-badge">OPÉRATIONNELLE</span><h4>Station S-01 — Fleuve Ntem / Confluent Mvila</h4><p>Polluants cibles : Mercure, sédiments, DBO₅, métaux lourds miniers</p><p>Technologies : ICP-MS in situ, fluorimètre Hg, capteurs YSI EXO3 — Mesure continue 15 min</p></div>
+            <div class="station-card"><span class="s-badge">OPÉRATIONNELLE</span><h4>Station S-07 — Rivière Lokoundjé / Aval huileries Kribi</h4><p>Polluants cibles : DBO₅, huiles-graisses, DCO, MES, phosphore</p><p>Technologies : Sondes O₂, pH, conductivité + analyseur DBO en ligne Hach</p></div>
+            <div class="station-card"><span class="s-badge" style="background:#f59e0b;">EN INSTALLATION</span><h4>Station S-12 — Nyong / Zone agricole Sangmélima</h4><p>Polluants cibles : Glyphosate, chlorpyrifos, nitrates, phosphates, atrazine</p><p>Technologies : HPLC portable + capteurs nutriments automatiques</p></div>
+            <div class="station-card"><span class="s-badge">OPÉRATIONNELLE</span><h4>Station S-22 — Rivière Kom / Bassin minier</h4><p>Polluants cibles : Mercure total, méthylmercure, cyanures, turbidité</p><p>Technologies : Fluorimètre mercure continu Brooks Rand + ICP portable</p></div>
+          </div>
+        </div>
+
+        <div class="art-section" id="axes">
+          <h2 class="art-section-title">3. Axes Stratégiques d'Intervention</h2>
+
+          <div class="axe-block">
+            <div class="axe-header">
+              <div class="axe-num">1</div>
+              <div class="axe-title"><h3>Dépollution Active des Sites Prioritaires (2025–2027)</h3><p>62 sites classés selon niveau de contamination, risque sanitaire et faisabilité technique</p></div>
+            </div>
+            <div class="axe-body">
+              <div class="axe-item">Réhabilitation des 247 sites d'orpaillage : revégétalisation, stabilisation berges, phytoextraction mercurielle (Pteris vittata, Vetiveria zizanoides)</div>
+              <div class="axe-item">Traitement des effluents agro-industriels : accompagnement de 18 industries dans la construction de stations d'épuration (STEP) et lagunes de finissement</div>
+              <div class="axe-item">Dépollution des berges urbaines : 85 km de berges (Kribi, Ebolowa, Sangmélima) + zones tampons végétalisées</div>
+              <div class="axe-item">Traitement biologique des hot spots organiques par ensemencement de consortiums microbiens dégradeurs</div>
+            </div>
+          </div>
+
+          <div class="axe-block">
+            <div class="axe-header">
+              <div class="axe-num">2</div>
+              <div class="axe-title"><h3>Contrôle des Rejets Industriels (2025–2030)</h3><p>Dispositif réglementaire et technique pour les 62 sources industrielles et agro-industrielles</p></div>
+            </div>
+            <div class="axe-body">
+              <div class="axe-item">Installation de systèmes de mesure en continu des paramètres de rejet à la sortie de chaque installation (débit, DBO₅, MES, pH)</div>
+              <div class="axe-item">Système de permis de rejet individuels avec seuils de concentration et de flux massique, renouvelés annuellement après audit</div>
+              <div class="axe-item">Formation et certification de <strong>48 inspecteurs environnementaux</strong> pour les contrôles inopinés des installations</div>
+              <div class="axe-item">Registre public en ligne de la qualité des rejets de chaque installation (principe pollueur-payeur transparent)</div>
+            </div>
+          </div>
+
+          <div class="axe-block">
+            <div class="axe-header">
+              <div class="axe-num">3</div>
+              <div class="axe-title"><h3>Agriculture Durable et Réduction Pollution Diffuse (2025–2028)</h3><p>28 000 exploitations agricoles dans la zone d'intervention</p></div>
+            </div>
+            <div class="axe-body">
+              <div class="axe-item">Formation de <strong>15 000 agriculteurs</strong> aux Bonnes Pratiques Agricoles (BPA) et gestion des Zones Non Traitées (10 m minimum en bordure des cours d'eau)</div>
+              <div class="axe-item">Remplacement du glyphosate et du chlorpyrifos par des alternatives biologiques certifiées, avec subvention à <strong>60 %</strong> des intrants de substitution pendant 3 ans</div>
+              <div class="axe-item">Création de <strong>120 km de bandes enherbées</strong> et haies filtrantes interceptant les flux de ruissellement chargés en pesticides</div>
+              <div class="axe-item">Accompagnement de 8 agro-industries dans la certification agriculture durable (Rainforest Alliance, RSPO)</div>
+            </div>
+          </div>
+
+          <div class="axe-block">
+            <div class="axe-header">
+              <div class="axe-num">4</div>
+              <div class="axe-title"><h3>Réseau de Sentinelles Fluviales Communautaires (2025–2027)</h3><p>Surveillance citoyenne — filet de sécurité complémentaire au réseau instrumental</p></div>
+            </div>
+            <div class="axe-body">
+              <div class="axe-item"><strong>1 400 Sentinelles Fluviales Communautaires (SFC)</strong> dans 28 villages riverains, équipées de kits de mesure terrain et de l'application mobile IBCE-RC FluvioWatch</div>
+              <div class="axe-item">Formation de <strong>60 femmes leaders</strong> comme Coordinatrices Communautaires de la Qualité de l'Eau (CCQE)</div>
+              <div class="axe-item">Protocole d'alerte à trois niveaux : délai de réponse contractualisé inférieur à <strong>4 heures</strong> pour les alertes rouges</div>
+              <div class="axe-item">Plateforme numérique de visualisation publique des données de qualité de l'eau, accessible via smartphone</div>
+            </div>
+          </div>
+
+          <div class="axe-block">
+            <div class="axe-header">
+              <div class="axe-num">5</div>
+              <div class="axe-title"><h3>Gouvernance et Institutionnalisation (2027–2030)</h3><p>Pérennité des acquis par la création d'une structure institutionnelle régionale dédiée</p></div>
+            </div>
+            <div class="axe-body">
+              <div class="axe-item">Création de l'<strong>Agence Régionale de l'Eau et de la Qualité Fluviale du Sud Cameroun (AREQF-SC)</strong> — établissement public régional sous tutelle du Gouvernorat</div>
+              <div class="axe-item">Mise en place du Fonds Régional de Dépollution Fluviale (FRDF), alimenté par la redevance pollution industrielle (estimée à <strong>2,4 M USD/an</strong>)</div>
+              <div class="axe-item">Adoption d'un Schéma Directeur d'Aménagement et de Gestion des Eaux (SDAGE-SC) opposable aux tiers</div>
+              <div class="axe-item">Intégration du système IBCE-RC dans la plateforme nationale SNIE (Système National d'Information sur l'Environnement)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="art-section" id="resultats">
+          <h2 class="art-section-title">4. Indicateurs de Performance</h2>
+          <div class="art-table-wrap">
+            <table>
+              <thead><tr><th>Indicateur</th><th>Baseline 2024</th><th>Cible interméd. 2027</th><th>Cible finale 2030</th></tr></thead>
+              <tbody>
+                <tr><td>Score IBG moyen sur 48 stations (/20)</td><td>7,4 / 20</td><td>11 / 20</td><td>14 / 20</td></tr>
+                <tr><td>% stations conformes norme Hg (&lt; 0,001 µg/L)</td><td>12 %</td><td>45 %</td><td>80 %</td></tr>
+                <tr><td>Concentration moyenne glyphosate (µg/L)</td><td>48,6</td><td>12</td><td>&lt; 0,5</td></tr>
+                <tr><td>% industries aux normes de rejet MINEE</td><td>22 %</td><td>65 %</td><td>95 %</td></tr>
+                <tr><td>Taux Hg sanguin &gt; seuil OMS (population)</td><td>34 %</td><td>15 %</td><td>&lt; 5 %</td></tr>
+                <tr><td>Captures piscicoles artisanales (t/an)</td><td>1 840</td><td>2 400</td><td>3 200</td></tr>
+                <tr><td>Cas maladies hydriques annuels</td><td>12 400</td><td>7 000</td><td>&lt; 3 000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="art-section" id="budget">
+          <h2 class="art-section-title">5. Budget et Financement</h2>
+          <div class="art-table-wrap">
+            <table>
+              <thead><tr><th>Bailleur / Source</th><th>Montant (USD)</th><th>Part (%)</th><th>Statut</th></tr></thead>
+              <tbody>
+                <tr><td>Banque Mondiale — FSPI Eau &amp; Assainissement</td><td>7 000 000</td><td>31,8 %</td><td><span class="td-badge td-blue">Pré-accord signé</span></td></tr>
+                <tr><td>Union Européenne — LIFE+ International</td><td>4 500 000</td><td>20,5 %</td><td><span class="td-badge td-warn">Dossier déposé</span></td></tr>
+                <tr><td>Agence Française de Développement (AFD)</td><td>3 200 000</td><td>14,5 %</td><td><span class="td-badge td-warn">En négociation</span></td></tr>
+                <tr><td>Gouvernement du Cameroun</td><td>2 500 000</td><td>11,4 %</td><td><span class="td-badge td-ok">Confirmé</span></td></tr>
+                <tr><td>Redevance pollution industrielle (FRDF)</td><td>2 400 000</td><td>10,9 %</td><td><span class="td-badge td-warn">À mobiliser (loi)</span></td></tr>
+                <tr><td>Union Africaine — Fonds Eau Afrique</td><td>1 600 000</td><td>7,3 %</td><td><span class="td-badge td-warn">Candidature en cours</span></td></tr>
+                <tr><td>IBCE-RC (fonds propres)</td><td>500 000</td><td>2,3 %</td><td><span class="td-badge td-ok">Confirmé</span></td></tr>
+              </tbody>
+              <tfoot><tr><td>TOTAL PROGRAMME</td><td>22 000 000</td><td>100 %</td><td>93,2 % identifié</td></tr></tfoot>
+            </table>
+          </div>
+        </div>
+
+        <div class="art-section" id="conclusion">
+          <h2 class="art-section-title">6. Conclusion</h2>
+          <p class="art-text">La pollution des voies fluviales du Sud Cameroun est une crise environnementale et sanitaire silencieuse dont les effets s'accumulent depuis deux décennies. Elle n'est pas une fatalité : c'est le résultat d'une absence de surveillance, de contrôle insuffisant des rejets et d'une gouvernance fragmentée.</p>
+          <div style="background:#0d2540;border-radius:var(--r-lg);padding:2rem;text-align:center;margin:1.75rem 0;">
+            <p style="color:#93c5fd;font-family:var(--serif);font-size:1.05rem;font-weight:700;margin-bottom:.65rem;">Les fleuves du Sud Cameroun font partie du patrimoine naturel le plus précieux de l'Afrique centrale.</p>
+            <p style="color:rgba(255,255,255,.7);font-size:.88rem;max-width:560px;margin:0 auto;">Les restaurer, c'est investir simultanément dans la santé publique, la sécurité alimentaire, la biodiversité et la résilience climatique.</p>
+          </div>
+        </div>
+
+        <div class="art-cta">
+          <h2>Rejoindre le Programme</h2>
+          <p>Partenariat technique et financier pour la dépollution des fleuves du Sud Cameroun.</p>
+          <div class="cta-person">ELLA NTYAM Steve · Directeur IBCE-RC</div>
+          <div class="cta-role">Physicien de l'Environnement — Institut du Bassin du Congo pour l'Environnement et la Résilience Climatique</div>
+          <a href="mailto:info@ibce-rc.org" class="cta-mail">info@ibce-rc.org</a>
+          <div style="margin-top:1.75rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-gold btn-lg">Nous contacter</a>
+            <a href="projects.html" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.35);color:white;">Tous les projets</a>
+          </div>
+        </div>
+
+      </main>
+
+      <aside>
+        <div class="art-toc">
+          <h4>Sommaire</h4>
+          <ol>
+            <li><a href="#resume">Résumé exécutif</a></li>
+            <li><a href="#diagnostic">1. Diagnostic pollution</a></li>
+            <li><a href="#surveillance">2. Réseau 48 stations</a></li>
+            <li><a href="#axes">3. Axes stratégiques</a></li>
+            <li><a href="#resultats">4. Indicateurs de performance</a></li>
+            <li><a href="#budget">5. Budget &amp; financement</a></li>
+            <li><a href="#conclusion">6. Conclusion</a></li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-about"><a href="index.html" class="logo" style="margin-bottom:.75rem;"><img src="images/l.png" alt="Logo IBCE-RC" class="logo-img"><div><span class="logo-name">IBCE-RC</span><span class="logo-tagline">Environnement · Résilience Climatique</span></div></a><p>Institut du Bassin de Congo pour l'Environnement et la Résilience Climatique.</p><div class="f-social"><a href="#">f</a><a href="#">𝕏</a><a href="#">📷</a><a href="https://wa.me/237697874374" target="_blank">💬</a></div></div>
+      <div class="footer-col"><h4>Navigation</h4><div class="footer-links"><a href="index.html">Accueil</a><a href="about.html">À Propos</a><a href="projects.html">Nos Projets</a><a href="gallery.html">Galerie</a><a href="contact.html">Contact</a></div></div>
+      <div class="footer-col"><h4>Publications</h4><div class="footer-links"><a href="projet-restauration-sud.html">Restauration Forestière</a><a href="note-cadrage-resilience.html">Résilience Riveraines</a><a href="programme-depollution-fluviale.html">Dépollution Fluviale</a><a href="rapport-zones-humides.html">Zones Humides 2025</a><a href="article-puits-carbone.html">Puits de Carbone</a></div></div>
+      <div class="footer-col"><h4>Nous Trouver</h4><div class="f-contact"><div class="f-ci"><span class="ico">📍</span><span>Yaoundé, Cameroun</span></div><div class="f-ci"><span class="ico">✉</span><a href="mailto:info@ibce-rc.org">info@ibce-rc.org</a></div><div class="f-ci"><span class="ico">📞</span><a href="tel:+237697874374">(+237) 697 874 374</a></div><div class="f-ci"><span class="ico">💬</span><a href="https://wa.me/237697874374" target="_blank">WhatsApp</a></div></div></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;"><span>© 2026 IBCE-RC. Tous droits réservés.</span><span>🌿 Protéger la forêt, nourrir les communautés</span></div></div>
+</footer>
+
+</div>
+<a href="https://wa.me/237697874374" class="wa-float" target="_blank" title="WhatsApp"><img src="images/wha.png" alt="WhatsApp" style="width:36px;height:36px;object-fit:contain;"></a>
+<button class="btt" aria-label="Retour en haut">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>

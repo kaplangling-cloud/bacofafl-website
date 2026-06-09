@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Évaluation des Puits de Carbone dans le Bassin du Congo — Nouvelles Méthodologies 2025. Article scientifique IBCE-RC.">
+  <title>Puits de Carbone — Bassin du Congo 2025 — IBCE-RC</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/l.png" type="image/png">
+  <style>
+    .art-hero{position:relative;min-height:380px;display:flex;align-items:flex-end;background:linear-gradient(160deg,#1c1917 0%,#292524 60%,#0f0e0d 100%);overflow:hidden}
+    .art-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25}
+    .art-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,14,13,.95) 0%,rgba(15,14,13,.35) 60%,transparent 100%)}
+    .art-hero-content{position:relative;z-index:2;padding:2.5rem 0 3rem;width:100%}
+    .art-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fde68a;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.28rem .85rem;border-radius:20px;margin-bottom:1.1rem}
+    .art-hero-content h1{font-family:var(--serif);color:white;font-size:clamp(1.7rem,3.5vw,2.8rem);line-height:1.15;margin-bottom:1.25rem;max-width:800px}
+    .art-meta-grid{display:flex;flex-wrap:wrap;gap:1.25rem;margin-bottom:1.5rem}
+    .art-meta-item{color:rgba(255,255,255,.78);font-size:.86rem}
+    .art-meta-item strong{color:#fde68a;display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.15rem}
+    .kpi-band{background:#1c1917;padding:2rem 0}
+    .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border-radius:var(--r-lg);overflow:hidden}
+    .kpi-item{background:rgba(255,255,255,.03);text-align:center;padding:1.5rem .75rem}
+    .kpi-num{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:700;color:#fde68a;display:block;line-height:1}
+    .kpi-unit{font-size:.74rem;color:#fbbf24;font-weight:600;display:block;margin-bottom:.25rem}
+    .kpi-lbl{font-size:.76rem;color:rgba(255,255,255,.6)}
+    .art-body{padding:3.5rem 0}
+    .art-layout{display:grid;grid-template-columns:1fr 260px;gap:2.5rem;align-items:start}
+    .art-toc{position:sticky;top:100px;background:var(--gray-100);border-radius:var(--r-lg);padding:1.25rem;font-size:.83rem}
+    .art-toc h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray-500);margin-bottom:.85rem}
+    .art-toc ol{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+    .art-toc ol li a{color:var(--g800);line-height:1.4;display:block;padding:.2rem 0 .2rem .5rem;border-left:2px solid transparent;transition:all .2s}
+    .art-toc ol li a:hover{color:var(--g700);border-left-color:var(--g700)}
+    .art-section{margin-bottom:3.5rem}
+    .art-section-title{font-family:var(--serif);font-size:clamp(1.2rem,2.2vw,1.65rem);color:var(--g900);margin-bottom:1.1rem;padding-bottom:.65rem;border-bottom:2px solid var(--g100)}
+    .art-section-sub{font-size:1rem;font-weight:600;color:var(--g800);margin:1.5rem 0 .65rem}
+    .art-text{color:var(--gray-800);line-height:1.75;margin-bottom:.9rem}
+    .art-bullet{margin:.55rem 0;display:flex;gap:.7rem;align-items:flex-start;font-size:.91rem;color:var(--gray-800)}
+    .art-bullet::before{content:'▸';color:#d97706;font-weight:700;flex-shrink:0;margin-top:.06rem}
+    .art-bullets{margin:.6rem 0 1.1rem;display:flex;flex-direction:column;gap:.05rem}
+    .art-table-wrap{overflow-x:auto;margin:1.25rem 0 1.75rem;border-radius:var(--r);box-shadow:var(--shadow-sm)}
+    table{width:100%;border-collapse:collapse;font-size:.83rem}
+    thead tr{background:#1c1917;color:white}
+    thead th{padding:.8rem .9rem;text-align:left;font-weight:600;font-size:.77rem;text-transform:uppercase;letter-spacing:.05em}
+    tbody tr{border-bottom:1px solid var(--gray-200)}
+    tbody tr:nth-child(even){background:var(--gray-100)}
+    tbody td{padding:.7rem .9rem;vertical-align:top;color:var(--gray-800)}
+    tbody td:first-child{font-weight:500;color:var(--g900)}
+    tfoot tr{background:#1c1917;color:white;font-weight:700}
+    tfoot td{padding:.8rem .9rem}
+    .td-badge{display:inline-block;padding:.18rem .55rem;border-radius:20px;font-size:.73rem;font-weight:700}
+    .td-ok{background:#dcfce7;color:#15803d}
+    .td-warn{background:#fef9c3;color:#854d0e}
+    .td-gold{background:#fef3c7;color:#92400e}
+    .pilier-block{background:white;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:1.35rem;border-left:4px solid #d97706;margin-bottom:1rem}
+    .pilier-block h4{color:var(--g900);font-size:.95rem;font-family:var(--serif);margin-bottom:.5rem}
+    .pilier-block p{font-size:.86rem;color:var(--gray-800);line-height:1.65}
+    .abstract-box{background:#fef9c3;border:1px solid #fde68a;border-radius:var(--r);padding:1.25rem 1.5rem;margin:1.5rem 0}
+    .abstract-box h4{color:#78350f;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.65rem}
+    .abstract-box p{color:#44403c;font-size:.9rem;line-height:1.7}
+    .inline-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin:1.5rem 0}
+    .istat{background:#fef3c7;border-radius:var(--r);padding:1.1rem;text-align:center}
+    .istat-num{font-family:var(--serif);font-size:1.55rem;color:#92400e;font-weight:700;display:block}
+    .istat-lbl{font-size:.74rem;color:var(--gray-500);margin-top:.2rem}
+    .potentiel-card{background:linear-gradient(135deg,#1c1917 0%,#2a251f 100%);border-radius:var(--r-lg);padding:2rem;margin:1.5rem 0}
+    .potentiel-card h3{color:#fde68a;font-family:var(--serif);margin-bottom:1rem;font-size:1.1rem}
+    .potentiel-row{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:.88rem}
+    .potentiel-row:last-child{border-bottom:none}
+    .potentiel-row .label{color:rgba(255,255,255,.7)}
+    .potentiel-row .value{color:#fde68a;font-weight:700}
+    .art-cta{background:linear-gradient(135deg,#1c1917 0%,#2a251f 100%);border-radius:var(--r-lg);padding:2.5rem;text-align:center;margin-top:2.5rem}
+    .art-cta h2{color:white;font-family:var(--serif);margin-bottom:.65rem;font-size:1.5rem}
+    .art-cta p{color:rgba(255,255,255,.72);margin-bottom:1.5rem;max-width:520px;margin-left:auto;margin-right:auto}
+    .art-cta .cta-person{color:#fde68a;font-weight:600;margin-bottom:.2rem}
+    .art-cta .cta-role{font-size:.82rem;color:rgba(255,255,255,.58);margin-bottom:1.25rem}
+    .art-cta .cta-mail{color:#86efac;font-weight:700;font-size:1rem}
+    @media(max-width:900px){.art-layout{grid-template-columns:1fr}.art-toc{display:none}.kpi-grid{grid-template-columns:repeat(2,1fr)}.inline-stats{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-top-bar">
+    <div class="container">
+      <div class="top-items">
+        <span><img src="images/gps.png" alt="" style="width:20px;height:20px;object-fit:contain;"> Yaoundé, Cameroun — Bassin du Congo</span>
+        <a href="mailto:info@ibce-rc.org"><img src="images/lettre.png" alt="" style="width:20px;height:20px;object-fit:contain;"> info@ibce-rc.org</a>
+        <a href="tel:+237697874374"><img src="images/phone.png" alt="" style="width:20px;height:20px;object-fit:contain;"> (+237) 697 874 374 / 678 202 974</a>
+      </div>
+      <div class="top-social">
+        <a href="#" title="Facebook"><img src="images/f.png" alt="Facebook" class="social-icon"></a>
+        <a href="#" title="Instagram"><img src="images/int.png" alt="Instagram" class="social-icon"></a>
+        <a href="https://wa.me/237697874374" target="_blank" title="WhatsApp"><img src="images/wha.png" alt="WhatsApp" class="social-icon"></a>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="images/l.png" alt="Logo IBCE-RC" class="logo-img"><div><span class="logo-name">IBCE-RC</span><span class="logo-tagline">Environnement · Résilience Climatique</span></div></a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="about.html" class="nav-link">À Propos</a></li>
+        <li><a href="projects.html" class="nav-link active">Nos Projets</a></li>
+        <li><a href="gallery.html" class="nav-link">Galerie</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Nous Soutenir</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<div class="page-content">
+
+<section class="art-hero">
+  <img src="images/piste-forestiere.jpg" alt="Forêts denses du Bassin du Congo — puits de carbone" class="art-hero-img">
+  <div class="art-hero-overlay"></div>
+  <div class="container art-hero-content">
+    <div class="breadcrumb" style="margin-bottom:.9rem;">
+      <a href="index.html" style="color:rgba(255,255,255,.55);">Accueil</a>
+      <span style="color:rgba(255,255,255,.35);"> › </span>
+      <a href="projects.html" style="color:rgba(255,255,255,.55);">Nos Projets</a>
+      <span style="color:rgba(255,255,255,.35);"> › </span>
+      <span style="color:#fde68a;">Article Scientifique</span>
+    </div>
+    <div class="art-badge">Article Scientifique · Physique de l'Environnement · Mai 2025</div>
+    <h1>Évaluation des Puits de Carbone<br><span style="color:#fde68a;">dans le Bassin du Congo — Nouvelles Méthodologies 2025</span></h1>
+    <div class="art-meta-grid">
+      <div class="art-meta-item"><strong>Domaine</strong>Physique de l'environnement / Climatologie</div>
+      <div class="art-meta-item"><strong>Auteur</strong>ELLA NTYAM Steve — IBCE-RC</div>
+      <div class="art-meta-item"><strong>Soumission</strong>Mai 2025</div>
+      <div class="art-meta-item"><strong>Mots-clés</strong>Puits de carbone, LiDAR, REDD+, IPCC 2025</div>
+    </div>
+  </div>
+</section>
+
+<div class="kpi-band">
+  <div class="container">
+    <div class="kpi-grid">
+      <div class="kpi-item"><span class="kpi-num">0,83</span><span class="kpi-unit">PgC/an</span><span class="kpi-lbl">Séquestration nette mesurée 2020–2024</span></div>
+      <div class="kpi-item"><span class="kpi-num">±12 %</span><span class="kpi-unit">incertitude</span><span class="kpi-lbl">Cible méthodologique (vs ±40 % avant)</span></div>
+      <div class="kpi-item"><span class="kpi-num">97,2</span><span class="kpi-unit">PgC</span><span class="kpi-lbl">Stock carbone total mesuré</span></div>
+      <div class="kpi-item"><span class="kpi-num">340</span><span class="kpi-unit">placettes</span><span class="kpi-lbl">Inventaires dendrométriques permanents</span></div>
+      <div class="kpi-item"><span class="kpi-num">4</span><span class="kpi-unit">tours de flux</span><span class="kpi-lbl">Instrumentation eddy covariance ICOS</span></div>
+      <div class="kpi-item"><span class="kpi-num">14 250</span><span class="kpi-unit">M USD/an</span><span class="kpi-lbl">Potentiel crédits carbone certifiables</span></div>
+      <div class="kpi-item"><span class="kpi-num">27 M</span><span class="kpi-unit">USD</span><span class="kpi-lbl">Plan de financement 2025–2030</span></div>
+      <div class="kpi-item"><span class="kpi-num">2,3 %</span><span class="kpi-unit">des émissions mondiales</span><span class="kpi-lbl">Part du Congo dans la séquestration globale</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="art-body">
+  <div class="container">
+    <div class="art-layout">
+      <main>
+
+        <div class="art-section" id="abstract">
+          <h2 class="art-section-title">Résumé / Abstract</h2>
+          <div class="abstract-box">
+            <h4>Résumé (Français)</h4>
+            <p>Le bassin du Congo constitue le deuxième puits de carbone tropical le plus important de la planète, absorbant annuellement entre 0,6 et 1,1 PgC par an. Néanmoins, les méthodes d'évaluation existantes souffrent d'une incertitude méthodologique significative, atteignant parfois ±40 %, compromettant leur crédibilité auprès des bailleurs de fonds internationaux. Le présent article introduit un cadre méthodologique intégré — combinant télédétection hyperspectrale à haute résolution, inventaires dendrométriques in situ, modélisation par intelligence artificielle et instrumentation eddy covariance — visant à réduire cette incertitude à moins de <strong>±12 %</strong>. Les résultats préliminaires indiquent une capacité séquestratrice nette de <strong>0,83 ± 0,09 PgC·an⁻¹</strong> pour la période 2020–2024.</p>
+          </div>
+          <div class="abstract-box" style="background:#f0fdf4;border-color:#86efac;">
+            <h4>Abstract (English)</h4>
+            <p>The Congo Basin represents the second largest tropical carbon sink on Earth, sequestering between 0.6 and 1.1 PgC per year. However, existing assessment methodologies suffer from significant uncertainty (up to ±40%), undermining credibility with international funders. This paper introduces an integrated methodological framework combining high-resolution hyperspectral remote sensing, in situ dendrometric inventories, AI-driven modeling, and eddy covariance instrumentation, targeting uncertainty reduction below ±12%. Preliminary results indicate a net sequestration capacity of <strong>0.83 ± 0.09 PgC·yr⁻¹</strong> for 2020–2024. This framework is proposed as a reference standard for carbon monetization under REDD+ and Article 6 of the Paris Agreement.</p>
+          </div>
+        </div>
+
+        <div class="art-section" id="contexte">
+          <h2 class="art-section-title">1. Introduction et Contexte Scientifique</h2>
+          <p class="art-text">Le bassin du Congo, s'étendant sur près de <strong>3,7 millions de km²</strong> à travers six États d'Afrique centrale, représente l'un des systèmes écologiques les plus critiques de la planète. Ses forêts tropicales denses stockent un total estimé à <strong>60–65 PgC</strong> dans la biomasse aérienne et les sols.</p>
+          <p class="art-text">Pourtant, les puits de carbone du bassin demeurent parmi les moins documentés avec rigueur scientifique. Une récente méta-analyse (Xu et al., 2021, Science) a révélé que les estimations de la biomasse forestière divergeaient de plus de <strong>40 %</strong> selon les approches — soulignant l'urgence de standards méthodologiques unifiés.</p>
+          <div class="art-bullets">
+            <div class="art-bullet">Les bailleurs institutionnels (FVC, FEM, BM, UE) exigent désormais une traçabilité des données et des incertitudes quantifiées conformes aux standards MRV les plus exigeants</div>
+            <div class="art-bullet">La persistance nuageuse (&gt;60 % du temps en milieu équatorial) limite fortement les approches satellitaires optiques conventionnelles</div>
+            <div class="art-bullet">Les tourbières de la Cuvette Centrale (30,6 PgC selon Dargie et al., 2017, Nature) ne sont pas correctement intégrées dans les bilans carbonés actuels</div>
+          </div>
+        </div>
+
+        <div class="art-section" id="methode">
+          <h2 class="art-section-title">2. Cadre Méthodologique Intégré — IBCE-RC 2025</h2>
+          <p class="art-text">La méthodologie repose sur quatre piliers technologiques complémentaires, conformes aux lignes directrices du GIEC 2019 ainsi qu'aux standards Verra VM0042 et Gold Standard for Nature-Based Solutions.</p>
+
+          <div class="pilier-block">
+            <h4>Pilier 1 — Télédétection multi-source et fusion de données</h4>
+            <p>Radar SAR bande L et bande P (ALOS-2/PALSAR-2) pour l'estimation de la biomasse aérienne jusqu'à 400 Mg/ha. LiDAR aéroporté Full-Waveform sur 12 transects stratifiés (précision verticale ±15 cm). Imagerie Sentinel-2 L2A + Planet SuperDove (3 m) pour suivi phénologique mensuel.</p>
+          </div>
+
+          <div class="pilier-block">
+            <h4>Pilier 2 — Réseau d'inventaires dendrométriques in situ</h4>
+            <p><strong>340 placettes permanentes (0,25 ha)</strong> selon plan d'échantillonnage stratifié-aléatoire sur 7 strates écologiques. Mesure annuelle des DBH ≥ 10 cm avec identification botanique, équations allométriques régionales (Chave et al., 2014 ; Fayolle et al., 2018), prélèvements de sol à 3 profondeurs (COT par combustion sèche).</p>
+          </div>
+
+          <div class="pilier-block">
+            <h4>Pilier 3 — Instrumentation eddy covariance et tours de flux</h4>
+            <p><strong>4 tours de flux ICOS-compatibles</strong> déployées à Salonga (forêt primaire dense), Cuvette Centrale (forêt marécageuse), Cameroun-Est (écotone forêt-savane) et RDC-Maniema (forêt perturbée). Mesure continue à 10 Hz des échanges nets (NEE) de CO₂, CH₄ et vapeur d'eau.</p>
+          </div>
+
+          <div class="pilier-block">
+            <h4>Pilier 4 — Modélisation par intelligence artificielle et assimilation de données</h4>
+            <p>Architecture <strong>transformer hybride</strong> entraîné sur données fusionnées (SAR + LiDAR + Sentinel-2 + inventaires + eddy covariance). Cartes de densité carbonée à <strong>30 m de résolution</strong>, actualisées trimestriellement. Approche bayésienne pour intervalles de confiance à 95 % par pixel.</p>
+          </div>
+
+          <h3 class="art-section-sub">Comparaison des performances méthodologiques</h3>
+          <div class="art-table-wrap">
+            <table>
+              <thead><tr><th>Méthode</th><th>Résolution spatiale</th><th>Fréquence</th><th>Incertitude AGB</th></tr></thead>
+              <tbody>
+                <tr><td>IFN conventionnel</td><td>Parcelles locales</td><td>Décennale</td><td>±35–45 %</td></tr>
+                <tr><td>Satellite optique (Sentinel-2)</td><td>10 m</td><td>Bi-mensuelle</td><td>±30–40 %</td></tr>
+                <tr><td>SAR bande L (ALOS-2)</td><td>25 m</td><td>Trimestrielle</td><td>±20–25 %</td></tr>
+                <tr><td>LiDAR aéroporté</td><td>1 m (points)</td><td>Annuelle</td><td>±8–12 %</td></tr>
+                <tr><td>Eddy covariance</td><td>1–3 km² (empreinte)</td><td>Continue (30 min)</td><td>±5–10 %</td></tr>
+                <tr><td><strong>Cadre IBCE-RC 2025 (intégré)</strong></td><td><strong>30 m</strong></td><td><strong>Trimestrielle</strong></td><td><strong>±10–12 %</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="art-section" id="resultats">
+          <h2 class="art-section-title">3. Résultats Préliminaires (2020–2024)</h2>
+
+          <h3 class="art-section-sub">Stock et flux de carbone — Bassin du Congo 2020–2024</h3>
+          <div class="art-table-wrap">
+            <table>
+              <thead><tr><th>Compartiment</th><th>Stock carbone (PgC)</th><th>Flux net (PgC/an)</th><th>IC à 95 %</th></tr></thead>
+              <tbody>
+                <tr><td>Biomasse aérienne vivante (AGB)</td><td>35,2</td><td>−0,44</td><td>±0,05</td></tr>
+                <tr><td>Biomasse souterraine (BGB)</td><td>9,8</td><td>−0,12</td><td>±0,02</td></tr>
+                <tr><td>Sol – couche organique (0–30 cm)</td><td>18,6</td><td>−0,15</td><td>±0,03</td></tr>
+                <tr><td>Tourbes – Cuvette Centrale</td><td>30,6</td><td>−0,08</td><td>±0,04</td></tr>
+                <tr><td>Nécromasse ligneuse grossière</td><td>2,1</td><td>+0,02</td><td>±0,01</td></tr>
+                <tr><td>Litière forestière</td><td>0,9</td><td>+0,04</td><td>±0,01</td></tr>
+              </tbody>
+              <tfoot><tr><td>TOTAL (Puits net)</td><td>97,2</td><td>−0,83</td><td>±0,09</td></tr></tfoot>
+            </table>
+          </div>
+
+          <div class="inline-stats">
+            <div class="istat"><span class="istat-num">0,83</span><span class="istat-lbl">PgC/an séquestrés — soit 2,3 % des émissions mondiales</span></div>
+            <div class="istat"><span class="istat-num">&gt; 300</span><span class="istat-lbl">MgC/ha dans les forêts primaires de basse altitude</span></div>
+            <div class="istat"><span class="istat-num">+0,18</span><span class="istat-lbl">PgC/an potentiel si dégradation inversée</span></div>
+            <div class="istat"><span class="istat-num">85 000</span><span class="istat-lbl">ha/an dégradation forêts Cameroun-Est (signal d'alerte)</span></div>
+          </div>
+        </div>
+
+        <div class="art-section" id="standards">
+          <h2 class="art-section-title">4. Conformité aux Standards de Financement International</h2>
+          <div class="art-bullets" style="gap:.65rem;">
+            <div class="art-bullet"><strong>Verra (VCS + CCBS) :</strong> Conformité au module VM0042 (Improved Forest Management) et aux lignes directrices MRV du standard biodiversité-climat-communautaire</div>
+            <div class="art-bullet"><strong>Article 6 de l'Accord de Paris (ITMO) :</strong> Traçabilité et non-double comptage garantis par le registre numérique IBCE-RC pour les transferts internationaux de résultats d'atténuation</div>
+            <div class="art-bullet"><strong>Fonds Vert pour le Climat (FVC) :</strong> Respect des sauvegardes de Cancun et du cadre de résultats REDD+ de la CCNUCC, avec rapportage selon le Format FCRB</div>
+            <div class="art-bullet"><strong>EU Carbon Border Adjustment Mechanism (CBAM) :</strong> Compatibilité avec les exigences de traçabilité pour la certification des crédits carbone destinés aux marchés européens</div>
+          </div>
+        </div>
+
+        <div class="art-section" id="potentiel">
+          <h2 class="art-section-title">5. Implications pour le Financement International</h2>
+          <p class="art-text">Sur la base d'un prix conservateur de <strong>15 USD par tonne de CO₂</strong> sur les marchés volontaires :</p>
+
+          <div class="potentiel-card">
+            <h3>Potentiel économique annuel — Crédits carbone certifiables — Bassin du Congo</h3>
+            <div class="potentiel-row"><span class="label">Séquestration nette certifiable (450 MtCO₂/an)</span><span class="value">6 750 M USD/an</span></div>
+            <div class="potentiel-row"><span class="label">Déforestation évitée — scénario baseline (320 MtCO₂/an)</span><span class="value">4 800 M USD/an</span></div>
+            <div class="potentiel-row"><span class="label">Restauration des zones dégradées (180 MtCO₂/an)</span><span class="value">2 700 M USD/an</span></div>
+            <div class="potentiel-row" style="border-top:1px solid rgba(255,255,255,.2);padding-top:.75rem;margin-top:.25rem;"><span class="label" style="color:#fde68a;font-weight:600;">TOTAL POTENTIEL CUMULÉ (950 MtCO₂/an)</span><span class="value" style="font-size:1.1rem;">14 250 M USD/an</span></div>
+          </div>
+
+          <h3 class="art-section-sub">Plan de financement 2025–2030</h3>
+          <div class="art-table-wrap">
+            <table>
+              <thead><tr><th>Phase</th><th>Période</th><th>Activités principales</th><th>Budget (M USD)</th></tr></thead>
+              <tbody>
+                <tr><td>Phase I — Fondation</td><td>2025–2026</td><td>Extension réseau placettes (340→600), 2 tours de flux supplémentaires, plateforme data</td><td>8,5</td></tr>
+                <tr><td>Phase II — Intégration</td><td>2027–2028</td><td>Déploiement modèle IA v2, certifications Verra/Gold Standard, plateforme crédits carbone</td><td>12,0</td></tr>
+                <tr><td>Phase III — Opérationnalisation</td><td>2029–2030</td><td>Transfert capacités nationales, réseau régional IBCE-RC, rapportage CCNUCC autonome</td><td>6,5</td></tr>
+              </tbody>
+              <tfoot><tr><td>TOTAL 2025–2030</td><td>—</td><td>—</td><td>27,0</td></tr></tfoot>
+            </table>
+          </div>
+        </div>
+
+        <div class="art-section" id="conclusion">
+          <h2 class="art-section-title">6. Conclusion</h2>
+          <p class="art-text">Le bassin du Congo est l'un des rares biomes tropicaux à maintenir une fonction de puits de carbone nette et significative dans le contexte du changement climatique. Cependant, cette fonction vitale pour le climat mondial reste insuffisamment mesurée, peu valorisée économiquement et sous-financée.</p>
+          <p class="art-text">Le cadre méthodologique IBCE-RC 2025 offre pour la première fois une estimation du puits carboné du bassin du Congo avec une incertitude inférieure à <strong>±12 %</strong>, franchissant le seuil de crédibilité requis pour les marchés de carbone de haute intégrité.</p>
+          <div style="background:#1c1917;border-radius:var(--r-lg);padding:1.75rem;text-align:center;margin:1.75rem 0;">
+            <p style="color:#fde68a;font-family:var(--serif);font-size:1.05rem;font-weight:700;margin-bottom:.65rem;">Ce programme ne représente pas seulement un investissement dans la connaissance scientifique.</p>
+            <p style="color:rgba(255,255,255,.7);font-size:.88rem;max-width:580px;margin:0 auto;">Il constitue l'infrastructure critique qui permettra aux États du bassin du Congo de transformer leur patrimoine naturel en une ressource économique souveraine et durable, contribuant simultanément aux objectifs de l'Accord de Paris et au Cadre de Kunming-Montréal pour la biodiversité.</p>
+          </div>
+        </div>
+
+        <div class="art-cta">
+          <h2>Partenariats &amp; Financement</h2>
+          <p>L'IBCE-RC appelle les bailleurs de fonds à rejoindre ce programme comme partenaires fondateurs, positionnant le bassin du Congo au centre de la finance climatique internationale.</p>
+          <div class="cta-person">ELLA NTYAM Steve · Directeur IBCE-RC</div>
+          <div class="cta-role">Physicien de l'Environnement — Institut du Bassin du Congo pour l'Environnement et la Résilience Climatique</div>
+          <a href="mailto:info@ibce-rc.org" class="cta-mail">info@ibce-rc.org</a>
+          <div style="margin-top:1.75rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-gold btn-lg">Nous contacter</a>
+            <a href="projects.html" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.35);color:white;">Tous les projets</a>
+          </div>
+        </div>
+
+      </main>
+
+      <aside>
+        <div class="art-toc">
+          <h4>Sommaire</h4>
+          <ol>
+            <li><a href="#abstract">Résumé / Abstract</a></li>
+            <li><a href="#contexte">1. Introduction</a></li>
+            <li><a href="#methode">2. Méthodologie intégrée</a></li>
+            <li><a href="#resultats">3. Résultats 2020–2024</a></li>
+            <li><a href="#standards">4. Conformité aux standards</a></li>
+            <li><a href="#potentiel">5. Potentiel économique</a></li>
+            <li><a href="#conclusion">6. Conclusion</a></li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-about"><a href="index.html" class="logo" style="margin-bottom:.75rem;"><img src="images/l.png" alt="Logo IBCE-RC" class="logo-img"><div><span class="logo-name">IBCE-RC</span><span class="logo-tagline">Environnement · Résilience Climatique</span></div></a><p>Institut du Bassin de Congo pour l'Environnement et la Résilience Climatique.</p><div class="f-social"><a href="#">f</a><a href="#">𝕏</a><a href="#">📷</a><a href="https://wa.me/237697874374" target="_blank">💬</a></div></div>
+      <div class="footer-col"><h4>Navigation</h4><div class="footer-links"><a href="index.html">Accueil</a><a href="about.html">À Propos</a><a href="projects.html">Nos Projets</a><a href="gallery.html">Galerie</a><a href="contact.html">Contact</a></div></div>
+      <div class="footer-col"><h4>Publications</h4><div class="footer-links"><a href="projet-restauration-sud.html">Restauration Forestière</a><a href="note-cadrage-resilience.html">Résilience Riveraines</a><a href="programme-depollution-fluviale.html">Dépollution Fluviale</a><a href="rapport-zones-humides.html">Zones Humides 2025</a><a href="article-puits-carbone.html">Puits de Carbone</a></div></div>
+      <div class="footer-col"><h4>Nous Trouver</h4><div class="f-contact"><div class="f-ci"><span class="ico">📍</span><span>Yaoundé, Cameroun</span></div><div class="f-ci"><span class="ico">✉</span><a href="mailto:info@ibce-rc.org">info@ibce-rc.org</a></div><div class="f-ci"><span class="ico">📞</span><a href="tel:+237697874374">(+237) 697 874 374</a></div><div class="f-ci"><span class="ico">💬</span><a href="https://wa.me/237697874374" target="_blank">WhatsApp</a></div></div></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;"><span>© 2026 IBCE-RC. Tous droits réservés.</span><span>🌿 Protéger la forêt, nourrir les communautés</span></div></div>
+</footer>
+
+</div>
+<a href="https://wa.me/237697874374" class="wa-float" target="_blank" title="WhatsApp"><img src="images/wha.png" alt="WhatsApp" style="width:36px;height:36px;object-fit:contain;"></a>
+<button class="btt" aria-label="Retour en haut">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>

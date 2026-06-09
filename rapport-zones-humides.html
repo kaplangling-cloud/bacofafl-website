@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cartographie des Zones Humides & Tourbières — État des Lieux 2025. Bassin du Congo. Rapport d'Impact IBCE-RC/RI-ZHT/2025-003.">
+  <title>Zones Humides & Tourbières 2025 — IBCE-RC</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/l.png" type="image/png">
+  <style>
+    .art-hero{position:relative;min-height:380px;display:flex;align-items:flex-end;background:linear-gradient(160deg,#14532d 0%,#1e6b4a 60%,#0a3622 100%);overflow:hidden}
+    .art-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.22}
+    .art-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,40,22,.95) 0%,rgba(10,40,22,.35) 60%,transparent 100%)}
+    .art-hero-content{position:relative;z-index:2;padding:2.5rem 0 3rem;width:100%}
+    .art-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#6ee7b7;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.28rem .85rem;border-radius:20px;margin-bottom:1.1rem}
+    .art-hero-content h1{font-family:var(--serif);color:white;font-size:clamp(1.7rem,3.5vw,2.8rem);line-height:1.15;margin-bottom:1.25rem;max-width:800px}
+    .art-meta-grid{display:flex;flex-wrap:wrap;gap:1.25rem;margin-bottom:1.5rem}
+    .art-meta-item{color:rgba(255,255,255,.78);font-size:.86rem}
+    .art-meta-item strong{color:#6ee7b7;display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.15rem}
+    .kpi-band{background:#0a3622;padding:2rem 0}
+    .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border-radius:var(--r-lg);overflow:hidden}
+    .kpi-item{background:rgba(255,255,255,.03);text-align:center;padding:1.5rem .75rem}
+    .kpi-num{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:700;color:#6ee7b7;display:block;line-height:1}
+    .kpi-unit{font-size:.74rem;color:#34d399;font-weight:600;display:block;margin-bottom:.25rem}
+    .kpi-lbl{font-size:.76rem;color:rgba(255,255,255,.6)}
+    .art-body{padding:3.5rem 0}
+    .art-layout{display:grid;grid-template-columns:1fr 260px;gap:2.5rem;align-items:start}
+    .art-toc{position:sticky;top:100px;background:var(--gray-100);border-radius:var(--r-lg);padding:1.25rem;font-size:.83rem}
+    .art-toc h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray-500);margin-bottom:.85rem}
+    .art-toc ol{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+    .art-toc ol li a{color:var(--g800);line-height:1.4;display:block;padding:.2rem 0 .2rem .5rem;border-left:2px solid transparent;transition:all .2s}
+    .art-toc ol li a:hover{color:var(--g700);border-left-color:var(--g700)}
+    .art-section{margin-bottom:3.5rem}
+    .art-section-title{font-family:var(--serif);font-size:clamp(1.2rem,2.2vw,1.65rem);color:var(--g900);margin-bottom:1.1rem;padding-bottom:.65rem;border-bottom:2px solid var(--g100)}
+    .art-section-sub{font-size:1rem;font-weight:600;color:var(--g800);margin:1.5rem 0 .65rem}
+    .art-text{color:var(--gray-800);line-height:1.75;margin-bottom:.9rem}
+    .art-bullet{margin:.55rem 0;display:flex;gap:.7rem;align-items:flex-start;font-size:.91rem;color:var(--gray-800)}
+    .art-bullet::before{content:'▸';color:var(--g700);font-weight:700;flex-shrink:0;margin-top:.06rem}
+    .art-bullets{margin:.6rem 0 1.1rem;display:flex;flex-direction:column;gap:.05rem}
+    .art-table-wrap{overflow-x:auto;margin:1.25rem 0 1.75rem;border-radius:var(--r);box-shadow:var(--shadow-sm)}
+    table{width:100%;border-collapse:collapse;font-size:.83rem}
+    thead tr{background:#0a3622;color:white}
+    thead th{padding:.8rem .9rem;text-align:left;font-weight:600;font-size:.77rem;text-transform:uppercase;letter-spacing:.05em}
+    tbody tr{border-bottom:1px solid var(--gray-200)}
+    tbody tr:nth-child(even){background:var(--gray-100)}
+    tbody td{padding:.7rem .9rem;vertical-align:top;color:var(--gray-800)}
+    tbody td:first-child{font-weight:500;color:var(--g900)}
+    tfoot tr{background:#0a3622;color:white;font-weight:700}
+    tfoot td{padding:.8rem .9rem}
+    .td-badge{display:inline-block;padding:.18rem .55rem;border-radius:20px;font-size:.73rem;font-weight:700}
+    .td-ok{background:#dcfce7;color:#15803d}
+    .td-alert{background:#fee2e2;color:#b91c1c}
+    .td-warn{background:#fef9c3;color:#854d0e}
+    .td-blue{background:#dbeafe;color:#1d4ed8}
+    .alert-box-critical{background:#7f1d1d;border-radius:var(--r-lg);padding:1.5rem 1.75rem;margin:1.5rem 0;color:white}
+    .alert-box-critical h4{color:#fca5a5;font-family:var(--serif);margin-bottom:.6rem}
+    .alert-box-critical p{color:rgba(255,255,255,.82);font-size:.9rem;line-height:1.65}
+    .zone-card{background:white;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:1.25rem;border-top:4px solid var(--g700);margin-bottom:.85rem}
+    .zone-card h4{font-size:.95rem;color:var(--g900);margin-bottom:.3rem}
+    .zone-card .z-loc{font-size:.78rem;color:var(--gray-500);margin-bottom:.65rem}
+    .zone-card dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem .75rem;font-size:.8rem}
+    .zone-card dt{color:var(--gray-500)}
+    .zone-card dd{color:var(--g900);font-weight:500}
+    .inline-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin:1.5rem 0}
+    .istat{background:var(--g100);border-radius:var(--r);padding:1.1rem;text-align:center}
+    .istat-num{font-family:var(--serif);font-size:1.55rem;color:var(--g800);font-weight:700;display:block}
+    .istat-lbl{font-size:.74rem;color:var(--gray-500);margin-top:.2rem}
+    .rec-block{background:#f0fdf4;border:1px solid var(--g300);border-radius:var(--r);padding:1.1rem 1.35rem;margin-bottom:.85rem}
+    .rec-block h4{color:var(--g800);font-size:.92rem;margin-bottom:.5rem;font-family:var(--serif)}
+    .rec-block ul{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+    .rec-block ul li{font-size:.86rem;color:var(--gray-800);display:flex;gap:.6rem}
+    .rec-block ul li::before{content:'✓';color:var(--g700);font-weight:700;flex-shrink:0}
+    .art-cta{background:linear-gradient(135deg,var(--g800) 0%,var(--g900) 100%);border-radius:var(--r-lg);padding:2.5rem;text-align:center;margin-top:2.5rem}
+    .art-cta h2{color:white;font-family:var(--serif);margin-bottom:.65rem;font-size:1.5rem}
+    .art-cta p{color:rgba(255,255,255,.72);margin-bottom:1.5rem;max-width:520px;margin-left:auto;margin-right:auto}
+    .art-cta .cta-person{color:#6ee7b7;font-weight:600;margin-bottom:.2rem}
+    .art-cta .cta-role{font-size:.82rem;color:rgba(255,255,255,.58);margin-bottom:1.25rem}
+    .art-cta .cta-mail{color:#f0b429;font-weight:700;font-size:1rem}
+    @media(max-width:900px){.art-layout{grid-template-columns:1fr}.art-toc{display:none}.kpi-grid{grid-template-columns:repeat(2,1fr)}.inline-stats{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-top-bar">
+    <div class="container">
+      <div class="top-items">
+        <span><img src="images/gps.png" alt="" style="width:20px;height:20px;object-fit:contain;"> Yaoundé, Cameroun — Bassin du Congo</span>
+        <a href="mailto:info@ibce-rc.org"><img src="images/lettre.png" alt="" style="width:20px;height:20px;object-fit:contain;"> info@ibce-rc.org</a>
+        <a href="tel:+237697874374"><img src="images/phone.png" alt="" style="width:20px;height:20px;object-fit:contain;"> (+237) 697 874 374 / 678 202 974</a>
+      </div>
+      <div class="top-social">
+        <a href="#" title="Facebook"><img src="images/f.png" alt="Facebook" class="social-icon"></a>
+        <a href="#" title="Instagram"><img src="images/int.png" alt="Instagram" class="social-icon"></a>
+        <a href="https://wa.me/237697874374" target="_blank" title="WhatsApp"><img src="images/wha.png" alt="WhatsApp" class="social-icon"></a>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="images/l.png" alt="Logo IBCE-RC" class="logo-img"><div><span class="logo-name">IBCE-RC</span><span class="logo-tagline">Environnement · Résilience Climatique</span></div></a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="about.html" class="nav-link">À Propos</a></li>
+        <li><a href="projects.html" class="nav-link active">Nos Projets</a></li>
+        <li><a href="gallery.html" class="nav-link">Galerie</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Nous Soutenir</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<div class="page-content">
+
+<section class="art-hero">
+  <img src="images/grand-arbre-foret.jpg" alt="Zones humides et tourbières du Bassin du Congo" class="art-hero-img">
+  <div class="art-hero-overlay"></div>
+  <div class="container art-hero-content">
+    <div class="breadcrumb" style="margin-bottom:.9rem;">
+      <a href="index.html" style="color:rgba(255,255,255,.55);">Accueil</a>
+      <span style="color:rgba(255,255,255,.35);"> › </span>
+      <a href="projects.html" style="color:rgba(255,255,255,.55);">Nos Projets</a>
+      <span style="color:rgba(255,255,255,.35);"> › </span>
+      <span style="color:#6ee7b7;">Rapport Zones Humides 2025</span>
+    </div>
+    <div class="art-badge">Rapport d'Impact · Cartographie Environnementale · 2025</div>
+    <h1>Cartographie des Zones Humides &amp; Tourbières<br><span style="color:#6ee7b7;">État des Lieux 2025 — Bassin du Congo</span></h1>
+    <div class="art-meta-grid">
+      <div class="art-meta-item"><strong>Référence</strong>IBCE-RC/RI-ZHT/2025-003</div>
+      <div class="art-meta-item"><strong>Couverture</strong>Bassin du Congo — 6 États</div>
+      <div class="art-meta-item"><strong>Période couverte</strong>2018 – 2025</div>
+      <div class="art-meta-item"><strong>Type</strong>Rapport d'Impact — Cartographie</div>
+    </div>
+  </div>
+</section>
+
+<div class="kpi-band">
+  <div class="container">
+    <div class="kpi-grid">
+      <div class="kpi-item"><span class="kpi-num">145 500</span><span class="kpi-unit">km²</span><span class="kpi-lbl">Tourbières cartographiées</span></div>
+      <div class="kpi-item"><span class="kpi-num">30,6</span><span class="kpi-unit">PgC</span><span class="kpi-lbl">Carbone stocké dans les tourbières</span></div>
+      <div class="kpi-item"><span class="kpi-num">8,3 %</span><span class="kpi-unit">surface</span><span class="kpi-lbl">Zones en dégradation active</span></div>
+      <div class="kpi-item"><span class="kpi-num">+14 %</span><span class="kpi-unit">depuis 2020</span><span class="kpi-lbl">Accélération oxydation tourbe</span></div>
+      <div class="kpi-item"><span class="kpi-num">3,7 M</span><span class="kpi-unit">km²</span><span class="kpi-lbl">Zones humides totales inventoriées</span></div>
+      <div class="kpi-item"><span class="kpi-num">612</span><span class="kpi-unit">sites</span><span class="kpi-lbl">Sites cartographiés in situ</span></div>
+      <div class="kpi-item"><span class="kpi-num">−19 %</span><span class="kpi-unit">2015–2025</span><span class="kpi-lbl">Réduction des herbiers aquatiques</span></div>
+      <div class="kpi-item"><span class="kpi-num">75 M</span><span class="kpi-unit">personnes</span><span class="kpi-lbl">Riverains dépendant des écosystèmes</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="art-body">
+  <div class="container">
+    <div class="art-layout">
+      <main>
+
+        <div class="art-section" id="resume">
+          <h2 class="art-section-title">Résumé Exécutif</h2>
+          <p class="art-text">La Cuvette Centrale du bassin du Congo abrite le plus grand complexe de tourbières tropicales au monde, couvrant environ <strong>145 500 km²</strong> et stockant un total estimé à <strong>30,6 PgC</strong> — soit l'équivalent de trois années d'émissions mondiales de CO₂ d'origine fossile. En 2025, l'IBCE-RC a conduit la cartographie la plus exhaustive jamais réalisée de ces écosystèmes, en couplant données satellitaires haute résolution, LiDAR aéroporté, levés terrain et modélisation géostatistique.</p>
+          <div class="alert-box-critical">
+            <h4>⚠ Signal d'Alerte Critique</h4>
+            <p>Sans intervention immédiate, les projections IBCE-RC indiquent que les émissions liées à la dégradation des tourbières pourraient atteindre <strong>215 MtCO₂/an d'ici 2035</strong>, transformant le bassin du Congo de puits net en source nette de carbone — un point de basculement irréversible aux conséquences planétaires. <strong>Les résultats sont alarmants : 8,3 % des zones humides montrent des signes de dégradation active, et les tourbières sous pression agricole et minière affichent des taux d'oxydation en accélération de +14 % depuis 2020.</strong></p>
+          </div>
+        </div>
+
+        <div class="art-section" id="methode">
+          <h2 class="art-section-title">1. Méthodologie de Cartographie</h2>
+          <p class="art-text">Le Programme de Cartographie Intégrée des Zones Humides (PCZH-Congo) a mobilisé une équipe pluridisciplinaire de <strong>47 scientifiques</strong> issus de 11 institutions partenaires, couvrant les six États du bassin. La précision globale de la carte atteint <strong>91,4 %</strong> (Kappa de Cohen = 0,887) — meilleur résultat jamais obtenu pour une cartographie des zones humides du bassin du Congo.</p>
+          <div class="art-bullets">
+            <div class="art-bullet"><strong>Observation spatiale SAR :</strong> Sentinel-1 bande C (détection eau) + ALOS-2 bande L (structure végétation)</div>
+            <div class="art-bullet"><strong>Optique :</strong> Sentinel-2 10 m (classification) + Planet SuperDove 3 m (changements fins)</div>
+            <div class="art-bullet"><strong>LiDAR aéroporté Full-Waveform :</strong> Structure 3D, hyperspectrale — 12 transects, 18 400 km² couverts, résolution 4 pts/m²</div>
+            <div class="art-bullet"><strong>Inventaires terrain :</strong> 612 placettes permanentes de 0,5 ha, carottes de tourbe jusqu'à 6,2 m de profondeur, datation ¹⁴C</div>
+          </div>
+        </div>
+
+        <div class="art-section" id="resultats">
+          <h2 class="art-section-title">2. Résultats — État des Lieux 2025</h2>
+
+          <h3 class="art-section-sub">Nomenclature des zones humides cartographiées</h3>
+          <div class="art-table-wrap">
+            <table>
+              <thead><tr><th>Type d'écosystème</th><th>Surface (km²)</th><th>% total</th><th>Statut UICN</th></tr></thead>
+              <tbody>
+                <tr><td>Forêts marécageuses tropicales</td><td>485 200</td><td>13,1 %</td><td><span class="td-badge td-warn">VU</span></td></tr>
+                <tr><td>Tourbières ombrotropes</td><td>145 500</td><td>3,9 %</td><td><span class="td-badge td-alert">EN</span></td></tr>
+                <tr><td>Prairies inondées permanentes</td><td>380 000</td><td>10,3 %</td><td><span class="td-badge td-ok">NT</span></td></tr>
+                <tr><td>Herbiers aquatiques</td><td>42 800</td><td>1,2 %</td><td><span class="td-badge td-warn">VU</span></td></tr>
+                <tr><td>Mangroves estuariennes</td><td>12 400</td><td>0,3 %</td><td><span class="td-badge td-alert">EN</span></td></tr>
+                <tr><td>Zones humides de transition</td><td>290 000</td><td>7,8 %</td><td><span class="td-badge td-ok">LC</span></td></tr>
+                <tr><td>Lacs et lagunes endoréiques</td><td>28 600</td><td>0,8 %</td><td><span class="td-badge td-ok">NT</span></td></tr>
+              </tbody>
+              <tfoot><tr><td>TOTAL cartographié</td><td>1 384 500</td><td>37,4 %</td><td>—</td></tr></tfoot>
+            </table>
+          </div>
+
+          <h3 class="art-section-sub">Évolution des surfaces 2015–2025</h3>
+          <div class="art-table-wrap">
+            <table>
+              <thead><tr><th>Type</th><th>Surface 2015 (km²)</th><th>Surface 2025 (km²)</th><th>Variation</th><th>Tendance</th></tr></thead>
+              <tbody>
+                <tr><td>Forêts marécageuses</td><td>502 400</td><td>485 200</td><td>−3,4 %</td><td><span class="td-badge td-warn">Déclin lent</span></td></tr>
+                <tr><td>Tourbières</td><td>148 200</td><td>145 500</td><td>−1,8 %</td><td><span class="td-badge td-alert">Déclin accéléré</span></td></tr>
+                <tr><td>Herbiers aquatiques</td><td>52 800</td><td>42 800</td><td>−18,9 %</td><td><span class="td-badge td-alert">EFFONDREMENT</span></td></tr>
+                <tr><td>Mangroves</td><td>13 600</td><td>12 400</td><td>−8,8 %</td><td><span class="td-badge td-alert">Déclin accéléré</span></td></tr>
+                <tr><td>Prairies inondées</td><td>392 000</td><td>380 000</td><td>−3,1 %</td><td><span class="td-badge td-warn">Déclin lent</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="art-section-sub">Zones de tourbières — Découvertes majeures</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin:1.25rem 0;">
+            <div class="zone-card">
+              <h4>Cuvette Centrale Nord (République du Congo — Likouala)</h4>
+              <div class="z-loc">58 400 km² · Stable — légère expansion en bordure</div>
+              <dl>
+                <dt>Profondeur tourbe</dt><dd>2,8 m moyenne</dd>
+                <dt>Stock carbone</dt><dd>13,2 PgC</dd>
+                <dt>Découverte IBCE-RC</dt><dd>4 800 km² de nouvelles tourbières</dd>
+                <dt>Statut</dt><dd><span class="td-badge td-ok">Zone noyau protégée</span></dd>
+              </dl>
+            </div>
+            <div class="zone-card">
+              <h4>Cuvette Centrale Sud (RDC — Maï-Ndombe, Équateur)</h4>
+              <div class="z-loc">61 200 km² · Dégradation active — taux : −0,4 %/an</div>
+              <dl>
+                <dt>Stock carbone</dt><dd>14,1 PgC</dd>
+                <dt>Zones dégradées</dt><dd>2 450 km² identifiées à 30 m</dd>
+                <dt>Oxydation</dt><dd>12 % de la superficie (horizons 0–30 cm)</dd>
+                <dt>Statut</dt><dd><span class="td-badge td-alert">Zone sous pression</span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="art-section" id="impacts">
+          <h2 class="art-section-title">3. Quantification des Impacts</h2>
+
+          <h3 class="art-section-sub">Émissions liées à la dégradation — 2025</h3>
+          <div class="art-table-wrap">
+            <table>
+              <thead><tr><th>Source d'émission</th><th>Superficie</th><th>Émission CO₂ éq. (MtCO₂/an)</th><th>% émissions nationales RDC</th></tr></thead>
+              <tbody>
+                <tr><td>Oxydation tourbes — Cuvette Sud</td><td>2 450 km²</td><td>48,2 ±6,4</td><td>12,8 %</td></tr>
+                <tr><td>Drainage zones marécageuses</td><td>890 km²</td><td>12,6 ±2,1</td><td>3,3 %</td></tr>
+                <tr><td>Incendies tourbières de bordure</td><td>320 km²</td><td>8,4 ±1,8</td><td>2,2 %</td></tr>
+                <tr><td>Conversion herbiers → agriculture</td><td>620 km²</td><td>3,8 ±0,9</td><td>1,0 %</td></tr>
+                <tr><td>Dégradation mangroves (CH₄)</td><td>120 km²</td><td>4,1 ±1,2</td><td>1,1 %</td></tr>
+              </tbody>
+              <tfoot><tr><td>TOTAL dégradation zones humides</td><td>4 400 km²</td><td>77,1 ±12,4</td><td>20,4 %</td></tr></tfoot>
+            </table>
+          </div>
+
+          <h3 class="art-section-sub">Impact socioéconomique</h3>
+          <div class="inline-stats">
+            <div class="istat"><span class="istat-num">−31 %</span><span class="istat-lbl">Baisse captures artisanales en 10 ans</span></div>
+            <div class="istat"><span class="istat-num">2,3 M</span><span class="istat-lbl">Personnes dépendant des herbiers dégradés</span></div>
+            <div class="istat"><span class="istat-num">−840 USD</span><span class="istat-lbl">Perte revenu moyen / ménage / an</span></div>
+            <div class="istat"><span class="istat-num">180 k</span><span class="istat-lbl">Déplacements climatiques 2020–2025</span></div>
+          </div>
+          <p class="art-text">La perte nette de revenus pour les communautés de pêcheurs artisanaux est estimée à <strong>1,94 milliard USD sur la décennie 2015–2025</strong>.</p>
+        </div>
+
+        <div class="art-section" id="recommandations">
+          <h2 class="art-section-title">4. Recommandations Prioritaires</h2>
+
+          <div class="rec-block">
+            <h4>Actions immédiates (2025–2026) — Protection d'urgence</h4>
+            <ul>
+              <li>Moratoire immédiat sur toute nouvelle concession minière et agricole dans les 15 700 km² prioritaires (zones rouge et orange IBCE-RC)</li>
+              <li>Classement d'urgence en Zone de Conservation Intégrale des 145 500 km² de tourbières, avec statut légal contraignant dans les 6 États</li>
+              <li>Inscription sur la liste RAMSAR des zones humides d'importance internationale</li>
+              <li>Activation du mécanisme d'alerte précoce IBCE-RC pour les tourbières de la Cuvette Sud (signes d'oxydation avancée)</li>
+            </ul>
+          </div>
+
+          <div class="rec-block">
+            <h4>Actions à court terme (2026–2028) — Restauration et gouvernance</h4>
+            <ul>
+              <li>Programme de restauration hydrologique sur 1 200 km² prioritaires (Cuvette Sud). Coût estimé : 240 millions USD — éligible au Fonds Vert pour le Climat</li>
+              <li>Déploiement de 120 stations automatisées de mesure du niveau de la nappe phréatique dans les zones à risque</li>
+              <li>Programme REDD+ et carbone bleu pour les zones humides, visant la certification de 450 MtCO₂/an à haute intégrité</li>
+            </ul>
+          </div>
+
+          <div class="rec-block">
+            <h4>Actions à moyen terme (2028–2030) — Pérennisation</h4>
+            <ul>
+              <li>Création de l'Observatoire Régional des Zones Humides du Bassin du Congo (ORZH-BC), hébergé à l'IBCE-RC</li>
+              <li>Intégration obligatoire des cartes IBCE-RC 2025 dans les Plans Nationaux d'Adaptation (PNA) de chaque État</li>
+              <li>Mise à jour quinquennale de la cartographie avec publication d'un rapport d'impact actualisé</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="art-section" id="conclusion">
+          <h2 class="art-section-title">5. Conclusion</h2>
+          <p class="art-text">La campagne de cartographie IBCE-RC 2025 représente une avancée scientifique majeure. Pour la première fois, les décideurs politiques et les bailleurs disposent d'une référence cartographique exhaustive, précise et actualisée, établissant sans ambiguïté l'état écologique de ces écosystèmes vitaux.</p>
+          <div style="background:#0a3622;border-radius:var(--r-lg);padding:2rem;text-align:center;margin:1.75rem 0;">
+            <p style="color:#6ee7b7;font-family:var(--serif);font-size:1.05rem;font-weight:700;margin-bottom:.7rem;">La cartographie est achevée. Le temps de l'action est maintenant.</p>
+            <p style="color:rgba(255,255,255,.7);font-size:.88rem;max-width:580px;margin:0 auto;">L'IBCE-RC s'engage à mettre ces données au service de tout partenaire qui souhaite agir. Les données IBCE-RC 2025 sont disponibles pour les partenaires institutionnels, les gouvernements et les bailleurs de fonds.</p>
+          </div>
+        </div>
+
+        <div class="art-cta">
+          <h2>Accès aux Données &amp; Partenariats Scientifiques</h2>
+          <p>Les données cartographiques IBCE-RC 2025 sont disponibles pour les partenaires institutionnels, gouvernements et bailleurs souhaitant agir.</p>
+          <div class="cta-person">ELLA NTYAM Steve · Directeur IBCE-RC</div>
+          <div class="cta-role">Physicien de l'Environnement — Institut du Bassin du Congo pour l'Environnement et la Résilience Climatique</div>
+          <a href="mailto:info@ibce-rc.org" class="cta-mail">info@ibce-rc.org</a>
+          <div style="margin-top:1.75rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-gold btn-lg">Nous contacter</a>
+            <a href="projects.html" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.35);color:white;">Tous les projets</a>
+          </div>
+        </div>
+
+      </main>
+
+      <aside>
+        <div class="art-toc">
+          <h4>Sommaire</h4>
+          <ol>
+            <li><a href="#resume">Résumé exécutif</a></li>
+            <li><a href="#methode">1. Méthodologie</a></li>
+            <li><a href="#resultats">2. Résultats cartographiques</a></li>
+            <li><a href="#impacts">3. Impacts quantifiés</a></li>
+            <li><a href="#recommandations">4. Recommandations</a></li>
+            <li><a href="#conclusion">5. Conclusion</a></li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-about"><a href="index.html" class="logo" style="margin-bottom:.75rem;"><img src="images/l.png" alt="Logo IBCE-RC" class="logo-img"><div><span class="logo-name">IBCE-RC</span><span class="logo-tagline">Environnement · Résilience Climatique</span></div></a><p>Institut du Bassin de Congo pour l'Environnement et la Résilience Climatique.</p><div class="f-social"><a href="#">f</a><a href="#">𝕏</a><a href="#">📷</a><a href="https://wa.me/237697874374" target="_blank">💬</a></div></div>
+      <div class="footer-col"><h4>Navigation</h4><div class="footer-links"><a href="index.html">Accueil</a><a href="about.html">À Propos</a><a href="projects.html">Nos Projets</a><a href="gallery.html">Galerie</a><a href="contact.html">Contact</a></div></div>
+      <div class="footer-col"><h4>Publications</h4><div class="footer-links"><a href="projet-restauration-sud.html">Restauration Forestière</a><a href="note-cadrage-resilience.html">Résilience Riveraines</a><a href="programme-depollution-fluviale.html">Dépollution Fluviale</a><a href="rapport-zones-humides.html">Zones Humides 2025</a><a href="article-puits-carbone.html">Puits de Carbone</a></div></div>
+      <div class="footer-col"><h4>Nous Trouver</h4><div class="f-contact"><div class="f-ci"><span class="ico">📍</span><span>Yaoundé, Cameroun</span></div><div class="f-ci"><span class="ico">✉</span><a href="mailto:info@ibce-rc.org">info@ibce-rc.org</a></div><div class="f-ci"><span class="ico">📞</span><a href="tel:+237697874374">(+237) 697 874 374</a></div><div class="f-ci"><span class="ico">💬</span><a href="https://wa.me/237697874374" target="_blank">WhatsApp</a></div></div></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;"><span>© 2026 IBCE-RC. Tous droits réservés.</span><span>🌿 Protéger la forêt, nourrir les communautés</span></div></div>
+</footer>
+
+</div>
+<a href="https://wa.me/237697874374" class="wa-float" target="_blank" title="WhatsApp"><img src="images/wha.png" alt="WhatsApp" style="width:36px;height:36px;object-fit:contain;"></a>
+<button class="btt" aria-label="Retour en haut">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>

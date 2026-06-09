@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Note de Cadrage — Résilience Climatique des Communautés Riveraines 2026-2030. Politiques recommandées pour le Bassin du Congo. IBCE-RC.">
+  <title>Résilience Riveraines 2026-2030 — IBCE-RC</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/l.png" type="image/png">
+  <style>
+    .art-hero { position:relative;min-height:380px;display:flex;align-items:flex-end;background:linear-gradient(160deg,#0d3320 0%,#1b5e40 60%,#0a2a1a 100%);overflow:hidden; }
+    .art-hero-img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.18; }
+    .art-hero-overlay { position:absolute;inset:0;background:linear-gradient(to top,rgba(8,35,18,.95) 0%,rgba(8,35,18,.35) 60%,transparent 100%); }
+    .art-hero-content { position:relative;z-index:2;padding:2.5rem 0 3rem;width:100%; }
+    .art-badge { display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#95d5b2;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.28rem .85rem;border-radius:20px;margin-bottom:1.1rem; }
+    .art-hero-content h1 { font-family:var(--serif);color:white;font-size:clamp(1.7rem,3.5vw,2.8rem);line-height:1.15;margin-bottom:1.25rem;max-width:800px; }
+    .art-meta-grid { display:flex;flex-wrap:wrap;gap:1.25rem;margin-bottom:1.5rem; }
+    .art-meta-item { color:rgba(255,255,255,.78);font-size:.86rem; }
+    .art-meta-item strong { color:#95d5b2;display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.15rem; }
+    /* KPI */
+    .kpi-band { background:var(--g900);padding:2rem 0; }
+    .kpi-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border-radius:var(--r-lg);overflow:hidden; }
+    .kpi-item { background:rgba(255,255,255,.03);text-align:center;padding:1.5rem .75rem; }
+    .kpi-num { font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:700;color:#95d5b2;display:block;line-height:1; }
+    .kpi-unit { font-size:.74rem;color:#52b788;font-weight:600;display:block;margin-bottom:.25rem; }
+    .kpi-lbl { font-size:.76rem;color:rgba(255,255,255,.6); }
+    /* Body */
+    .art-body { padding:3.5rem 0; }
+    .art-layout { display:grid;grid-template-columns:1fr 260px;gap:2.5rem;align-items:start; }
+    .art-toc { position:sticky;top:100px;background:var(--gray-100);border-radius:var(--r-lg);padding:1.25rem;font-size:.83rem; }
+    .art-toc h4 { font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gray-500);margin-bottom:.85rem; }
+    .art-toc ol { list-style:none;display:flex;flex-direction:column;gap:.35rem; }
+    .art-toc ol li a { color:var(--g800);line-height:1.4;display:block;padding:.2rem 0 .2rem .5rem;border-left:2px solid transparent;transition:all .2s; }
+    .art-toc ol li a:hover { color:var(--g700);border-left-color:var(--g700); }
+    .art-section { margin-bottom:3.5rem; }
+    .art-section-title { font-family:var(--serif);font-size:clamp(1.2rem,2.2vw,1.65rem);color:var(--g900);margin-bottom:1.1rem;padding-bottom:.65rem;border-bottom:2px solid var(--g100); }
+    .art-section-sub { font-size:1rem;font-weight:600;color:var(--g800);margin:1.5rem 0 .65rem; }
+    .art-text { color:var(--gray-800);line-height:1.75;margin-bottom:.9rem; }
+    .art-bullet { margin:.55rem 0;display:flex;gap:.7rem;align-items:flex-start;font-size:.91rem;color:var(--gray-800); }
+    .art-bullet::before { content:'▸';color:var(--g700);font-weight:700;flex-shrink:0;margin-top:.06rem; }
+    .art-bullets { margin:.6rem 0 1.1rem;display:flex;flex-direction:column;gap:.05rem; }
+    /* Axe */
+    .axe-block { margin-bottom:1.75rem;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--gray-200); }
+    .axe-header { display:flex;align-items:center;gap:1rem;padding:1.1rem 1.4rem;background:var(--g900);color:white; }
+    .axe-num { width:48px;height:48px;border-radius:50%;background:var(--g700);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.15rem;font-weight:700;flex-shrink:0; }
+    .axe-title { flex:1; }
+    .axe-title h3 { font-family:var(--serif);font-size:.98rem;color:#95d5b2;margin-bottom:.15rem; }
+    .axe-title p { font-size:.78rem;color:rgba(255,255,255,.6); }
+    .axe-body { padding:1.35rem;background:white; }
+    .axe-rec { margin:.6rem 0;display:flex;gap:.6rem;font-size:.88rem;color:var(--gray-800);align-items:flex-start; }
+    .axe-rec::before { content:'R►';color:var(--g700);font-weight:700;font-size:.75rem;flex-shrink:0;margin-top:.1rem;white-space:nowrap; }
+    /* Table */
+    .art-table-wrap { overflow-x:auto;margin:1.25rem 0 1.75rem;border-radius:var(--r);box-shadow:var(--shadow-sm); }
+    table { width:100%;border-collapse:collapse;font-size:.83rem; }
+    thead tr { background:var(--g900);color:white; }
+    thead th { padding:.8rem .9rem;text-align:left;font-weight:600;font-size:.77rem;text-transform:uppercase;letter-spacing:.05em; }
+    tbody tr { border-bottom:1px solid var(--gray-200); }
+    tbody tr:nth-child(even) { background:var(--gray-100); }
+    tbody td { padding:.7rem .9rem;vertical-align:top;color:var(--gray-800); }
+    tbody td:first-child { font-weight:500;color:var(--g900); }
+    tfoot tr { background:var(--g900);color:white;font-weight:700; }
+    tfoot td { padding:.8rem .9rem; }
+    .td-badge { display:inline-block;padding:.18rem .55rem;border-radius:20px;font-size:.73rem;font-weight:700; }
+    .td-ok { background:#dcfce7;color:#15803d; }
+    .td-alert { background:#fee2e2;color:#b91c1c; }
+    .td-warn { background:#fef9c3;color:#854d0e; }
+    /* Inline stats */
+    .inline-stats { display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin:1.5rem 0; }
+    .istat { background:var(--g100);border-radius:var(--r);padding:1.1rem;text-align:center; }
+    .istat-num { font-family:var(--serif);font-size:1.55rem;color:var(--g800);font-weight:700;display:block; }
+    .istat-lbl { font-size:.74rem;color:var(--gray-500);margin-top:.2rem; }
+    /* CTA */
+    .art-cta { background:linear-gradient(135deg,var(--g800) 0%,var(--g900) 100%);border-radius:var(--r-lg);padding:2.5rem;text-align:center;margin-top:2.5rem; }
+    .art-cta h2 { color:white;font-family:var(--serif);margin-bottom:.65rem;font-size:1.5rem; }
+    .art-cta p { color:rgba(255,255,255,.72);margin-bottom:1.5rem;max-width:520px;margin-left:auto;margin-right:auto; }
+    .art-cta .cta-person { color:#95d5b2;font-weight:600;margin-bottom:.2rem; }
+    .art-cta .cta-role { font-size:.82rem;color:rgba(255,255,255,.58);margin-bottom:1.25rem; }
+    .art-cta .cta-mail { color:#f0b429;font-weight:700;font-size:1rem; }
+    @media(max-width:900px){.art-layout{grid-template-columns:1fr}.art-toc{display:none}.kpi-grid{grid-template-columns:repeat(2,1fr)}.inline-stats{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-top-bar">
+    <div class="container">
+      <div class="top-items">
+        <span><img src="images/gps.png" alt="" style="width:20px;height:20px;object-fit:contain;"> Yaoundé, Cameroun — Bassin du Congo</span>
+        <a href="mailto:info@ibce-rc.org"><img src="images/lettre.png" alt="" style="width:20px;height:20px;object-fit:contain;"> info@ibce-rc.org</a>
+        <a href="tel:+237697874374"><img src="images/phone.png" alt="" style="width:20px;height:20px;object-fit:contain;"> (+237) 697 874 374 / 678 202 974</a>
+      </div>
+      <div class="top-social">
+        <a href="#" title="Facebook"><img src="images/f.png" alt="Facebook" class="social-icon"></a>
+        <a href="#" title="Instagram"><img src="images/int.png" alt="Instagram" class="social-icon"></a>
+        <a href="https://wa.me/237697874374" target="_blank" title="WhatsApp"><img src="images/wha.png" alt="WhatsApp" class="social-icon"></a>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/l.png" alt="Logo IBCE-RC" class="logo-img">
+        <div><span class="logo-name">IBCE-RC</span><span class="logo-tagline">Environnement · Résilience Climatique</span></div>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="about.html" class="nav-link">À Propos</a></li>
+        <li><a href="projects.html" class="nav-link active">Nos Projets</a></li>
+        <li><a href="gallery.html" class="nav-link">Galerie</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Nous Soutenir</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<div class="page-content">
+
+<section class="art-hero">
+  <img src="images/canal-irrigation.jpg" alt="Fleuve et communautés riveraines du Bassin du Congo" class="art-hero-img">
+  <div class="art-hero-overlay"></div>
+  <div class="container art-hero-content">
+    <div class="breadcrumb" style="margin-bottom:.9rem;">
+      <a href="index.html" style="color:rgba(255,255,255,.55);">Accueil</a>
+      <span style="color:rgba(255,255,255,.35);"> › </span>
+      <a href="projects.html" style="color:rgba(255,255,255,.55);">Nos Projets</a>
+      <span style="color:rgba(255,255,255,.35);"> › </span>
+      <span style="color:#95d5b2;">Note de Cadrage</span>
+    </div>
+    <div class="art-badge">Note de Cadrage Politique · Juin 2026 · Bassin du Congo</div>
+    <h1>Résilience Climatique des Communautés Riveraines<br><span style="color:#95d5b2;">Politiques Recommandées 2026–2030</span></h1>
+    <div class="art-meta-grid">
+      <div class="art-meta-item"><strong>Référence</strong>IBCE-RC/NC-RC/2026-001</div>
+      <div class="art-meta-item"><strong>Type</strong>Note de Cadrage Politique</div>
+      <div class="art-meta-item"><strong>Couverture</strong>Bassin du Congo — 6 États</div>
+      <div class="art-meta-item"><strong>Horizon</strong>2026 – 2030</div>
+    </div>
+  </div>
+</section>
+
+<div class="kpi-band">
+  <div class="container">
+    <div class="kpi-grid">
+      <div class="kpi-item"><span class="kpi-num">75 M</span><span class="kpi-unit">personnes</span><span class="kpi-lbl">Riverains concernés par la résilience</span></div>
+      <div class="kpi-item"><span class="kpi-num">5</span><span class="kpi-unit">axes stratégiques</span><span class="kpi-lbl">Cadre d'intervention intégré</span></div>
+      <div class="kpi-item"><span class="kpi-num">500 M</span><span class="kpi-unit">USD</span><span class="kpi-lbl">Fonds Régional Résilience (F3R) proposé</span></div>
+      <div class="kpi-item"><span class="kpi-num">25 000</span><span class="kpi-unit">volontaires</span><span class="kpi-lbl">Volontaires Communautaires de Résilience</span></div>
+      <div class="kpi-item"><span class="kpi-num">480</span><span class="kpi-unit">stations</span><span class="kpi-lbl">Réseau hydro-climatique communautaire</span></div>
+      <div class="kpi-item"><span class="kpi-num">+ 22 %</span><span class="kpi-unit">fréquence</span><span class="kpi-lbl">Augmentation crues décennales (1990-2025)</span></div>
+      <div class="kpi-item"><span class="kpi-num">280 M</span><span class="kpi-unit">USD/an</span><span class="kpi-lbl">Potentiel carbone bleu estimé</span></div>
+      <div class="kpi-item"><span class="kpi-num">85 %</span><span class="kpi-unit">cible couverture</span><span class="kpi-lbl">Zones riveraines avec système d'alerte d'ici 2030</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="art-body">
+  <div class="container">
+    <div class="art-layout">
+      <main>
+
+        <div class="art-section" id="resume">
+          <h2 class="art-section-title">Résumé Exécutif</h2>
+          <p class="art-text">Les communautés riveraines du bassin du Congo — estimées à plus de <strong>75 millions de personnes</strong> dépendant directement des écosystèmes fluviaux, lacustres et marécageux — sont en première ligne des impacts du changement climatique. Montées des eaux extrêmes, sécheresses prolongées, intensification des crues saisonnières et érosion accélérée des berges menacent leurs moyens de vie, leurs habitats et leur sécurité alimentaire de manière croissante.</p>
+          <p class="art-text">La présente Note de Cadrage propose un cadre politique structuré pour la période 2026–2030, articulé autour de <strong>cinq axes stratégiques</strong> : gouvernance participative de la résilience, infrastructures climato-intelligentes, diversification des moyens de subsistance, systèmes d'alerte précoce et gestion des risques, et financement climatique inclusif.</p>
+          <div style="background:var(--g100);border-left:5px solid var(--g700);border-radius:0 var(--r) var(--r) 0;padding:1.1rem 1.4rem;margin:1.25rem 0;">
+            <p style="color:var(--g900);font-weight:600;font-size:.92rem;">Message central : La résilience des communautés riveraines n'est pas un coût social — c'est un investissement stratégique dans la stabilité régionale, la sécurité alimentaire et la protection du plus grand capital naturel de la planète.</p>
+          </div>
+        </div>
+
+        <div class="art-section" id="contexte">
+          <h2 class="art-section-title">1. Introduction et Justification</h2>
+          <p class="art-text">Le bassin du Congo, avec son réseau hydrographique de plus de <strong>4 millions de km²</strong> et ses quelque 10 000 km de voies navigables, structure la vie de dizaines de millions de riverains. Les données collectées par le réseau de monitoring de l'IBCE-RC (2020–2025) indiquent :</p>
+          <div class="art-bullets">
+            <div class="art-bullet">Augmentation de <strong>+1,4°C</strong> de la température de surface des eaux du fleuve Congo depuis 1980</div>
+            <div class="art-bullet">Augmentation de <strong>22 %</strong> de la fréquence des crues décennales</div>
+            <div class="art-bullet">Recul moyen des berges de <strong>2,3 m/an</strong> dans les zones à fort trafic hydrologique</div>
+            <div class="art-bullet">Seuls <strong>18 %</strong> des zones riveraines disposent d'un système d'alerte hydrologique fonctionnel</div>
+          </div>
+        </div>
+
+        <div class="art-section" id="vulnerabilites">
+          <h2 class="art-section-title">2. Diagnostic — Cartographie des Vulnérabilités</h2>
+          <h3 class="art-section-sub">Matrice des risques climatiques prioritaires</h3>
+          <div class="art-table-wrap">
+            <table>
+              <thead>
+                <tr><th>Risque climatique</th><th>Tendance 1990–2025</th><th>Projection 2030</th><th>Criticité</th><th>Communautés exposées</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Crues extrêmes saisonnières</td><td>+22 % fréquence</td><td>+35 %</td><td><span class="td-badge td-alert">CRITIQUE</span></td><td>RDC — Pool Malebo, Congo-Brazzaville</td></tr>
+                <tr><td>Sécheresses prolongées</td><td>+18 % durée</td><td>+28 %</td><td><span class="td-badge td-alert">ÉLEVÉ</span></td><td>RCA, Cameroun-Nord, Lac Tchad</td></tr>
+                <tr><td>Érosion des berges</td><td>2,3 m/an recul</td><td>3,8 m/an</td><td><span class="td-badge td-alert">ÉLEVÉ</span></td><td>Toutes zones d'embouchures</td></tr>
+                <tr><td>Dégradation qualité eau</td><td>+31 % turbidité</td><td>+45 %</td><td><span class="td-badge td-warn">MODÉRÉ-ÉLEVÉ</span></td><td>Zones minières, RDC-Est</td></tr>
+                <tr><td>Perturbation cycles piscicoles</td><td>−19 % captures/an</td><td>−32 %</td><td><span class="td-badge td-alert">CRITIQUE</span></td><td>Pêcheurs artisanaux (9 M pers.)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 class="art-section-sub">Vulnérabilités structurelles</h3>
+          <div class="art-bullets">
+            <div class="art-bullet">Accès à l'électricité dans les zones riveraines rurales inférieur à <strong>12 %</strong></div>
+            <div class="art-bullet">Plus de <strong>68 %</strong> des ménages riverains dépendent de la pêche artisanale comme source principale de revenus (FAO, 2024)</div>
+            <div class="art-bullet">Les femmes assurent <strong>70 %</strong> de la transformation du poisson et sont disproportionnellement exposées aux chocs climatiques</div>
+            <div class="art-bullet">Absence de titre foncier formel pour plus de <strong>85 %</strong> des communautés riveraines — obstacle majeur à l'accès aux financements climatiques</div>
+          </div>
+        </div>
+
+        <div class="art-section" id="axes">
+          <h2 class="art-section-title">3. Cadre Stratégique 2026–2030 — Cinq Axes d'Intervention</h2>
+
+          <div class="axe-block">
+            <div class="axe-header">
+              <div class="axe-num">1</div>
+              <div class="axe-title">
+                <h3>Gouvernance Participative et Droits Climatiques</h3>
+                <p>Réforme institutionnelle pour placer les communautés riveraines comme actrices principales</p>
+              </div>
+            </div>
+            <div class="axe-body">
+              <div class="axe-rec"><span><strong>R1.1</strong> — Reconnaissance légale des Comités Locaux de Résilience Climatique (CLRC) à l'échelle des unités hydrographiques locales, avec droit de co-décision sur les projets d'infrastructure affectant les zones riveraines.</span></div>
+              <div class="axe-rec"><span><strong>R1.2</strong> — Parité genre : quota minimum de <strong>40 %</strong> de représentation féminine dans tous les organes de gouvernance climatique communautaire.</span></div>
+              <div class="axe-rec"><span><strong>R1.3</strong> — Intégration des savoirs écologiques traditionnels (SET) via un protocole régional de documentation et d'intégration dans les plans d'adaptation.</span></div>
+            </div>
+          </div>
+
+          <div class="axe-block">
+            <div class="axe-header">
+              <div class="axe-num">2</div>
+              <div class="axe-title">
+                <h3>Infrastructures Climato-Intelligentes et Aménagement du Territoire</h3>
+                <p>Programme de mise à niveau des infrastructures riveraines pour les conditions climatiques projetées 2030–2050</p>
+              </div>
+            </div>
+            <div class="axe-body">
+              <div class="axe-rec"><span><strong>R2.1</strong> — Normes de construction résilientes obligatoires pour les zones à risque (surélévation minimale de 1,5 m au-dessus de la ligne de crue centennale projetée).</span></div>
+              <div class="axe-rec"><span><strong>R2.2</strong> — Solutions d'infrastructure basées sur la Nature (NbS) prioritaires : restauration des mangroves et ripisylves comme digues naturelles, revégétalisation des berges érodées.</span></div>
+              <div class="axe-rec"><span><strong>R2.3</strong> — Zonage climatique participatif des territoires riverains avec cartes de risques actualisées.</span></div>
+            </div>
+          </div>
+
+          <div class="axe-block">
+            <div class="axe-header">
+              <div class="axe-num">3</div>
+              <div class="axe-title">
+                <h3>Diversification des Moyens de Subsistance et Sécurité Alimentaire</h3>
+                <p>Réduire la dépendance excessive à la pêche artisanale et à l'agriculture de subsistance en zones inondables</p>
+              </div>
+            </div>
+            <div class="axe-body">
+              <div class="axe-rec"><span><strong>R3.1</strong> — Programme d'aquaculture communautaire résiliente en cages flottantes et étangs hors-sol. Cible : <strong>150 000 ménages</strong> bénéficiaires à l'horizon 2030.</span></div>
+              <div class="axe-rec"><span><strong>R3.2</strong> — Agriculture de conservation : accès aux semences tolérantes aux inondations et à la sécheresse, intégration de l'agroforesterie riveraine.</span></div>
+              <div class="axe-rec"><span><strong>R3.3</strong> — Label régional 'Tourisme Résilient du Bassin du Congo' avec redistribution directe de <strong>70 %</strong> des revenus aux communautés hôtes.</span></div>
+            </div>
+          </div>
+
+          <div class="axe-block">
+            <div class="axe-header">
+              <div class="axe-num">4</div>
+              <div class="axe-title">
+                <h3>Systèmes d'Alerte Précoce et Gestion Communautaire des Risques</h3>
+                <p>Le bassin du Congo est dramatiquement sous-équipé : seuls 18 % des zones riveraines disposent d'un système d'alerte fonctionnel</p>
+              </div>
+            </div>
+            <div class="axe-body">
+              <div class="axe-rec"><span><strong>R4.1</strong> — Réseau intégré de <strong>480 stations hydrométriques</strong> automatisées à énergie solaire, accessibles via une application mobile multilingue (français, lingala, swahili, hausa, fula).</span></div>
+              <div class="axe-rec"><span><strong>R4.2</strong> — Formation de <strong>25 000 Volontaires Communautaires de Résilience (VCR)</strong> dans 2 500 communautés prioritaires (premiers secours, évacuation, gestion de crise).</span></div>
+              <div class="axe-rec"><span><strong>R4.3</strong> — Plans Communautaires de Résilience (PCR) obligatoires pour toute commune riveraine de plus de 5 000 habitants, avec révision quinquennale garantie.</span></div>
+            </div>
+          </div>
+
+          <div class="axe-block">
+            <div class="axe-header">
+              <div class="axe-num">5</div>
+              <div class="axe-title">
+                <h3>Financement Climatique Inclusif et Mécanismes Innovants</h3>
+                <p>Architecture financière innovante à accès direct simplifié pour les acteurs locaux</p>
+              </div>
+            </div>
+            <div class="axe-body">
+              <div class="axe-rec"><span><strong>R5.1</strong> — Création du Fonds Régional de Résilience Riveraine (F3R), capitalisation cible : <strong>500 millions USD</strong> sur 5 ans, avec accès direct simplifié pour les CLRC.</span></div>
+              <div class="axe-rec"><span><strong>R5.2</strong> — Obligations vertes souveraines 'Résilience Riveraine' dont le taux est lié à l'atteinte d'indicateurs de résilience communautaire vérifiables.</span></div>
+              <div class="axe-rec"><span><strong>R5.3</strong> — Programmes PSE (Paiements pour Services Écosystémiques) pour carbone bleu : potentiel estimé à <strong>280 millions USD/an</strong> pour le bassin du Congo.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="art-section" id="implementation">
+          <h2 class="art-section-title">4. Matrice de Mise en Œuvre 2026–2030</h2>
+          <div class="art-table-wrap">
+            <table>
+              <thead>
+                <tr><th>Axe</th><th>Horizon</th><th>Acteurs principaux</th><th>Indicateur de résultat</th><th>Cible 2030</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>AXE 1 — Gouvernance</td><td>2026–2027</td><td>Ministères, CLRC, OSC</td><td>% communautés dotées d'un CLRC légal</td><td><strong>80 %</strong></td></tr>
+                <tr><td>AXE 2 — Infrastructures</td><td>2026–2030</td><td>Gouvernements, BM, BAD</td><td>Km de berges restaurées / logements aux normes</td><td><strong>12 000 km / 45 000 log.</strong></td></tr>
+                <tr><td>AXE 3 — Subsistance</td><td>2027–2030</td><td>FAO, FIDA, secteur privé</td><td>Ménages ayant diversifié leurs revenus</td><td><strong>150 000</strong></td></tr>
+                <tr><td>AXE 4 — Alerte précoce</td><td>2026–2028</td><td>IBCE-RC, OCHA, États</td><td>% zones riveraines couvertes par SAP</td><td><strong>85 %</strong></td></tr>
+                <tr><td>AXE 5 — Financement</td><td>2026–2028</td><td>FVC, États, F3R</td><td>Volume financements mobilisés</td><td><strong>500 M USD</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="art-section" id="coherence">
+          <h2 class="art-section-title">5. Cohérence avec les Engagements Internationaux</h2>
+          <div class="art-bullets" style="gap:.65rem;">
+            <div class="art-bullet"><span><strong>Accord de Paris (Article 7 — Adaptation) :</strong> Le cadre contribue directement aux objectifs globaux d'adaptation et permet aux États de renforcer leurs CDN dans leur volet adaptation.</span></div>
+            <div class="art-bullet"><span><strong>Cadre de Sendai 2015–2030 :</strong> Les Axes 4 et 2 opérationnalisent les priorités A (Comprendre les risques), C (Investir dans la réduction) et D (Renforcer la préparation).</span></div>
+            <div class="art-bullet"><span><strong>Cadre de Kunming-Montréal (COP15 Biodiversité) :</strong> Les Axes 2 et 3 contribuent à l'objectif 30×30 et aux cibles de restauration des écosystèmes dégradés.</span></div>
+            <div class="art-bullet"><span><strong>ODD 13, 14 et 15 :</strong> Le cadre génère des co-bénéfices mesurables pour les trois ODD (Action climatique, Vie aquatique, Vie terrestre).</span></div>
+            <div class="art-bullet"><span><strong>Stratégie Régionale CEEAC :</strong> Articulation avec la Stratégie de l'Afrique Centrale sur le changement climatique, plateforme de coordination inter-étatique.</span></div>
+          </div>
+        </div>
+
+        <div class="art-section" id="conclusion">
+          <h2 class="art-section-title">6. Conclusion et Appel à l'Action</h2>
+          <p class="art-text">La résilience climatique des communautés riveraines du bassin du Congo est à la fois un impératif humanitaire, une nécessité écologique et une opportunité économique. Les 75 millions de riverains qui dépendent de ces écosystèmes fluviaux sont à la fois les premières victimes du dérèglement climatique et les gardiens indispensables du plus grand réservoir de biodiversité et de carbone d'Afrique.</p>
+          <p class="art-text">Ce cadre politique est fondé sur cinq années de données scientifiques collectées par l'IBCE-RC, sur les enseignements de programmes pilotes conduits dans sept communautés riveraines de RDC, du Cameroun et du Congo-Brazzaville, et sur une consultation de plus de 200 représentants communautaires conduite entre 2024 et 2026.</p>
+          <div style="background:var(--g900);border-radius:var(--r-lg);padding:2rem;text-align:center;margin:2rem 0;">
+            <p style="color:var(--g300);font-family:var(--serif);font-size:1.1rem;font-weight:700;margin-bottom:.75rem;">La fenêtre d'opportunité pour agir de manière préventive se referme.</p>
+            <p style="color:rgba(255,255,255,.7);font-size:.9rem;max-width:600px;margin:0 auto;">L'IBCE-RC appelle les gouvernements des États du bassin du Congo, les bailleurs de fonds internationaux et les partenaires du secteur privé à endosser ce cadre comme feuille de route partagée.</p>
+          </div>
+        </div>
+
+        <div class="art-cta">
+          <h2>Rejoindre cette Initiative Politique</h2>
+          <p>Pour les gouvernements, bailleurs, organisations et partenaires souhaitant endosser ce cadre stratégique ou contribuer à sa mise en œuvre.</p>
+          <div class="cta-person">ELLA NTYAM Steve · Directeur IBCE-RC</div>
+          <div class="cta-role">Physicien de l'Environnement — Institut du Bassin du Congo pour l'Environnement et la Résilience Climatique</div>
+          <a href="mailto:info@ibce-rc.org" class="cta-mail">info@ibce-rc.org</a>
+          <div style="margin-top:1.75rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-gold btn-lg">Nous contacter</a>
+            <a href="projects.html" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.35);color:white;">Tous les projets</a>
+          </div>
+        </div>
+
+      </main>
+
+      <aside>
+        <div class="art-toc">
+          <h4>Sommaire</h4>
+          <ol>
+            <li><a href="#resume">Résumé exécutif</a></li>
+            <li><a href="#contexte">1. Introduction</a></li>
+            <li><a href="#vulnerabilites">2. Diagnostic</a></li>
+            <li><a href="#axes">3. Cinq axes stratégiques</a></li>
+            <li><a href="#implementation">4. Matrice de mise en œuvre</a></li>
+            <li><a href="#coherence">5. Cohérence internationale</a></li>
+            <li><a href="#conclusion">6. Conclusion</a></li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-about">
+        <a href="index.html" class="logo" style="margin-bottom:.75rem;"><img src="images/l.png" alt="Logo IBCE-RC" class="logo-img"><div><span class="logo-name">IBCE-RC</span><span class="logo-tagline">Environnement · Résilience Climatique</span></div></a>
+        <p>Institut du Bassin de Congo pour l'Environnement et la Résilience Climatique. Nous protégeons la biodiversité du Bassin du Congo.</p>
+        <div class="f-social"><a href="#">f</a><a href="#">𝕏</a><a href="#">📷</a><a href="https://wa.me/237697874374" target="_blank">💬</a></div>
+      </div>
+      <div class="footer-col"><h4>Navigation</h4><div class="footer-links"><a href="index.html">Accueil</a><a href="about.html">À Propos</a><a href="projects.html">Nos Projets</a><a href="gallery.html">Galerie</a><a href="contact.html">Contact</a></div></div>
+      <div class="footer-col"><h4>Publications</h4><div class="footer-links"><a href="projet-restauration-sud.html">Restauration Forestière</a><a href="note-cadrage-resilience.html">Résilience Riveraines</a><a href="programme-depollution-fluviale.html">Dépollution Fluviale</a><a href="rapport-zones-humides.html">Zones Humides 2025</a><a href="article-puits-carbone.html">Puits de Carbone</a></div></div>
+      <div class="footer-col"><h4>Nous Trouver</h4><div class="f-contact"><div class="f-ci"><span class="ico">📍</span><span>Yaoundé, Cameroun</span></div><div class="f-ci"><span class="ico">✉</span><a href="mailto:info@ibce-rc.org">info@ibce-rc.org</a></div><div class="f-ci"><span class="ico">📞</span><a href="tel:+237697874374">(+237) 697 874 374</a></div><div class="f-ci"><span class="ico">💬</span><a href="https://wa.me/237697874374" target="_blank">WhatsApp</a></div></div></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;"><span>© 2026 IBCE-RC. Tous droits réservés.</span><span>🌿 Protéger la forêt, nourrir les communautés</span></div></div>
+</footer>
+
+</div>
+
+<a href="https://wa.me/237697874374" class="wa-float" target="_blank" title="WhatsApp"><img src="images/wha.png" alt="WhatsApp" style="width:36px;height:36px;object-fit:contain;"></a>
+<button class="btt" aria-label="Retour en haut">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>

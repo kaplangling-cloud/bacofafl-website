@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Restauration des Forêts Dégradées, Reboisement & Réhabilitation Écologique — Région du Sud Cameroun. Projet IBCE-RC/PRJ-RF-SC/2023-007.">
+  <title>Restauration Forestière Sud Cameroun — IBCE-RC</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/l.png" type="image/png">
+  <style>
+    /* ---- Page-level overrides ---- */
+    .art-hero {
+      position: relative; min-height: 420px; display: flex; align-items: flex-end;
+      background: linear-gradient(160deg, var(--g900) 0%, var(--g800) 60%, #0d3320 100%);
+      overflow: hidden;
+    }
+    .art-hero-img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .22;
+    }
+    .art-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,40,20,.95) 0%, rgba(10,40,20,.4) 60%, transparent 100%);
+    }
+    .art-hero-content { position: relative; z-index: 2; padding: 3rem 0 3.5rem; width: 100%; }
+    .art-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25);
+      color: var(--g300); font-size: .73rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; padding: .3rem .9rem; border-radius: 20px; margin-bottom: 1.25rem;
+    }
+    .art-hero-content h1 {
+      font-family: var(--serif); color: white; font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.15; margin-bottom: 1.5rem; max-width: 820px;
+    }
+    .art-meta-grid {
+      display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;
+    }
+    .art-meta-item { color: rgba(255,255,255,.8); font-size: .88rem; }
+    .art-meta-item strong { color: var(--g300); display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .2rem; }
+    .art-status {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: #22c55e; color: white; font-weight: 700; font-size: .8rem;
+      padding: .4rem 1rem; border-radius: 20px;
+    }
+    .art-status::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: white; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+    /* ---- KPI banner ---- */
+    .kpi-band {
+      background: var(--g900); padding: 2.5rem 0;
+    }
+    .kpi-grid {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 1px;
+      background: rgba(255,255,255,.1); border-radius: var(--r-lg); overflow: hidden;
+    }
+    .kpi-item {
+      background: rgba(255,255,255,.04); text-align: center; padding: 1.75rem 1rem;
+    }
+    .kpi-num {
+      font-family: var(--serif); font-size: clamp(1.8rem,3vw,2.6rem); font-weight: 700;
+      color: var(--g300); display: block; line-height: 1;
+    }
+    .kpi-unit { font-size: .78rem; color: var(--g500); font-weight: 600; display: block; margin-bottom: .3rem; }
+    .kpi-lbl { font-size: .8rem; color: rgba(255,255,255,.65); }
+
+    /* ---- Fiche ID ---- */
+    .fiche-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;
+    }
+    .fiche-card {
+      background: var(--g100); border-left: 4px solid var(--g700);
+      border-radius: var(--r); padding: 1.5rem 1.75rem;
+    }
+    .fiche-card h3 { font-size: 1rem; color: var(--g900); margin-bottom: 1rem; }
+    .fiche-row { display: flex; gap: .75rem; margin-bottom: .6rem; font-size: .88rem; }
+    .fiche-row dt { color: var(--gray-500); min-width: 120px; flex-shrink: 0; }
+    .fiche-row dd { color: var(--g900); font-weight: 500; }
+    .porteur-card {
+      background: var(--g900); border-radius: var(--r-lg); padding: 2rem; color: white; text-align: center;
+    }
+    .porteur-card .porteur-name { font-family: var(--serif); font-size: 1.4rem; color: var(--g300); margin-bottom: .25rem; }
+    .porteur-card .porteur-title { font-size: .85rem; color: rgba(255,255,255,.7); margin-bottom: .5rem; }
+    .porteur-card .porteur-org { font-size: .78rem; color: var(--g500); font-style: italic; }
+
+    /* ---- Article body ---- */
+    .art-body { padding: 4rem 0; }
+    .art-section { margin-bottom: 4rem; }
+    .art-section-title {
+      font-family: var(--serif); font-size: clamp(1.3rem,2.5vw,1.75rem);
+      color: var(--g900); margin-bottom: 1.25rem; padding-bottom: .75rem;
+      border-bottom: 2px solid var(--g100);
+    }
+    .art-section-sub {
+      font-size: 1.05rem; font-weight: 600; color: var(--g800); margin: 1.75rem 0 .75rem;
+    }
+    .art-text { color: var(--gray-800); line-height: 1.75; margin-bottom: 1rem; }
+    .art-bullet { margin: .6rem 0; display: flex; gap: .75rem; align-items: flex-start; font-size: .93rem; color: var(--gray-800); }
+    .art-bullet::before { content: '▸'; color: var(--g700); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+    .art-bullets { margin: .75rem 0 1.25rem; display: flex; flex-direction: column; gap: .1rem; }
+
+    /* ---- Stat inline ---- */
+    .inline-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin: 2rem 0; }
+    .istat {
+      background: var(--g100); border-radius: var(--r); padding: 1.25rem; text-align: center;
+    }
+    .istat-num { font-family: var(--serif); font-size: 1.7rem; color: var(--g800); font-weight: 700; display: block; }
+    .istat-lbl { font-size: .78rem; color: var(--gray-500); margin-top: .25rem; }
+
+    /* ---- Tables ---- */
+    .art-table-wrap { overflow-x: auto; margin: 1.5rem 0 2rem; border-radius: var(--r); box-shadow: var(--shadow-sm); }
+    table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    thead tr { background: var(--g900); color: white; }
+    thead th { padding: .85rem 1rem; text-align: left; font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+    tbody tr { border-bottom: 1px solid var(--gray-200); }
+    tbody tr:nth-child(even) { background: var(--gray-100); }
+    tbody td { padding: .75rem 1rem; vertical-align: top; color: var(--gray-800); }
+    tbody td:first-child { font-weight: 500; color: var(--g900); }
+    .td-badge {
+      display: inline-block; padding: .2rem .6rem; border-radius: 20px; font-size: .75rem; font-weight: 700;
+    }
+    .td-ok { background: #dcfce7; color: #15803d; }
+    .td-progress { background: #fef9c3; color: #854d0e; }
+    .td-planned { background: #dbeafe; color: #1d4ed8; }
+    tfoot tr { background: var(--g900); color: white; font-weight: 700; }
+    tfoot td { padding: .85rem 1rem; }
+
+    /* ---- Community cards ---- */
+    .community-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    .community-card {
+      background: white; border: 1px solid var(--gray-200); border-radius: var(--r-lg);
+      padding: 1.5rem; border-top: 4px solid var(--g700);
+    }
+    .community-card h4 { font-size: 1rem; color: var(--g900); margin-bottom: .3rem; }
+    .community-card .cc-loc { font-size: .78rem; color: var(--gray-500); margin-bottom: .75rem; }
+    .community-card dl { display: grid; grid-template-columns: auto 1fr; gap: .3rem .75rem; font-size: .82rem; }
+    .community-card dt { color: var(--gray-500); }
+    .community-card dd { color: var(--g900); font-weight: 500; }
+
+    /* ---- Phases ---- */
+    .phase-block { margin-bottom: 2rem; border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--gray-200); }
+    .phase-header {
+      display: flex; align-items: center; gap: 1.25rem; padding: 1.25rem 1.5rem;
+      background: var(--g900); color: white;
+    }
+    .phase-num {
+      width: 56px; height: 56px; border-radius: 50%; background: var(--g700);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-weight: 700; flex-shrink: 0; font-size: .75rem; line-height: 1.1;
+    }
+    .phase-num span { font-size: 1.3rem; font-family: var(--serif); }
+    .phase-title { flex: 1; }
+    .phase-title h3 { font-family: var(--serif); font-size: 1.05rem; color: var(--g300); margin-bottom: .2rem; }
+    .phase-title p { font-size: .82rem; color: rgba(255,255,255,.65); }
+    .phase-badge {
+      padding: .3rem .9rem; border-radius: 20px; font-size: .75rem; font-weight: 700;
+    }
+    .badge-done { background: #22c55e; color: white; }
+    .badge-current { background: #f59e0b; color: white; }
+    .badge-planned { background: rgba(255,255,255,.2); color: rgba(255,255,255,.8); }
+    .phase-body { padding: 1.5rem; background: white; }
+    .phase-desc { color: var(--gray-800); font-size: .92rem; margin-bottom: 1rem; line-height: 1.65; }
+    .phase-list { display: flex; flex-direction: column; gap: .45rem; }
+    .phase-list li { display: flex; gap: .65rem; font-size: .88rem; color: var(--gray-800); }
+    .phase-list li::before { content: '▸'; color: var(--g700); flex-shrink: 0; font-weight: 700; }
+
+    /* ---- Testimonial ---- */
+    .testimonial {
+      background: var(--g100); border-left: 5px solid var(--g700);
+      border-radius: 0 var(--r-lg) var(--r-lg) 0; padding: 1.75rem 2rem; margin: 2rem 0;
+    }
+    .testimonial blockquote { font-family: var(--serif); font-size: 1.05rem; color: var(--g900); font-style: italic; line-height: 1.7; margin-bottom: .75rem; }
+    .testimonial cite { font-size: .8rem; color: var(--gray-500); font-style: normal; }
+
+    /* ---- Gap financing ---- */
+    .gap-card {
+      background: linear-gradient(135deg, var(--g900) 0%, #0d4028 100%);
+      border-radius: var(--r-lg); padding: 2.5rem; color: white; margin: 2rem 0;
+    }
+    .gap-card h3 { color: var(--gold-lt); font-family: var(--serif); margin-bottom: 1rem; font-size: 1.2rem; }
+    .gap-card .art-bullet { color: rgba(255,255,255,.85); }
+    .gap-card .art-bullet::before { color: var(--g300); }
+
+    /* ---- Conclusion banner ---- */
+    .conclusion-banner {
+      background: var(--g900); border-radius: var(--r-lg); padding: 3rem; text-align: center; margin: 2.5rem 0;
+    }
+    .conclusion-banner .cb-numbers {
+      font-family: var(--serif); font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--g300); font-weight: 700; margin-bottom: 1rem; letter-spacing: .02em;
+    }
+    .conclusion-banner p { color: rgba(255,255,255,.75); font-size: .95rem; max-width: 680px; margin: 0 auto; line-height: 1.7; }
+
+    /* ---- Contact CTA ---- */
+    .art-cta {
+      background: linear-gradient(135deg, var(--g800) 0%, var(--g900) 100%);
+      border-radius: var(--r-lg); padding: 3rem; text-align: center; margin-top: 3rem;
+    }
+    .art-cta h2 { color: white; font-family: var(--serif); margin-bottom: .75rem; font-size: 1.6rem; }
+    .art-cta p { color: rgba(255,255,255,.75); margin-bottom: 1.75rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .art-cta .cta-person { color: var(--g300); font-weight: 600; margin-bottom: .25rem; }
+    .art-cta .cta-role { font-size: .85rem; color: rgba(255,255,255,.6); margin-bottom: 1.5rem; }
+    .art-cta .cta-mail { color: var(--gold-lt); font-weight: 700; font-size: 1.05rem; }
+
+    /* ---- Table of contents (sidebar) ---- */
+    .art-layout { display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: start; }
+    .art-toc {
+      position: sticky; top: 100px; background: var(--gray-100);
+      border-radius: var(--r-lg); padding: 1.5rem; font-size: .85rem;
+    }
+    .art-toc h4 { font-size: .82rem; text-transform: uppercase; letter-spacing: .1em; color: var(--gray-500); margin-bottom: 1rem; }
+    .art-toc ol { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+    .art-toc ol li a { color: var(--g800); line-height: 1.4; display: block; padding: .2rem 0; border-left: 2px solid transparent; padding-left: .5rem; transition: all .2s; }
+    .art-toc ol li a:hover { color: var(--g700); border-left-color: var(--g700); }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 900px) {
+      .art-layout { grid-template-columns: 1fr; }
+      .art-toc { display: none; }
+      .kpi-grid { grid-template-columns: repeat(2,1fr); }
+      .fiche-grid { grid-template-columns: 1fr; }
+      .community-grid { grid-template-columns: 1fr; }
+      .inline-stats { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 480px) {
+      .art-hero-content h1 { font-size: 1.6rem; }
+      .kpi-grid { grid-template-columns: repeat(2,1fr); }
+      .inline-stats { grid-template-columns: repeat(2,1fr); }
+      .phase-header { flex-direction: column; align-items: flex-start; gap: .75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-top-bar">
+    <div class="container">
+      <div class="top-items">
+        <span><img src="images/gps.png" alt="" style="width:20px;height:20px;object-fit:contain;"> Yaoundé, Cameroun — Bassin du Congo</span>
+        <a href="mailto:info@ibce-rc.org"><img src="images/lettre.png" alt="" style="width:20px;height:20px;object-fit:contain;"> info@ibce-rc.org</a>
+        <a href="tel:+237697874374"><img src="images/phone.png" alt="" style="width:20px;height:20px;object-fit:contain;"> (+237) 697 874 374 / 678 202 974</a>
+      </div>
+      <div class="top-social">
+        <a href="#" title="Facebook"><img src="images/f.png" alt="Facebook" class="social-icon"></a>
+        <a href="#" title="Instagram"><img src="images/int.png" alt="Instagram" class="social-icon"></a>
+        <a href="https://wa.me/237697874374" target="_blank" title="WhatsApp"><img src="images/wha.png" alt="WhatsApp" class="social-icon"></a>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/l.png" alt="Logo IBCE-RC" class="logo-img">
+        <div>
+          <span class="logo-name">IBCE-RC</span>
+          <span class="logo-tagline">Environnement · Résilience Climatique</span>
+        </div>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html"    class="nav-link">Accueil</a></li>
+        <li><a href="about.html"    class="nav-link">À Propos</a></li>
+        <li><a href="projects.html" class="nav-link active">Nos Projets</a></li>
+        <li><a href="gallery.html"  class="nav-link">Galerie</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
+        <li><a href="contact.html"  class="nav-link nav-cta">Nous Soutenir</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div class="page-content">
+
+<!-- ===== HERO ===== -->
+<section class="art-hero">
+  <img src="images/grand-arbre-foret.jpg" alt="Forêt tropicale dense humide — Sud Cameroun" class="art-hero-img">
+  <div class="art-hero-overlay"></div>
+  <div class="container art-hero-content">
+    <div class="breadcrumb" style="margin-bottom:1rem;">
+      <a href="index.html" style="color:rgba(255,255,255,.6);">Accueil</a>
+      <span style="color:rgba(255,255,255,.4);"> › </span>
+      <a href="projects.html" style="color:rgba(255,255,255,.6);">Nos Projets</a>
+      <span style="color:rgba(255,255,255,.4);"> › </span>
+      <span style="color:var(--g300);">Restauration Forestière</span>
+    </div>
+    <div class="art-badge">
+      <span>Projet en cours d'exécution</span>
+      <span>·</span>
+      <span>Restauration Forestière</span>
+      <span>·</span>
+      <span>Sud Cameroun</span>
+    </div>
+    <h1>Restauration des Forêts Dégradées,<br>Reboisement &amp; Réhabilitation Écologique</h1>
+    <div class="art-meta-grid">
+      <div class="art-meta-item">
+        <strong>Région</strong>
+        Dpt. Mvila &amp; Océan — Cameroun
+      </div>
+      <div class="art-meta-item">
+        <strong>Durée totale</strong>
+        5 ans (Jan. 2023 – Déc. 2027)
+      </div>
+      <div class="art-meta-item">
+        <strong>Référence</strong>
+        IBCE-RC/PRJ-RF-SC/2023-007
+      </div>
+      <div class="art-meta-item">
+        <strong>Statut</strong>
+        <span class="art-status">EN COURS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KPI BAND ===== -->
+<div class="kpi-band">
+  <div class="container">
+    <div class="kpi-grid">
+      <div class="kpi-item">
+        <span class="kpi-num">45 000</span>
+        <span class="kpi-unit">hectares</span>
+        <span class="kpi-lbl">Surface cible de restauration</span>
+      </div>
+      <div class="kpi-item">
+        <span class="kpi-num">18 200</span>
+        <span class="kpi-unit">ha restaurés</span>
+        <span class="kpi-lbl">Superficie réhabilitée à ce jour</span>
+      </div>
+      <div class="kpi-item">
+        <span class="kpi-num">28</span>
+        <span class="kpi-unit">communautés</span>
+        <span class="kpi-lbl">Localités engagées</span>
+      </div>
+      <div class="kpi-item">
+        <span class="kpi-num">12 500</span>
+        <span class="kpi-unit">ménages</span>
+        <span class="kpi-lbl">Bénéficiaires directs</span>
+      </div>
+      <div class="kpi-item">
+        <span class="kpi-num">2,1 M</span>
+        <span class="kpi-unit">plants</span>
+        <span class="kpi-lbl">Plants produits en pépinières</span>
+      </div>
+      <div class="kpi-item">
+        <span class="kpi-num">3,2</span>
+        <span class="kpi-unit">MtCO₂</span>
+        <span class="kpi-lbl">Séquestration carbone projetée</span>
+      </div>
+      <div class="kpi-item">
+        <span class="kpi-num">320</span>
+        <span class="kpi-unit">espèces</span>
+        <span class="kpi-lbl">Essences autochtones utilisées</span>
+      </div>
+      <div class="kpi-item">
+        <span class="kpi-num">40 %</span>
+        <span class="kpi-unit">progression</span>
+        <span class="kpi-lbl">Taux de réalisation global</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FICHE + PORTEUR ===== -->
+<section class="section section-alt" style="padding:3.5rem 0;">
+  <div class="container">
+    <div class="fiche-grid">
+      <div>
+        <span class="section-label">Fiche d'Identification</span>
+        <div class="fiche-card" style="margin-top:1rem;">
+          <h3>Données du Projet</h3>
+          <dl style="display:flex;flex-direction:column;gap:.5rem;">
+            <div class="fiche-row"><dt>Référence</dt><dd>IBCE-RC/PRJ-RF-SC/2023-007</dd></div>
+            <div class="fiche-row"><dt>Pays</dt><dd>République du Cameroun</dd></div>
+            <div class="fiche-row"><dt>Région</dt><dd>Sud (Dpt. Mvila &amp; Océan)</dd></div>
+            <div class="fiche-row"><dt>Secteur</dt><dd>Environnement / Foresterie / Communautés</dd></div>
+            <div class="fiche-row"><dt>Début exécution</dt><dd>Janvier 2023</dd></div>
+            <div class="fiche-row"><dt>Fin prévue</dt><dd>Décembre 2027</dd></div>
+            <div class="fiche-row"><dt>Budget total</dt><dd>17,8 millions USD (82 % confirmé)</dd></div>
+            <div class="fiche-row"><dt>Contact</dt><dd><a href="mailto:info@ibce-rc.org" style="color:var(--g700);">info@ibce-rc.org</a></dd></div>
+          </dl>
+        </div>
+      </div>
+      <div>
+        <span class="section-label">Porteur du Projet</span>
+        <div class="porteur-card" style="margin-top:1rem;">
+          <div class="porteur-name">ELLA NTYAM Steve</div>
+          <div class="porteur-title">Physicien de l'Environnement<br>Directeur, IBCE-RC</div>
+          <div class="porteur-org" style="margin-top:.75rem;">Institut du Bassin du Congo pour l'Environnement et la Résilience Climatique</div>
+          <div style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.1);">
+            <a href="mailto:info@ibce-rc.org" style="color:var(--gold-lt);font-size:.88rem;">info@ibce-rc.org</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ARTICLE BODY ===== -->
+<div class="art-body">
+  <div class="container">
+    <div class="art-layout">
+
+      <!-- ===== MAIN CONTENT ===== -->
+      <main>
+
+        <!-- RÉSUMÉ EXÉCUTIF -->
+        <div class="art-section" id="resume">
+          <h2 class="art-section-title">Résumé Exécutif</h2>
+          <p class="art-text">La Région du Sud Cameroun, corridor de la forêt tropicale dense humide du bassin du Congo, fait face à une déforestation galopante atteignant <strong>85 000 ha par an</strong> dans les départements de la Mvila et de l'Océan. Les principaux moteurs en sont l'agriculture itinérante sur brûlis, l'exploitation forestière incontrôlée, la collecte de bois-énergie et la conversion des terres pour les cultures pérennes d'export (cacao, huile de palme). Cette pression, exercée sur un massif forestier abritant plus de <strong>9 000 espèces végétales</strong> et constituant un réservoir carbone estimé à 2,8 PgC, représente une menace grave pour la résilience climatique régionale et le bien-être des communautés riveraines.</p>
+          <p class="art-text">En réponse à cette urgence, l'IBCE-RC a lancé en janvier 2023 le <strong>Projet de Restauration des Forêts Dégradées, de Reboisement et de Réhabilitation Écologique des Zones Déforestées dans la Région du Sud Cameroun</strong>. Ce projet quinquennal (2023–2027), actuellement en cours d'exécution, place les communautés locales — agriculteurs, femmes transformatrices, jeunes ruraux, organisations paysannes — au cœur de son dispositif, en combinant approches scientifiques de restauration écologique et savoirs traditionnels locaux.</p>
+          <div style="background:var(--g100);border-left:5px solid var(--g700);border-radius:0 var(--r) var(--r) 0;padding:1.25rem 1.5rem;margin:1.5rem 0;">
+            <p style="color:var(--g900);font-weight:600;font-size:.95rem;">Objectif central : Restaurer <strong>45 000 hectares</strong> de forêts dégradées et déforestées, séquestrer <strong>3,2 MtCO₂</strong> sur cinq ans, et améliorer durablement les moyens de vie de <strong>12 500 ménages ruraux</strong> dans 28 communautés d'intervention.</p>
+          </div>
+        </div>
+
+        <!-- 1. CONTEXTE -->
+        <div class="art-section" id="contexte">
+          <h2 class="art-section-title">1. Contexte et Justification du Projet</h2>
+
+          <h3 class="art-section-sub">1.1 Situation forestière de la Région du Sud Cameroun</h3>
+          <p class="art-text">La Région du Sud Cameroun, avec ses quelque <strong>5,2 millions d'hectares</strong> de forêts tropicales denses humides, représente l'une des zones de biodiversité les plus remarquables d'Afrique centrale. Les départements de la Mvila (chef-lieu Ebolowa) et de l'Océan (chef-lieu Kribi) constituent un continuum forestier avec le massif du Congo, abritant des espèces emblématiques — gorilles de plaine, chimpanzés, éléphants de forêt — et des communautés autochtones Baka dont les pratiques de vie sont intrinsèquement liées à l'intégrité des écosystèmes forestiers.</p>
+          <p class="art-text">Les données satellitaires traitées par l'IBCE-RC pour la période 2000–2023 indiquent une <strong>perte forestière nette cumulée de 1,85 million d'hectares</strong> dans la région, soit une réduction de 35,6 % du couvert forestier initial. L'analyse spatiotemporelle révèle cinq catégories de pressions, par ordre d'importance décroissante :</p>
+          <div class="art-bullets">
+            <div class="art-bullet">Agriculture de subsistance sur abattis-brûlis (41 % des pertes)</div>
+            <div class="art-bullet">Plantations industrielles de cacao et d'huile de palme (24 %)</div>
+            <div class="art-bullet">Exploitation forestière légale et illégale (19 %)</div>
+            <div class="art-bullet">Collecte de bois-énergie (10 %)</div>
+            <div class="art-bullet">Expansion des zones d'habitat (6 %)</div>
+          </div>
+
+          <h3 class="art-section-sub">1.2 Impacts sur les communautés et le climat</h3>
+          <p class="art-text">La déforestation a entraîné une réduction de <strong>28 %</strong> des débits de base des rivières locales, affectant directement les systèmes d'approvisionnement en eau potable de 340 villages. Les rendements agricoles dans les zones déboisées ont chuté de <strong>35 % en moyenne</strong> sur la dernière décennie. Du point de vue climatique, les forêts dégradées de la région émettent désormais <strong>4,8 MtCO₂/an</strong>, contre une séquestration nette potentielle de 8,2 MtCO₂/an si le couvert forestier était maintenu à son niveau de 2000.</p>
+
+          <h3 class="art-section-sub">1.3 Cadre stratégique et légal</h3>
+          <div class="art-bullets">
+            <div class="art-bullet">Stratégie Nationale REDD+ du Cameroun (révisée 2022) — objectif : restauration de 12 Mha à l'horizon 2030</div>
+            <div class="art-bullet">Initiative AFR100 (African Forest Landscape Restoration Initiative)</div>
+            <div class="art-bullet">Contribution Déterminée au niveau National (CDN) du Cameroun révisée 2021 — réduction de 35 % des GES à l'horizon 2030</div>
+            <div class="art-bullet">Loi forestière camerounaise N° 94/01 du 20 janvier 1994 et décret d'application N° 95/531/PM</div>
+          </div>
+        </div>
+
+        <!-- 2. OBJECTIFS -->
+        <div class="art-section" id="objectifs">
+          <h2 class="art-section-title">2. Objectifs du Projet</h2>
+
+          <h3 class="art-section-sub">Objectif général</h3>
+          <p class="art-text">Contribuer à la conservation de la biodiversité forestière et à l'atténuation des changements climatiques dans la Région du Sud Cameroun en restaurant et réhabilitant <strong>45 000 hectares</strong> de forêts dégradées, en renforçant la résilience écologique des paysages forestiers et en améliorant durablement les moyens de vie de <strong>12 500 ménages ruraux</strong> à travers l'engagement actif et la valorisation des savoirs des communautés locales.</p>
+
+          <h3 class="art-section-sub">Objectifs spécifiques</h3>
+          <div class="art-bullets" style="gap:.75rem;">
+            <div class="art-bullet"><span><strong>OS 1 — Restauration écologique active :</strong> Replanter et régénérer naturellement 45 000 ha en utilisant des espèces autochtones et des techniques adaptées aux conditions pédoclimatiques locales.</span></div>
+            <div class="art-bullet"><span><strong>OS 2 — Engagement communautaire :</strong> Former et organiser 2 500 acteurs communautaires pour assurer la mise en œuvre participative et la gouvernance durable des zones restaurées.</span></div>
+            <div class="art-bullet"><span><strong>OS 3 — Moyens de subsistance :</strong> Développer des systèmes agroforestiers permettant d'accroître les revenus des ménages de 40 % en moyenne.</span></div>
+            <div class="art-bullet"><span><strong>OS 4 — Séquestration carbone :</strong> Générer et certifier 3,2 MtCO₂ de crédits carbone forestiers sur cinq ans, contribuant aux objectifs REDD+ du Cameroun.</span></div>
+            <div class="art-bullet"><span><strong>OS 5 — Monitoring et durabilité :</strong> Mettre en place un système de monitoring écologique participatif assurant le suivi continu des indicateurs de restauration, de biodiversité et de carbone.</span></div>
+          </div>
+        </div>
+
+        <!-- 3. ZONE D'INTERVENTION -->
+        <div class="art-section" id="zone">
+          <h2 class="art-section-title">3. Zone d'Intervention et Communautés Cibles</h2>
+
+          <h3 class="art-section-sub">3.1 Présentation géographique</h3>
+          <p class="art-text">La zone d'intervention couvre les départements de la <strong>Mvila</strong> (arrondissements d'Ebolowa I &amp; II, Biwong-Bané, Mengong, Mvangan et Ngoulemakong) et de <strong>l'Océan</strong> (arrondissements de Kribi I &amp; II, Lokoundjé, Bipindi et Campo). Cette zone correspond au corridor forestier de transition entre le massif du Campo-Ma'an et le massif du Dja, deux réserves de biosphère de l'UNESCO.</p>
+
+          <h3 class="art-section-sub">3.2 Communautés locales engagées</h3>
+          <p class="art-text">Le projet implique directement <strong>28 communautés locales</strong>, regroupant des populations Beti (Bulu, Fang, Ewondo), Baka (peuples autochtones de la forêt) et populations migrantes. La consultation préalable, libre et éclairée (CPLE) menée en 2022 a permis de cartographier les territoires communautaires et de recueillir les consentements formels.</p>
+
+          <div class="community-grid">
+            <div class="community-card">
+              <h4>Communauté de Biwong-Bané</h4>
+              <div class="cc-loc">Arrondissement de Biwong-Bané, Mvila</div>
+              <dl>
+                <dt>Ménages engagés</dt><dd>380 ménages</dd>
+                <dt>Superficie ciblée</dt><dd>4 200 ha</dd>
+                <dt>Essences prioritaires</dt><dd>Ayous, Iroko, Moabi, Padouk</dd>
+                <dt>Statut</dt><dd><span class="td-badge td-progress">Phase II active</span></dd>
+              </dl>
+            </div>
+            <div class="community-card">
+              <h4>Communauté de Bipindi</h4>
+              <div class="cc-loc">Arrondissement de Bipindi, Océan</div>
+              <dl>
+                <dt>Ménages engagés</dt><dd>290 ménages</dd>
+                <dt>Superficie ciblée</dt><dd>3 800 ha</dd>
+                <dt>Essences prioritaires</dt><dd>Fraké, Sapelli, Tali, Doussié</dd>
+                <dt>Statut</dt><dd><span class="td-badge td-progress">Phase II active</span></dd>
+              </dl>
+            </div>
+            <div class="community-card">
+              <h4>Communauté Baka de Campo</h4>
+              <div class="cc-loc">Arrondissement de Campo, Océan</div>
+              <dl>
+                <dt>Ménages engagés</dt><dd>145 ménages — Baka</dd>
+                <dt>Superficie ciblée</dt><dd>2 600 ha, zone critique</dd>
+                <dt>Essences prioritaires</dt><dd>Mbanga, Moabi, fruits sauvages</dd>
+                <dt>Statut</dt><dd><span class="td-badge td-ok">Phase I achevée</span></dd>
+              </dl>
+            </div>
+            <div class="community-card">
+              <h4>Groupement de Ngoulemakong</h4>
+              <div class="cc-loc">Arrondissement de Ngoulemakong, Mvila</div>
+              <dl>
+                <dt>Ménages engagés</dt><dd>420 ménages</dd>
+                <dt>Superficie ciblée</dt><dd>5 100 ha</dd>
+                <dt>Essences prioritaires</dt><dd>Azobé, Sipo, Longhi, Okoumé</dd>
+                <dt>Statut</dt><dd><span class="td-badge td-ok">Phase I achevée</span></dd>
+              </dl>
+            </div>
+          </div>
+
+          <h3 class="art-section-sub">Tableau 1 — Répartition des zones d'intervention par département</h3>
+          <div class="art-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Arrondissement</th>
+                  <th>Département</th>
+                  <th>Superficie dégradée (ha)</th>
+                  <th>Superficie à restaurer (ha)</th>
+                  <th>Nb. communautés</th>
+                  <th>Statut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Ebolowa I &amp; II</td><td>Mvila</td><td>12 400</td><td>8 000</td><td>5</td><td><span class="td-badge td-progress">Phase II</span></td></tr>
+                <tr><td>Biwong-Bané</td><td>Mvila</td><td>8 200</td><td>6 200</td><td>4</td><td><span class="td-badge td-progress">Phase II</span></td></tr>
+                <tr><td>Mengong</td><td>Mvila</td><td>6 800</td><td>5 000</td><td>3</td><td><span class="td-badge td-progress">Phase I</span></td></tr>
+                <tr><td>Mvangan</td><td>Mvila</td><td>5 400</td><td>4 000</td><td>3</td><td><span class="td-badge td-progress">Phase II</span></td></tr>
+                <tr><td>Ngoulemakong</td><td>Mvila</td><td>9 100</td><td>7 200</td><td>4</td><td><span class="td-badge td-progress">Phase II</span></td></tr>
+                <tr><td>Kribi I &amp; II</td><td>Océan</td><td>7 800</td><td>5 500</td><td>3</td><td><span class="td-badge td-progress">Phase II</span></td></tr>
+                <tr><td>Bipindi</td><td>Océan</td><td>6 600</td><td>4 800</td><td>3</td><td><span class="td-badge td-progress">Phase II</span></td></tr>
+                <tr><td>Lokoundjé</td><td>Océan</td><td>4 800</td><td>3 300</td><td>2</td><td><span class="td-badge td-progress">Phase I</span></td></tr>
+                <tr><td>Campo</td><td>Océan</td><td>3 400</td><td>3 000</td><td>3</td><td><span class="td-badge td-ok">Transition II</span></td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td>TOTAL</td><td>—</td><td>64 500</td><td>47 000</td><td>30</td><td>—</td></tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <!-- 4. MÉTHODOLOGIE -->
+        <div class="art-section" id="methode">
+          <h2 class="art-section-title">4. Approche Méthodologique et Technique</h2>
+
+          <h3 class="art-section-sub">4.1 Principes directeurs</h3>
+          <div class="art-bullets" style="gap:.75rem;">
+            <div class="art-bullet"><span><strong>Restauration basée sur les processus naturels :</strong> Priorité à la Régénération Naturelle Assistée (RNA) et à la plantation avec des espèces autochtones adaptées.</span></div>
+            <div class="art-bullet"><span><strong>Participation communautaire pleine et effective :</strong> Chaque communauté dispose d'un Comité Villageois de Restauration Forestière (CVRF) légalement constitué.</span></div>
+            <div class="art-bullet"><span><strong>Valorisation des savoirs écologiques locaux (SEL) :</strong> Les savoirs botaniques Beti et Baka sont documentés et intégrés dans les plans de restauration.</span></div>
+            <div class="art-bullet"><span><strong>Intégration agroforestière :</strong> Cacaoyers sous ombrage, jardins à pharmacopée, arbres fruitiers locaux — pour des revenus durables aux ménages.</span></div>
+            <div class="art-bullet"><span><strong>Approche paysagère :</strong> Planification à l'échelle du paysage pour maximiser la connectivité entre fragments forestiers et optimiser les fonctions hydrologiques.</span></div>
+            <div class="art-bullet"><span><strong>Transparence carbone :</strong> 60 % des revenus carbone pour les communautés, 20 % pour le fonds de maintenance, 20 % pour IBCE-RC.</span></div>
+          </div>
+
+          <h3 class="art-section-sub">4.2 Techniques de restauration par niveau de dégradation</h3>
+          <div class="art-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Niveau dégradation</th>
+                  <th>Superficie</th>
+                  <th>Technique principale</th>
+                  <th>Essences utilisées</th>
+                  <th>Densité plantation</th>
+                  <th>Taux survie cible</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Faible (RNA possible)</td><td>18 500 ha</td><td>Régénération Naturelle Assistée (RNA)</td><td>Espèces pionnières locales</td><td>Régénération naturelle guidée</td><td>75 %</td></tr>
+                <tr><td>Modéré (appui requis)</td><td>14 200 ha</td><td>RNA + plantation en trouées</td><td>Moabi, Ayous, Padouk, Fraké</td><td>300–400 arbres/ha</td><td>70 %</td></tr>
+                <tr><td>Élevé (plantation dense)</td><td>8 800 ha</td><td>Plantation à haute densité</td><td>Doussié, Sapelli, Iroko, Tali</td><td>500–600 arbres/ha</td><td>65 %</td></tr>
+                <tr><td>Très élevé (réhabilitation)</td><td>3 500 ha</td><td>Réhabilitation intensive + agroforesterie</td><td>Cacaoyer, Avocatier, Moabi, fruits</td><td>Système multicouche</td><td>60 %</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="art-section-sub">4.3 Réseau des pépinières communautaires</h3>
+          <p class="art-text">Le projet a établi un réseau de <strong>14 pépinières communautaires décentralisées</strong>, avec une capacité de production totale de 2,5 millions de plants par cycle. Chaque pépinière est gérée par un groupement de 15 à 25 femmes formées aux techniques de production de plants forestiers.</p>
+          <div class="art-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Pépinière</th>
+                  <th>Localisation</th>
+                  <th>Capacité (plants/cycle)</th>
+                  <th>Plants produits (2023-24)</th>
+                  <th>Gestionnaire</th>
+                  <th>Statut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Pépinière Biwong-Bané</td><td>Biwong-Bané, Mvila</td><td>180 000</td><td>312 000</td><td>Ass. Femmes Forêt Mvila</td><td><span class="td-badge td-ok">Opérationnelle</span></td></tr>
+                <tr><td>Pépinière Bipindi Nord</td><td>Bipindi, Océan</td><td>160 000</td><td>288 000</td><td>GIC Reboisement Océan</td><td><span class="td-badge td-ok">Opérationnelle</span></td></tr>
+                <tr><td>Pépinière Campo-Ma'an</td><td>Campo, Océan</td><td>120 000</td><td>198 000</td><td>Groupement Baka Forêt</td><td><span class="td-badge td-ok">Opérationnelle</span></td></tr>
+                <tr><td>Pépinière Ngoulemakong</td><td>Ngoulemakong, Mvila</td><td>200 000</td><td>356 000</td><td>Coopérative Vert Avenir</td><td><span class="td-badge td-ok">Opérationnelle</span></td></tr>
+                <tr><td>Pépinière Mengong</td><td>Mengong, Mvila</td><td>140 000</td><td>220 000</td><td>Union Paysans Mvila</td><td><span class="td-badge td-ok">Opérationnelle</span></td></tr>
+                <tr><td>Pépinière Kribi</td><td>Kribi, Océan</td><td>150 000</td><td>242 000</td><td>Ass. Jeunes Reboiseurs</td><td><span class="td-badge td-ok">Opérationnelle</span></td></tr>
+                <tr><td>8 autres pépinières</td><td>Divers arrondissements</td><td>1 050 000</td><td>1 684 000</td><td>Groupements locaux</td><td><span class="td-badge td-ok">Opérationnelles</span></td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td>TOTAL RÉSEAU</td><td>—</td><td>2 000 000</td><td>3 300 000</td><td>14 groupements</td><td>100 % opérationnel</td></tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <!-- 5. PHASES -->
+        <div class="art-section" id="phases">
+          <h2 class="art-section-title">5. Plan de Mise en Œuvre — Phases d'Exécution</h2>
+          <p class="art-text" style="margin-bottom:2rem;">Le projet est structuré en cinq phases d'exécution annuelles. L'état d'avancement présenté correspond à la situation au 31 mars 2025.</p>
+
+          <div class="phase-block">
+            <div class="phase-header">
+              <div class="phase-num"><span>I</span>Jan–Déc 2023</div>
+              <div class="phase-title">
+                <h3>Préparation, diagnostics et mobilisation communautaire</h3>
+                <p>Pose des fondements scientifiques, institutionnels et communautaires du projet</p>
+              </div>
+              <span class="phase-badge badge-done">ACHEVÉE — 100 %</span>
+            </div>
+            <div class="phase-body">
+              <ul class="phase-list">
+                <li>Cartographie fine des zones dégradées à 10 m de résolution (18 340 ha diagnostiqués dans les 10 arrondissements)</li>
+                <li>Constitution et formation des 28 Comités Villageois de Restauration Forestière (CVRF)</li>
+                <li>Réalisation des consultations préalables libres et éclairées (CPLE) dans 28 localités</li>
+                <li>Établissement de 612 placettes permanentes de monitoring écologique</li>
+                <li>Lancement des 14 pépinières communautaires et formation de 312 femmes-pépiniéristes</li>
+                <li>Signature des accords de partenariat avec 28 chefferies traditionnelles et 6 associations paysannes</li>
+                <li>Mise en place du système de monitoring carbone (baseline : 2,1 tCO₂/ha/an moyen)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="phase-block">
+            <div class="phase-header">
+              <div class="phase-num"><span>II</span>Jan–Déc 2024</div>
+              <div class="phase-title">
+                <h3>Restauration active — secteurs prioritaires haute valeur</h3>
+                <p>Premières opérations massives de plantation et de RNA sur les 18 zones prioritaires</p>
+              </div>
+              <span class="phase-badge badge-done">ACHEVÉE — 100 %</span>
+            </div>
+            <div class="phase-body">
+              <ul class="phase-list">
+                <li>Plantation de 7 800 ha par RNA assistée dans les zones à dégradation faible à modérée</li>
+                <li>Plantation intensive de 3 200 ha dans les zones à dégradation élevée (1,6 M plants mis en terre)</li>
+                <li>Taux de survie moyen des plantations : <strong>71,4 %</strong> (objectif : 68 %) — résultat supérieur aux prévisions</li>
+                <li>Formation de 840 agriculteurs aux techniques d'agroforesterie et de gestion forestière communautaire</li>
+                <li>Création de 6 nouveaux pare-feux stratégiques totalisant 180 km linéaires</li>
+                <li>Soumission du premier Rapport de Surveillance Carbone (Verra VCS) : <strong>0,54 MtCO₂ certifiée</strong></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="phase-block">
+            <div class="phase-header">
+              <div class="phase-num"><span>III</span>Jan–Déc 2025</div>
+              <div class="phase-title">
+                <h3>Extension et consolidation — reboisement à grande échelle</h3>
+                <p>Extension aux 12 zones secondaires, consolidation des résultats des phases précédentes</p>
+              </div>
+              <span class="phase-badge badge-current">EN COURS — 40 %</span>
+            </div>
+            <div class="phase-body">
+              <ul class="phase-list">
+                <li>Objectif : planter 12 000 ha supplémentaires (6 000 ha RNA + 4 000 ha plantation + 2 000 ha agroforesterie)</li>
+                <li>Réalisé au 31/03/2025 : <strong>4 800 ha plantés</strong> (40 % de l'objectif annuel), saison principale avril-juin 2025 en préparation</li>
+                <li>Production de 900 000 plants en cours pour la saison principale</li>
+                <li>Formation de 420 nouveaux acteurs communautaires (jeunes, femmes des zones d'extension)</li>
+                <li>Déploiement de 18 agents communautaires de monitoring formés aux outils GPS et tablettes</li>
+                <li>Préparation du 2ème Rapport de Surveillance Carbone : objectif 1,1 MtCO₂ certifiée cumulée</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="phase-block">
+            <div class="phase-header">
+              <div class="phase-num"><span>IV</span>Jan–Déc 2026</div>
+              <div class="phase-title">
+                <h3>Valorisation, certifications et transfert de gestion</h3>
+                <p>Certification formelle des crédits carbone, valorisation des filières PFNL</p>
+              </div>
+              <span class="phase-badge badge-planned">PLANIFIÉE</span>
+            </div>
+            <div class="phase-body">
+              <ul class="phase-list">
+                <li>Certification Verra VCS + CCBS pour l'ensemble des zones restaurées (objectif : 2,1 MtCO₂ certifiée cumulée)</li>
+                <li>Mise en marché des premiers crédits carbone communautaires (revenus estimés : <strong>4,2 M USD pour les communautés</strong>)</li>
+                <li>Structuration de 12 coopératives forestières communautaires et appui à leur enregistrement légal</li>
+                <li>Développement des filières PFNL : Moabi (huile cosmétique), Gnetum (légume), miel, plantes médicinales</li>
+                <li>Transfert de gestion progressive (50 % des zones en gestion autonome)</li>
+                <li>Mise en place d'un fonds fiduciaire communautaire alimenté par les revenus carbone</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="phase-block">
+            <div class="phase-header">
+              <div class="phase-num"><span>V</span>Jan–Déc 2027</div>
+              <div class="phase-title">
+                <h3>Capitalisation, pérennisation et réplication</h3>
+                <p>Consolidation de la pérennité des résultats, passage à l'échelle régionale</p>
+              </div>
+              <span class="phase-badge badge-planned">PLANIFIÉE</span>
+            </div>
+            <div class="phase-body">
+              <ul class="phase-list">
+                <li>Atteinte de l'objectif de 45 000 ha restaurés et certification finale (3,2 MtCO₂ cumulée)</li>
+                <li>Transfert complet de la gestion des zones restaurées aux 28 CVRF</li>
+                <li>Production du rapport de capitalisation : leçons apprises, guide méthodologique de réplication</li>
+                <li>Développement d'un projet de 2ème phase couvrant 80 000 ha supplémentaires dans les régions Centre et Est</li>
+                <li>Organisation d'un forum régional de partage d'expérience avec les États du bassin du Congo</li>
+                <li>Évaluation finale externe et publication des résultats dans des revues scientifiques à comité de lecture</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. RÉSULTATS -->
+        <div class="art-section" id="resultats">
+          <h2 class="art-section-title">6. Résultats Atteints et État d'Avancement</h2>
+
+          <h3 class="art-section-sub">6.1 Résultats écologiques</h3>
+          <p class="art-text">Les résultats écologiques obtenus à mi-parcours du projet (fin 2024) dépassent les prévisions initiales sur plusieurs indicateurs clés. Le taux de survie moyen des plantations (71,4 %) excède de 3,4 points l'objectif contractuel de 68 %, témoignant de la qualité des techniques appliquées et de l'implication des communautés.</p>
+          <div class="art-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Indicateur</th>
+                  <th>Cible 2 ans</th>
+                  <th>Résultat atteint</th>
+                  <th>Taux de réalisation</th>
+                  <th>Évaluation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Superficie restaurée (ha)</td><td>18 000</td><td>18 200</td><td>101,1 %</td><td><span class="td-badge td-ok">Dépassé</span></td></tr>
+                <tr><td>Taux de survie moyen plantations</td><td>68 %</td><td>71,4 %</td><td>+3,4 pts</td><td><span class="td-badge td-ok">Dépassé</span></td></tr>
+                <tr><td>Plants produits en pépinières</td><td>2 000 000</td><td>2 100 000</td><td>105 %</td><td><span class="td-badge td-ok">Dépassé</span></td></tr>
+                <tr><td>Espèces autochtones utilisées</td><td>280</td><td>320 espèces</td><td>114,3 %</td><td><span class="td-badge td-ok">Dépassé</span></td></tr>
+                <tr><td>Km de corridors forestiers créés</td><td>120 km</td><td>138 km</td><td>115 %</td><td><span class="td-badge td-ok">Dépassé</span></td></tr>
+                <tr><td>Bassins versants protégés</td><td>12</td><td>14</td><td>116,7 %</td><td><span class="td-badge td-ok">Dépassé</span></td></tr>
+                <tr><td>CO₂ séquestré certifié</td><td>0,8 MtCO₂</td><td>0,54 MtCO₂</td><td>67,5 %</td><td><span class="td-badge td-planned">En vérification</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="art-section-sub">6.2 Résultats sociaux et économiques</h3>
+          <div class="inline-stats">
+            <div class="istat">
+              <span class="istat-num">2 500</span>
+              <span class="istat-lbl">Acteurs formés en techniques forestières &amp; agroforesterie</span>
+            </div>
+            <div class="istat">
+              <span class="istat-num">+ 28 %</span>
+              <span class="istat-lbl">Augmentation moyenne des revenus des ménages depuis 2023</span>
+            </div>
+            <div class="istat">
+              <span class="istat-num">312</span>
+              <span class="istat-lbl">Femmes employées dans les pépinières communautaires</span>
+            </div>
+            <div class="istat">
+              <span class="istat-num">840</span>
+              <span class="istat-lbl">Emplois directs créés dans les communautés</span>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <blockquote>« Avant le projet, je ne gagnais rien de la forêt, j'avais même abandonné mes champs à cause de la pauvreté des sols. Aujourd'hui, ma pépinière produit 8 000 plants par mois, mon jardin agroforestier commence à donner des revenus, et mes enfants mangent mieux. La forêt n'est plus un problème, elle est devenue notre avenir. »</blockquote>
+            <cite>— Marie-Claire Ondoua, responsable de pépinière, Biwong-Bané (Mvila) — Enquête mi-parcours, février 2025</cite>
+          </div>
+        </div>
+
+        <!-- 7. GOUVERNANCE -->
+        <div class="art-section" id="gouvernance">
+          <h2 class="art-section-title">7. Gouvernance du Projet et Parties Prenantes</h2>
+
+          <div class="art-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Instance</th>
+                  <th>Composition</th>
+                  <th>Fréquence</th>
+                  <th>Attributions principales</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Comité de Pilotage (COPIL)</td><td>IBCE-RC, MINFOF, Gouvernorat, Délégations régionales, représentants CVRF</td><td>Trimestrielle</td><td>Orientations stratégiques, approbation rapports, arbitrage</td></tr>
+                <tr><td>Comité Technique (COTECH)</td><td>Équipe IBCE-RC, experts forestiers, ONG partenaires, chercheurs</td><td>Mensuelle</td><td>Supervision technique, validation protocoles</td></tr>
+                <tr><td>CVRF (28 comités)</td><td>Chefferies, agriculteurs, femmes, jeunes, représentants Baka</td><td>Bi-mensuelle</td><td>Gestion locale, surveillance, entretien zones restaurées</td></tr>
+                <tr><td>Comité Carbone</td><td>IBCE-RC, vérificateur Verra, représentants communautaires</td><td>Semestrielle</td><td>Validation mesures, préparation rapports de surveillance</td></tr>
+                <tr><td>Commission Genre</td><td>Représentantes femmes, CVRF, référent genre IBCE-RC</td><td>Mensuelle</td><td>Suivi inclusivité, équité genre, filières économiques femmes</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="art-section-sub">7.2 Partenariats institutionnels</h3>
+          <div class="art-bullets" style="gap:.6rem;">
+            <div class="art-bullet"><span><strong>Ministère des Forêts et de la Faune (MINFOF) :</strong> Tutelle institutionnelle, autorisation de reboisement, coordination REDD+</span></div>
+            <div class="art-bullet"><span><strong>Université de Yaoundé I :</strong> Appui scientifique, identification botanique, suivi de la biodiversité</span></div>
+            <div class="art-bullet"><span><strong>REPALEAC :</strong> Représentation et protection des droits des communautés Baka</span></div>
+            <div class="art-bullet"><span><strong>Programme ONU-REDD Cameroun :</strong> Appui méthodologique MRV, formation certification carbone</span></div>
+            <div class="art-bullet"><span><strong>WWF-Cameroun &amp; WCS :</strong> Appui biodiversité, protection de la faune dans les corridors restaurés</span></div>
+            <div class="art-bullet"><span><strong>Verra (Verified Carbon Standard) :</strong> Certification des crédits carbone forestiers</span></div>
+          </div>
+        </div>
+
+        <!-- 8. BUDGET -->
+        <div class="art-section" id="budget">
+          <h2 class="art-section-title">8. Budget et Plan de Financement</h2>
+
+          <h3 class="art-section-sub">Tableau 6 — Budget global du projet (en USD)</h3>
+          <div class="art-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Composante</th>
+                  <th>Phase I (2023)</th>
+                  <th>Phase II (2024)</th>
+                  <th>Phase III (2025)</th>
+                  <th>Phase IV-V (2026-27)</th>
+                  <th>TOTAL (USD)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Diagnostics &amp; SIG</td><td>280 000</td><td>180 000</td><td>140 000</td><td>120 000</td><td>720 000</td></tr>
+                <tr><td>Pépinières &amp; plants</td><td>420 000</td><td>680 000</td><td>740 000</td><td>560 000</td><td>2 400 000</td></tr>
+                <tr><td>Opérations de plantation</td><td>620 000</td><td>1 840 000</td><td>2 100 000</td><td>1 940 000</td><td>6 500 000</td></tr>
+                <tr><td>RNA &amp; entretien</td><td>310 000</td><td>720 000</td><td>840 000</td><td>1 200 000</td><td>3 070 000</td></tr>
+                <tr><td>Formation communautaire</td><td>380 000</td><td>460 000</td><td>420 000</td><td>340 000</td><td>1 600 000</td></tr>
+                <tr><td>Monitoring &amp; carbone</td><td>290 000</td><td>380 000</td><td>440 000</td><td>590 000</td><td>1 700 000</td></tr>
+                <tr><td>Gouvernance &amp; coordination</td><td>240 000</td><td>260 000</td><td>280 000</td><td>480 000</td><td>1 260 000</td></tr>
+                <tr><td>Communication &amp; capitalisation</td><td>80 000</td><td>100 000</td><td>120 000</td><td>250 000</td><td>550 000</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td>TOTAL ANNUEL</td><td>2 620 000</td><td>4 620 000</td><td>5 080 000</td><td>5 480 000</td><td>17 800 000</td></tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <h3 class="art-section-sub">Tableau 7 — Sources de financement mobilisées</h3>
+          <div class="art-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Bailleur / Source</th>
+                  <th>Montant (USD)</th>
+                  <th>Pourcentage</th>
+                  <th>Nature</th>
+                  <th>Statut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Fonds Vert pour le Climat (FVC)</td><td>7 200 000</td><td>40,4 %</td><td>Subvention</td><td><span class="td-badge td-ok">Confirmé</span></td></tr>
+                <tr><td>Fonds pour l'Environnement Mondial (FEM)</td><td>2 800 000</td><td>15,7 %</td><td>Subvention</td><td><span class="td-badge td-ok">Confirmé</span></td></tr>
+                <tr><td>Programme ONU-REDD</td><td>1 600 000</td><td>9,0 %</td><td>Appui technique+finance</td><td><span class="td-badge td-ok">Confirmé</span></td></tr>
+                <tr><td>Gouvernement du Cameroun</td><td>1 400 000</td><td>7,9 %</td><td>Contrepartie en nature+cash</td><td><span class="td-badge td-ok">Confirmé</span></td></tr>
+                <tr><td>IBCE-RC (fonds propres)</td><td>800 000</td><td>4,5 %</td><td>Fonds propres institutionnels</td><td><span class="td-badge td-ok">Confirmé</span></td></tr>
+                <tr><td>Revenus crédits carbone (Verra)</td><td>2 800 000</td><td>15,7 %</td><td>Revenus propres</td><td><span class="td-badge td-progress">En mobilisation</span></td></tr>
+                <tr><td>Partenaires privés (certifications durables)</td><td>1 200 000</td><td>6,7 %</td><td>Investissement privé</td><td><span class="td-badge td-progress">Négociation avancée</span></td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td>TOTAL MOBILISÉ</td><td>17 800 000</td><td>100 %</td><td>—</td><td>82 % confirmé</td></tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <!-- 9. MONITORING -->
+        <div class="art-section" id="monitoring">
+          <h2 class="art-section-title">9. Système de Monitoring et Évaluation</h2>
+
+          <div class="art-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Indicateur</th>
+                  <th>Baseline (2022)</th>
+                  <th>Cible 2025</th>
+                  <th>Cible 2027</th>
+                  <th>Valeur actuelle (2025)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Superficie forêts restaurées (ha)</td><td>0</td><td>25 000</td><td>45 000</td><td>18 200</td></tr>
+                <tr><td>Taux couverture forestière zone (%)</td><td>42 %</td><td>52 %</td><td>60 %</td><td>48 % (en progression)</td></tr>
+                <tr><td>CO₂ séquestré certifié (MtCO₂)</td><td>0</td><td>1,1</td><td>3,2</td><td>0,54 (vérification en cours)</td></tr>
+                <tr><td>Revenus ménages zone projet (USD/an)</td><td>480</td><td>650</td><td>720</td><td>618 (+28 %)</td></tr>
+                <tr><td>Espèces végétales autochtones utilisées</td><td>0</td><td>250</td><td>320</td><td>320 (dépassé)</td></tr>
+                <tr><td>Communautés en gestion autonome (%)</td><td>0 %</td><td>20 %</td><td>80 %</td><td>25 % (Phase III)</td></tr>
+                <tr><td>Emplois verts créés</td><td>0</td><td>600</td><td>1 200</td><td>840</td></tr>
+                <tr><td>Femmes dans gouvernance (%)</td><td>18 %</td><td>35 %</td><td>45 %</td><td>38 % (objectif dépassé)</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="art-text">Le monitoring écologique est assuré par un réseau de <strong>612 placettes permanentes</strong> (0,25 ha chacune), visitées semestriellement. Pour le monitoring carbone, le projet applique la méthodologie Verra VM0007 (REDD+ Methodology Framework) couplée à VM0042, avec vérification tierce annuelle par un auditeur accrédité Verra.</p>
+        </div>
+
+        <!-- 10. RISQUES -->
+        <div class="art-section" id="risques">
+          <h2 class="art-section-title">10. Analyse des Risques et Mesures d'Atténuation</h2>
+
+          <div class="art-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Risque identifié</th>
+                  <th>Probabilité</th>
+                  <th>Impact</th>
+                  <th>Mesures d'atténuation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Feux de forêt incontrôlés</td><td>Modérée</td><td>Élevé</td><td>180 km de pare-feux + 28 brigades anti-incendie communautaires</td></tr>
+                <tr><td>Mortalité anormale des plants (sécheresse)</td><td>Faible-Mod.</td><td>Modéré</td><td>Espèces tolérantes sécheresse, paillage, irrigation d'appoint</td></tr>
+                <tr><td>Conflits fonciers sur zones restaurées</td><td>Modérée</td><td>Élevé</td><td>CPLE renforcée, enregistrement légal des droits communautaires, médiation traditionnelle</td></tr>
+                <tr><td>Insuffisance financement (revenus carbone)</td><td>Faible</td><td>Élevé</td><td>Diversification sources (FVC, FEM, privé), fonds de roulement, valorisation PFNL parallèle</td></tr>
+                <tr><td>Pression persistante agriculture abattis</td><td>Élevée</td><td>Modéré</td><td>Système agroforestier alternatif, formation, appui intrants, filières économiques PFNL</td></tr>
+                <tr><td>Défection communautés</td><td>Faible</td><td>Élevé</td><td>Mécanisme de partage des bénéfices attractif (60 % crédits carbone), emplois locaux</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 11. PERSPECTIVES -->
+        <div class="art-section" id="perspectives">
+          <h2 class="art-section-title">11. Perspectives et Appel à Partenariat</h2>
+
+          <h3 class="art-section-sub">11.1 Résultats attendus d'ici fin 2027</h3>
+          <p class="art-text">À l'horizon de clôture du projet en décembre 2027, les résultats consolidés attendus sont : restauration intégrale de <strong>45 000 ha</strong> de forêts dégradées, séquestration certifiée de <strong>3,2 MtCO₂</strong>, amélioration durable des moyens de subsistance de <strong>12 500 ménages ruraux</strong>, création de <strong>1 200 emplois verts permanents</strong> et transfert de la gestion de 80 % des zones restaurées à des organisations communautaires légalement constituées et financièrement autonomes.</p>
+
+          <h3 class="art-section-sub">11.2 Vision de passage à l'échelle</h3>
+          <p class="art-text">Le projet constitue le prototype d'un programme de restauration forestière participative réplicable à l'échelle de l'ensemble du bassin du Congo. L'IBCE-RC prépare un programme de seconde phase ciblant <strong>80 000 ha supplémentaires</strong> dans les régions Centre, Est et Littoral du Cameroun, ainsi qu'une extension aux pays voisins (Congo-Brazzaville, Gabon) dans le cadre du Mécanisme Forestier du Bassin du Congo (MECAFOR).</p>
+
+          <div class="gap-card">
+            <h3>Gap de financement — Opportunités pour de nouveaux partenaires</h3>
+            <p style="color:rgba(255,255,255,.7);font-size:.9rem;margin-bottom:1rem;">Malgré les financements confirmés à hauteur de 82 % du budget, un gap de <strong style="color:var(--gold-lt);">3,2 millions USD</strong> subsiste pour la pleine exécution du projet sur la période 2025–2027.</p>
+            <div class="art-bullets">
+              <div class="art-bullet">Étendre le réseau de pépinières à 6 nouvelles communautés dans les arrondissements de Mengong et Mvangan (1,2 M USD)</div>
+              <div class="art-bullet">Renforcer le système de monitoring carbone et accélérer la certification Verra (0,8 M USD)</div>
+              <div class="art-bullet">Développer 3 nouvelles filières PFNL à haute valeur ajoutée (huiles essentielles, plantes médicinales, champignons) (0,7 M USD)</div>
+              <div class="art-bullet">Appuyer la structuration légale des 28 coopératives forestières communautaires (0,5 M USD)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. CONCLUSION -->
+        <div class="art-section" id="conclusion">
+          <h2 class="art-section-title">12. Conclusion</h2>
+          <p class="art-text">Le Projet de Restauration des Forêts Dégradées, de Reboisement et de Réhabilitation Écologique de la Région du Sud Cameroun est une démonstration concrète qu'il est possible de <strong>concilier restauration écologique ambitieuse, développement communautaire équitable et valorisation économique du carbone forestier</strong>. À mi-parcours, les résultats dépassent les prévisions initiales sur sept des huit indicateurs écologiques suivis, et l'impact socioéconomique positif sur les communautés rurales est déjà tangible.</p>
+          <p class="art-text">Ce projet n'est pas seulement un programme de plantation d'arbres. C'est une démarche de transformation des relations entre les communautés humaines et leurs forêts — une transformation fondée sur la science, le respect des droits et des savoirs locaux, et la conviction que la forêt tropicale peut être simultanément un puits de carbone mondial, un réservoir de biodiversité irremplaçable et une source de vie et de revenus pour des millions de personnes.</p>
+
+          <div class="conclusion-banner">
+            <div class="cb-numbers">45 000 hectares · 12 500 ménages · 3,2 MtCO₂</div>
+            <p>Restaurer la forêt, c'est restaurer l'avenir des communautés et du climat.</p>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="art-cta">
+          <h2>Rejoindre le Projet</h2>
+          <p>Pour rejoindre le projet, devenir partenaire ou obtenir des données et rapports d'avancement, contactez le porteur de projet.</p>
+          <div class="cta-person">ELLA NTYAM Steve · Porteur de Projet &amp; Directeur IBCE-RC</div>
+          <div class="cta-role">Physicien de l'Environnement — Institut du Bassin du Congo pour l'Environnement et la Résilience Climatique</div>
+          <a href="mailto:info@ibce-rc.org" class="cta-mail">info@ibce-rc.org</a>
+          <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-gold btn-lg">Nous contacter</a>
+            <a href="projects.html" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.4);color:white;">Voir tous les projets</a>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- ===== TABLE OF CONTENTS ===== -->
+      <aside>
+        <div class="art-toc">
+          <h4>Sommaire</h4>
+          <ol>
+            <li><a href="#resume">Résumé exécutif</a></li>
+            <li><a href="#contexte">1. Contexte et justification</a></li>
+            <li><a href="#objectifs">2. Objectifs du projet</a></li>
+            <li><a href="#zone">3. Zone d'intervention</a></li>
+            <li><a href="#methode">4. Approche méthodologique</a></li>
+            <li><a href="#phases">5. Phases d'exécution</a></li>
+            <li><a href="#resultats">6. Résultats atteints</a></li>
+            <li><a href="#gouvernance">7. Gouvernance</a></li>
+            <li><a href="#budget">8. Budget et financement</a></li>
+            <li><a href="#monitoring">9. Monitoring &amp; évaluation</a></li>
+            <li><a href="#risques">10. Analyse des risques</a></li>
+            <li><a href="#perspectives">11. Perspectives</a></li>
+            <li><a href="#conclusion">12. Conclusion</a></li>
+          </ol>
+        </div>
+      </aside>
+
+    </div><!-- .art-layout -->
+  </div><!-- .container -->
+</div><!-- .art-body -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-about">
+        <a href="index.html" class="logo" style="margin-bottom:.75rem;">
+          <img src="images/l.png" alt="Logo IBCE-RC" class="logo-img">
+          <div>
+            <span class="logo-name">IBCE-RC</span>
+            <span class="logo-tagline">Environnement · Résilience Climatique</span>
+          </div>
+        </a>
+        <p>Institut du Bassin de Congo pour l'Environnement et la Résilience Climatique. Nous protégeons la biodiversité du Bassin du Congo.</p>
+        <div class="f-social">
+          <a href="#">f</a><a href="#">𝕏</a><a href="#">📷</a>
+          <a href="https://wa.me/237697874374" target="_blank">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <a href="about.html">À Propos</a>
+          <a href="projects.html">Nos Projets</a>
+          <a href="gallery.html">Galerie</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Nos Projets</h4>
+        <div class="footer-links">
+          <a href="projects.html">Conservation Forestière</a>
+          <a href="projects.html">Agroforesterie Cacao</a>
+          <a href="projects.html">Pépinières</a>
+          <a href="projects.html">Gestion de l'Eau</a>
+          <a href="projects.html">Biodiversité</a>
+          <a href="projet-restauration-sud.html">Restauration Forestière</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Nous Trouver</h4>
+        <div class="f-contact">
+          <div class="f-ci"><span class="ico">📍</span><span>Yaoundé, Cameroun</span></div>
+          <div class="f-ci"><span class="ico">✉</span><a href="mailto:info@ibce-rc.org">info@ibce-rc.org</a></div>
+          <div class="f-ci"><span class="ico">📞</span><a href="tel:+237697874374">(+237) 697 874 374 / 678 202 974</a></div>
+          <div class="f-ci"><span class="ico">💬</span><a href="https://wa.me/237697874374" target="_blank">WhatsApp</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
+      <span>© 2026 IBCE-RC. Tous droits réservés.</span>
+      <span>🌿 Protéger la forêt, nourrir les communautés</span>
+    </div>
+  </div>
+</footer>
+
+</div><!-- .page-content -->
+
+<a href="https://wa.me/237697874374" class="wa-float" target="_blank" title="WhatsApp"><img src="images/wha.png" alt="WhatsApp" style="width:36px;height:36px;object-fit:contain;"></a>
+<button class="btt" aria-label="Retour en haut">↑</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
