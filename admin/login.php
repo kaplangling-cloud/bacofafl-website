@@ -5,7 +5,8 @@ if (!empty($_SESSION['ibce_admin'])) { header('Location: index.php'); exit; }
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once 'auth.php';
-    if ($_POST['username'] === ADMIN_USER && $_POST['password'] === ADMIN_PASS) {
+    if (checkCredentials($_POST['username'] ?? '', $_POST['password'] ?? '')) {
+        session_regenerate_id(true);
         $_SESSION['ibce_admin'] = true;
         header('Location: index.php');
         exit;

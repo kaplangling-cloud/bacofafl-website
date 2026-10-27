@@ -1,8 +1,13 @@
 <?php
-session_start();
-define('ADMIN_USER', 'admin');
-define('ADMIN_PASS', 'Ibce2026!');
+if (session_status() === PHP_SESSION_NONE) session_start();
+// Identifiants dans config.php (non versionné, voir config.example.php)
+if (file_exists(__DIR__ . '/config.php')) require_once __DIR__ . '/config.php';
 define('DATA_DIR', __DIR__ . '/../data/');
+
+function checkCredentials($username, $password) {
+    if (!defined('ADMIN_USER') || !defined('ADMIN_PASS') || ADMIN_PASS === '') return false;
+    return hash_equals(ADMIN_USER, (string)$username) && hash_equals(ADMIN_PASS, (string)$password);
+}
 
 function requireAuth() {
     if (empty($_SESSION['ibce_admin'])) {

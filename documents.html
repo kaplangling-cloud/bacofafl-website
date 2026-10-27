@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consultez et téléchargez les bases de données et documents publics de l'IBCE-RC.">
+  <title>Documents et données — IBCE-RC</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/l.png" type="image/png">
+  <style>
+    .documents-section{min-height:65vh;padding-top:3rem;}
+    .documents-list{max-width:850px;margin:2rem auto 0;}
+    .document-card{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.5rem;margin-bottom:1rem;background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);}
+    .document-card h3{font-family:var(--font);font-size:1rem;overflow-wrap:anywhere;}
+    .document-card p{font-size:.85rem;color:var(--gray-500);margin-top:.25rem;}
+    .document-download{flex-shrink:0;}
+    .document-status{text-align:center;color:var(--gray-500);padding:2rem 1rem;}
+    @media(max-width:600px){.document-card{align-items:flex-start;flex-direction:column;}.document-download{width:100%;justify-content:center;}}
+  </style>
+</head>
+<body>
+<header class="site-header" id="top">
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/l.png" alt="Logo IBCE-RC" class="logo-img">
+        <div><span class="logo-name">IBCE-RC</span><span class="logo-tagline">Environnement · Résilience Climatique</span></div>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="about.html" class="nav-link">À Propos</a></li>
+        <li><a href="projects.html" class="nav-link">Nos Projets</a></li>
+        <li><a href="gallery.html" class="nav-link">Galerie</a></li>
+        <li><a href="documents.html" class="nav-link active" aria-current="page">Documents</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta">Nous Soutenir</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main class="page-content">
+  <section class="section section-alt documents-section">
+    <div class="container">
+      <span class="section-label">Ressources publiques</span>
+      <h1 class="section-title">Documents et données</h1>
+      <p class="section-sub">Téléchargez les bases de données et les documents mis à disposition par l’IBCE-RC.</p>
+      <div id="documents-list" class="documents-list" aria-live="polite">
+        <p class="document-status">Chargement des documents…</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-about">
+        <a href="index.html" class="logo" style="margin-bottom:.75rem;">
+          <img src="images/l.png" alt="Logo IBCE-RC" class="logo-img">
+          <div>
+            <span class="logo-name">IBCE-RC</span>
+            <span class="logo-tagline">Environnement · Résilience Climatique</span>
+          </div>
+        </a>
+        <p>Institut du Bassin de Congo pour l'Environnement et la Résilience Climatique. Nous protégeons la biodiversité du Bassin du Congo.</p>
+        <div class="f-social">
+          <a href="#">f</a><a href="#">𝕏</a><a href="#">📷</a>
+          <a href="https://wa.me/237697874374" target="_blank">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <a href="about.html">À Propos</a>
+          <a href="projects.html">Nos Projets</a>
+          <a href="gallery.html">Galerie</a>
+          <a href="documents.html">Documents et données</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Nos Projets</h4>
+        <div class="footer-links">
+          <a href="projects.html">Conservation Forestière</a>
+          <a href="projects.html">Agroforesterie</a>
+          <a href="projects.html">Pépinières</a>
+          <a href="projects.html">Gestion de l'Eau</a>
+          <a href="projects.html">Biodiversité</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Nous Trouver</h4>
+        <div class="f-contact">
+          <div class="f-ci"><span class="ico">📍</span><span>Yaoundé, Cameroun</span></div>
+          <div class="f-ci"><span class="ico">✉</span><a href="mailto:info@ibce-rc.org">info@ibce-rc.org</a></div>
+          <div class="f-ci"><span class="ico">📞</span><a href="tel:+237697874374">(+237) 697 874 374 / 678 202 974</a></div>
+          <div class="f-ci"><span class="ico">💬</span><a href="https://wa.me/237697874374" target="_blank">WhatsApp</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
+      <span>© 2026 IBCE-RC. Tous droits réservés.</span>
+      <span>🌿 Protéger la forêt, nourrir les communautés</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/237697874374" class="wa-float" target="_blank" title="WhatsApp"><img src="images/wha.png" alt="WhatsApp" style="width:36px;height:36px;object-fit:contain;"></a>
+<button class="btt" aria-label="Retour en haut">↑</button>
+
+<script src="js/main.js"></script>
+<script>
+fetch('data/documents.json')
+  .then(response => {
+    if (!response.ok) throw new Error('Impossible de charger la liste des documents.');
+    return response.json();
+  })
+  .then(documents => {
+    const list = document.getElementById('documents-list');
+    list.replaceChildren();
+    if (!Array.isArray(documents) || documents.length === 0) {
+      const empty = document.createElement('p');
+      empty.className = 'document-status';
+      empty.textContent = 'Aucun document public pour le moment.';
+      list.append(empty);
+      return;
+    }
+
+    documents.forEach(item => {
+      if (typeof item.name !== 'string' || typeof item.path !== 'string') return;
+      const card = document.createElement('article');
+      card.className = 'document-card';
+      const details = document.createElement('div');
+      const title = document.createElement('h3');
+      title.textContent = item.name;
+      const size = document.createElement('p');
+      size.textContent = `${(Number(item.size) / 1024).toLocaleString('fr-FR', { maximumFractionDigits: 0 })} Ko`;
+      details.append(title, size);
+
+      const link = document.createElement('a');
+      link.className = 'btn btn-primary document-download';
+      link.href = item.path;
+      link.download = '';
+      link.textContent = 'Télécharger';
+      card.append(details, link);
+      list.append(card);
+    });
+
+    if (!list.children.length) {
+      const error = document.createElement('p');
+      error.className = 'document-status';
+      error.textContent = 'La liste des documents contient des données invalides.';
+      list.append(error);
+    }
+  })
+  .catch(() => {
+    const error = document.createElement('p');
+    error.className = 'document-status';
+    error.textContent = 'Les documents ne sont pas disponibles pour le moment.';
+    document.getElementById('documents-list').replaceChildren(error);
+  });
+</script>
+</body>
+</html>

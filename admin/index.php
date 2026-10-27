@@ -59,6 +59,7 @@ $stats = getStats();
   </div>
   <a href="index.php" class="nav-item active"><span class="ico">🏠</span> Tableau de bord</a>
   <a href="news.php" class="nav-item"><span class="ico">📰</span> Actualités</a>
+  <a href="documents.php" class="nav-item"><span class="ico">📄</span> Documents</a>
   <a href="stats.php" class="nav-item"><span class="ico">📊</span> Statistiques</a>
   <a href="../index.html" class="nav-item" target="_blank"><span class="ico">🌐</span> Voir le site</a>
   <div class="logout"><a href="logout.php"><span>🚪</span> Déconnexion</a></div>
@@ -119,8 +120,9 @@ $stats = getStats();
     <div class="section-head"><h2>⚡ Accès rapide</h2></div>
     <div class="shortcut">
       <a href="news.php?action=add"><span class="big">📰</span>Ajouter une actualité</a>
+      <a href="documents.php"><span class="big">📄</span>Gérer les documents</a>
       <a href="stats.php"><span class="big">📊</span>Modifier les statistiques</a>
-      <a href="../index.html" target="_blank"><span class="big">🌐</span>Voir le site public</a>
+      <a href="../documents.html" target="_blank"><span class="big">🌐</span>Voir les documents publics</a>
     </div>
   </div>
 </div>

@@ -99,6 +99,7 @@ if (isset($_GET['msg'])) $msg = $_GET['msg'] === 'saved' ? '✅ Actualité enreg
   </div>
   <a href="index.php"  class="nav-item"><span>🏠</span> Tableau de bord</a>
   <a href="news.php"   class="nav-item active"><span>📰</span> Actualités</a>
+  <a href="documents.php" class="nav-item"><span>📄</span> Documents</a>
   <a href="stats.php"  class="nav-item"><span>📊</span> Statistiques</a>
   <a href="../index.html" class="nav-item" target="_blank"><span>🌐</span> Voir le site</a>
   <div class="logout"><a href="logout.php">🚪 Déconnexion</a></div>
